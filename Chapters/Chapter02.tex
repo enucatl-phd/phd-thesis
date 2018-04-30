@@ -222,3 +222,59 @@ order to resolve the intensity modulations of
 equation~\eqref{eq:free.space.propagation}. All of these constraints tend to
 have a negative impact on exposure times, but a number of applications are
 possible, including tomographic imaging and even \emph{in vivo} imaging.
+
+\subsection{Diffraction enhanced imaging}
+Diffraction enhanced --- or crystal-based --- methods employ two crystals:
+one after the source, to obtain a monochromatic and collimated X-ray beam;
+one before the detector, acting as an extremely sensitive angular filter.
+
+The intensity on the detector is modulated by changing the incidence angle
+$\vartheta$ of the beam on the second grating. The intensity in each pixel
+is then recorded through multiple exposures as a function of $\vartheta$,
+producing a \emph{rocking curve}. These rocking curves are sensitive to
+refraction in a direction perpendicular to the beam and to the axis of
+rotation of the analyzer grating, and can provide a differential phase
+image, as well as a scattering contrast. This technique is also suitable for
+polychromatic sources, although the presence of the first crystal acting as
+a monochromator with low efficiency also leads to long exposure times,
+especially on low brilliance laboratory sources. The beam is also collimated
+to a fan beam on the plane and the sample needs to be scanned through it, in
+addition to the scanning of the rocking curve. An device composed by an
+array of crystals has been proposed as a solution to this issue.
+
+\subsection{Bonse-Hart interferometry}
+This method is the oldest approach to X-ray interferometry, where three
+silicon beam splitters are used to create two paths from the X-ray source, a
+sample is introduced in one of the paths, a second mirror deflects them onto
+the third crystal, where they merge again forming an interference pattern
+whose characteristics depend on the phase displacements introduced by the
+sample. This third crystal is necessary since the fringes of this pattern
+have the same period as Bragg planes and are therefore too small to be
+directly recorded.
+
+Again, as for diffraction enhanced techniques, the use of crystals as
+optical elements means that only a very narrow bandwidth can be used from a
+polychromatic source. Moreover, the three beam splitters should be
+manufactured from a single crystal in order to reduce instabilities,
+resulting in a limitation on the size of the field of view.
+
+\subsection{Edge illumination}
+Edge illumination is not an interferometric technique, although it is
+inspired by diffraction enhanced imaging. The basic principle of edge
+illumination is the collimation of the X-rays through a narrow aperture,
+the resulting beam is then masked by a second aperture whose position is
+scanned in a direction perpendicular to the beam: the intensity decreases from a
+maximum when the two slits are perfectly aligned as the lateral displacement
+of the second mask is increased.
+The presence of a sample in the beam introduces refraction, which can be
+observed as a displacement of this curve. The same applies to each pixel in
+the detector, therefore the period of the source and detector masks have to
+be matched so that there is a one-to-one mapping from each aperture in the
+source mask to each aperture in the detector mask to each underlying
+detector pixel.
+
+This approach does not impose requirements on the spatial or temporal
+coherence of the source, and has been successfully run on conventional
+laboratory sources.
+
+\subsection{Talbot interferometry}
