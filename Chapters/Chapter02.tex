@@ -278,3 +278,106 @@ coherence of the source, and has been successfully run on conventional
 laboratory sources.
 
 \subsection{Talbot interferometry}
+Talbot interferometry in different configurations is the topic of this
+thesis. The Talbot effect will be therefore described in detail.
+
+The Helmoltz equation~\eqref{eq:helmoltz.fourier} provides the solution for
+the propagation of a plane wave in a vacuum, where $n \equiv 1$. Plane waves
+are solutions $\psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}}$ with $k^2
+= k_x^2 + k_y^2 + k_z^2 = c^2 \omega^2$. We can then isolate the direction
+of propagation $z$, by writing the solution in the form
+\begin{equation}
+    \psi(\omega, x, y, z) = e^{i(k_x x + k_y y)}e^{iz\sqrt{k^2 - k_x^2 -
+    k_y^2}}.
+    \label{eq:free.propagation}
+\end{equation}
+It is then clear that to propagate the plane wave from $z = 0$ to $z = z_0$
+it is necessary to multiply by the factor $\exp(iz\sqrt{k^2 - k_x^2 -
+k_y^2})$.
+
+Given a general solution to the Helmoltz
+equation~\eqref{eq:helmoltz.fourier}, it can be decomposed as a sum of plane
+waves through the Fourier transform $\Fxy$ with respect to $x$ and $y$. Each
+plane wave then propagates according to
+equation~\eqref{eq:free.propagation}. The propagated wave can be then
+recovered with the inverse transformation
+\begin{equation}
+    \psi(\omega, x, y, z_0) = \Fxy^{-1}e^{i z_0 \sqrt{k^2 - k_x^2 -
+    k_y^2}}\Fxy    \psi(\omega, x, y, 0) 
+    \label{eq:full.propagator}
+\end{equation}
+The paraxial approximation in this context translates to the fact that the
+transverse components of the wave vector $\vec{k}$ are much smaller than the
+component along the beam path $|k_x|, |k_y| \ll |k_z|$. The square root can
+then be approximated to the first order $\sqrt{k^2 - k_x^2 - k_y^2} \approx
+k - \frac{k_x^2 + k_y^2}{2k}$ to obtain the final form of the propagator
+\begin{equation}
+    \psi(\omega, x, y, z_0) = e^{i k z_0}\Fxy^{-1}e^{-i z_0\frac{k_x^2 +
+    k_y^2}{2k}}\Fxy\psi(\omega, x, y, 0). \label{eq:paraxial.propagator}
+\end{equation}
+
+The optical phenomenon discovered in 1836 by Talbot is the observation that
+the propagator~\eqref{eq:paraxial.propagator} is equal to one for a periodic
+source wave at fixed distances, therefore called \emph{Talbot distances}.
+
+Let's consider for simplicity the one-dimensional case where the
+monochromatic field $\psi(\omega, x, z=0)$ is periodic with period $p_1$
+along the $x$ direction. 
+
+Then, following the recipe of equation~\eqref{eq:full.propagator}, we need
+to calculate the Fourier transform with respect to $x$
+\begin{equation*}
+    \Fx\psi(\omega, x, 0) = \sum_j \psi_j(\omega)\delta(k_x -
+    k_{xj}),
+\end{equation*}
+in terms of $k_{xj} = 2\pi j/ p_1$ and of the Dirac $\delta$.
+
+By then propagating according to equation~\eqref{eq:paraxial.propagator}
+
+\begin{align}
+    \Fx\psi(\omega, x, z_0) &= e^{ikz_0} e^{-i z_0\frac{k_x^2}{2k}}\sum_j \psi_j(\omega)\delta(k_x -
+    k_{xj}) \\
+    &= e^{ikz_0}e^{-i z_0\frac{k_{xj}^2}{2k}}\sum_j \psi_j(\omega)\delta(k_x -
+    k_{xj}).
+    \label{eq:talbot1}
+\end{align}
+
+The effect of the Dirac $\delta$ is to replace $k_x$ with $k_{xj}$, which
+means that the propagator will, apart from an irrelevant constant phase
+factor, be equal to one at distances
+
+\begin{equation*}
+    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad n \in \mathbb{N}.
+\end{equation*}
+
+The source field at $z = 0$ creates a
+self-image, exactly replicating its periodic intensity pattern at each
+distance $\Delta_n$ downstream.
+
+This effect can be observed by introducing a grating with absorbing lines in
+the beam. However, the resulting intensity will be also reduced by a factor
+known as the \emph{duty cycle} of the grating, that is the ratio of the
+width of the opening to the pitch of the grating itself. This is not optimal
+as it affects exposure times, but it is possible to observe the same effect
+by introducing a phase periodicity in the source by letting the X-rays
+go through a gratings whose lines change the phase of the radiation by a
+factor of $\pi$. A self-image of the grating is then formed with double the
+spatial frequency at the Lohmann distances
+\begin{equation*}
+    D_j = \left(j - \frac{1}{2}\right) \frac{p_1^2}{4 \lambda} \qquad
+    j\in\mathbb{N}.
+\end{equation*}
+
+The intensity of a monochromatic periodic wave front propagating according to
+equation~\eqref{eq:paraxial.propagator} is shown in
+figure~\ref{fig:talbotcarpet}.
+
+\begin{figure}[htb]
+    \centering
+    \input{gfx/talbotcarpet.pgf}
+    \caption[Tappeto di Talbot.]{Simulazione del \emph{tappeto di Talbot},
+    ovvero della propagazione di un fronte
+    d'onda con periodicit\`a di fase. Si osserva la formazione di frange luminose alle
+    distanze di Lohmann con periodo dimezzato rispetto al reticolo \G{1}.}
+    \label{fig:talbotcarpet}
+\end{figure}
