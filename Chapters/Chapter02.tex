@@ -381,3 +381,157 @@ figure~\ref{fig:talbotcarpet}.
     distanze di Lohmann con periodo dimezzato rispetto al reticolo \G{1}.}
     \label{fig:talbotcarpet}
 \end{figure}
+
+\section{Talbot-Lau interferometry}
+\subsection{Image generation and analysis}
+The fundamental principle of Talbot interferometry lies in the self-imaging
+property of a periodic wave front as described in the previous section. A
+sample can then be introduced in the beam, resulting in a reshaping of the
+interference pattern.
+
+Specifically, refraction of the X-ray beam produces a lateral displacement
+of the interference fringes. The direction of propagation of a plane wave
+\begin{equation}
+    e^{-i \vec{k} \cdot \vec{x}} = e^{-i\varphi(x)}
+    \label{eq:plane.wave}
+\end{equation}
+is determined by the unit vector
+\begin{equation}
+    \vec{n} = -\frac{1}{k} \nabla\varphi.
+    \label{eq:plane.wave.direction}
+\end{equation}
+Therefore, the angular deviation of the beam along the axis $x$ perpendicular to
+the direction of propagation and to the direction of the grating lines is
+\begin{equation}
+        \alpha = -\frac{1}{k} \partial_x\varphi.\label{eq:refraction.angle}
+\end{equation}
+This deviation would be measurable as a lateral displacement of the
+interference fringes of the Talbot self-image of the grating \G1, with the
+\emph{caveat} that this interference pattern has a pitch of the order of
+few micrometers and is therefore not resolved by detectors with a pixel size
+that is one or two orders of magnitude larger, although some applications
+exist on synchrotron sources for a limited field of view\cn.
+
+For this reason, a second grating \G2 with absorbing lines is placed at the
+location where the self-image of \G1 is created with the same period of the
+interference pattern. This grating is then laterally displaced in the $x$
+direction: when the grating lines of \G2
+match the bright lines of the interference pattern, the intensity recorded
+by the underlying detector pixel reaches a minimum, whereas when the
+absorbing lines are superimposed to the dark lines the radiation is able to
+go through and a maximum intensity is recorded. Sliding the grating \G2
+along the rectangular interference pattern of \G1 corresponds to recording
+the convolution of the two signals. The result is a triangular signal, known
+as the \emph{phase stepping curve}.
+
+A triangular phase stepping curve is the result of the convolution of the
+two rectangular shapes of the grating transmissions. However, a finite
+source size also affects the shape of the curve by convolving the signal
+with the image of the source. The result is calculated in detail in\cn, we
+are here interested in the result pictured in
+figure~\ref{fig:phase.stepping}: the curve is well approximated by a
+sinusoid
+\begin{equation*}
+    s(x) = a_0 + a_1 \cos \left(\frac{2 \pi}{p_2} x + \theta\right).
+\end{equation*}
+
+A number of \emph{phase steps} are then recorded for different displacements
+$x$ of \G2 and the three parameters $a_0$, $a_1$ and $\theta$ are determined
+with a linear fit.
+
+A reference, or \emph{flat}, curve is then compared to the curve observed
+with the sample in the beam, or \emph{sample} curve
+
+\begin{align}
+    s_f(x) &= a_{0,f} + a_{1,f} \cos\left(\frac{2 \pi}{p_2} x + \theta_{f}\right)\\
+    s_s(x) &= a_{0,s} + a_{1,s} \cos\left(\frac{2 \pi}{p_2} x +
+    \theta_{s}\right).
+    \label{eq:flat}
+\end{align}
+
+Three complementary signals can be determined by these parameters:
+\begin{description}
+    \item[transmission,] given by the ratio $A = a_{0,c} / a_{0,f}$, is the
+        intensity of the transmitted radiation, as in conventional
+        radiography, related to the Beer-Lambert
+        law~\eqref{eq:beer-lambert}.
+    \item[differential phase,] or the difference $P = \theta_{c} -
+        \theta_f$, depending on the lateral displacement of the interference
+        fringes given by
+        $\alpha$~\eqref{eq:refraction.angle} at the
+        $j$th Lohmann distance according to
+        \begin{equation*}
+            P = 2\pi \frac{D_j}{p_2}\alpha.
+        \end{equation*}
+        It is a differential phase signal because it is proportional to the
+        derivative of the phase displacement introduced by the sample.
+    \item[visibility reduction,] also known as 
+        \emph{scattering} or \emph{dark field} contrast. The
+        \emph{visibility} of the curve is the parameter
+        $v = 2a_1 / a_0$. The ratio
+        \begin{equation*}
+            B = \frac{v_c}{v_f} =
+            \frac{a_{1,c}}{a_{0,c}}\frac{a_{0,f}}{a_{1,f}}
+        \end{equation*}
+        is influenced by inhomogeneities of the sample on a scale smaller
+        than a detector pixel\cn.
+\end{description}
+
+\subsection{Spatial and temporal coherence}
+Talbot interferometry is compatible with laboratory sources with a wide
+\emph{bremsstrahlung} spectrum. It has been shown\cn that the spectral
+acceptance at the $j$th Lohmann distance is
+\begin{equation}
+    \frac{\Delta \lambda}{\lambda} = \frac{1}{2j - 1}.\label{eq:acceptance}
+\end{equation}
+Our experiments are designed for sources with a high voltage and a wide
+spectrum. Therefore, given the inverse proportionality between Lohmann order
+and spectral acceptance, our interferometers operate at the first order.
+
+Spatial coherence is more critical for the formation of the self-image of
+the grating \G1, in the direction perpendicular to the grating lines --- since no
+interference is observed along the grating lines there
+is no coherence requirement in that direction.
+
+Let's consider two point sources producing an interference pattern at a
+distance $D_j$ from \G1, if the separation between the two points is
+$\epsilon$, the two patterns will be shifted by $\epsilon D_j / \ell$: if
+this distance is such that the bright lines of one pattern
+overlap with the dark lines of the second pattern, the interference will
+disappear. We can therefore establish a maximum source width for the
+interference effect to occur as
+\begin{equation}
+    s < \frac{p_2\ell}{2D_j}.
+    \label{eq:source.size}
+\end{equation}
+
+Synchrotron sources can achieve the required coherence without additional
+optical elements, but laboratory sources have a much larger focal spot. If
+for instance $\ell = \SI{1}{\meter}$, $\D_j = \SI{10}{\centi\meter}$, then
+the source has to be smaller than \SI{5}{\micro\meter} which is only
+achievable with a microfocus source, which can only provide a very small
+amount of radiation for imaging.
+
+This problem can be overcome by placing an additional grating \G0 in front
+of the source. This grating creates an array of individually coherent but
+mutually incoherent sources, whose interference patterns superimpose with the
+geometrical constraint
+\begin{equation}
+    p_0 = p_2 \frac{\ell}{D_j}.\label{eq:p0}
+\end{equation}
+
+Laboratory sources on a compact setup which are the goal of our experiments
+also introduce a significant geometrical magnification. The equations above
+all assume a plane wave geometry, but this can be easily adapted for a
+spherical wave front according to~\cite{Engelhardt2008}.
+
+The Lohmann distances are rescaled according to
+\begin{equation*}
+    D_j^\prime = D_j \frac{1}{1 - \dfrac{D_j}{\ell}}.
+\end{equation*}
+
+The period of the grating $p_2$ is rescaled by the same factor
+\begin{equation}
+    p_2^\prime = p_2 \frac{1}{1 -
+        \dfrac{D_j}{\ell}}.\label{eq:magnification}
+\end{equation}
