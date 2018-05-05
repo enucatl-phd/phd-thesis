@@ -197,7 +197,7 @@
 %
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=1.827083in,y=0.165000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont distanze di Lohmann}}
+\pgftext[left,bottom,x=1.827083in,y=0.165000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont Lohmann distance}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -339,7 +339,7 @@
 %
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=0.300667in,y=1.742156in,rotate=90.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont periodi di \(\displaystyle G_1\)}}
+\pgftext[left,bottom,x=0.300667in,y=1.742156in,rotate=90.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\select periods of \(\displaystyle G_1\)}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
