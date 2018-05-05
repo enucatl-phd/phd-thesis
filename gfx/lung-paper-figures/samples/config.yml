@@ -1,0 +1,20 @@
+---
+version: 2
+multicolumn: false
+web-width: 500px
+align: center
+float: h!
+grid:
+  rows: 1
+  columns: 1
+  grid_elements:
+  - path: figures/samples/samples.png
+    type: static
+    from:
+    - 1
+    - 1
+    to:
+    - 1
+    - 1
+    url: "/users/53595/articles/278308/master/file/figures/samples/samples.png"
+    folder_url: "/users/53595/articles/278308/master/folder/figures/samples"

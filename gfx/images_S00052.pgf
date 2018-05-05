@@ -1,0 +1,69 @@
+%% Creator: Matplotlib, PGF backend
+%%
+%% To include the figure in your LaTeX document, write
+%%   \input{<filename>.pgf}
+%%
+%% Make sure the required packages are loaded in your preamble
+%%   \usepackage{pgf}
+%%
+%% Figures using additional raster images can only be included by \input if
+%% they are in the same directory as the main LaTeX file. For loading figures
+%% from other directories you can use the `import` package
+%%   \usepackage{import}
+%% and then include the figures with
+%%   \import{<path to file>}{<filename>.pgf}
+%%
+%% Matplotlib used the following preamble
+%%   \usepackage{fontspec}
+%%
+\begingroup%
+\makeatletter%
+\begin{pgfpicture}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{4.600000in}{6.000000in}}%
+\pgfusepath{use as bounding box, clip}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.000000pt}%
+\definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.600000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.600000in}{6.000000in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{6.000000in}}%
+\pgfpathclose%
+\pgfusepath{fill}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{3.785028in}}{\pgfqpoint{3.915694in}{1.860611in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.507639in}{3.785028in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=1.863333in]{images_S00052-img0.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=2.465486in,y=5.728972in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont absorption}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{2.509834in}}{\pgfqpoint{3.915694in}{0.790970in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.507639in}{2.509834in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=0.793333in]{images_S00052-img1.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=2.465486in,y=3.384138in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont differential phase}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{0.699820in}}{\pgfqpoint{3.915694in}{0.790970in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.507639in}{0.699820in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=0.793333in]{images_S00052-img2.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgftext[x=2.465486in,y=1.574124in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont dark field}%
+\end{pgfscope}%
+\end{pgfpicture}%
+\makeatother%
+\endgroup%

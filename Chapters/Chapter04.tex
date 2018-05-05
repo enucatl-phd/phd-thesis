@@ -66,25 +66,26 @@ TOMCAT beamline of the Swiss Light Source at the Paul Scherrer Institute
 (Villigen, Switzerland). The X-ray beam is generated with a 2.9 T bending
 magnet from electrons at an energy of 2.4 GeV. The current in the storage
 ring is 400 mA, top-up mode. Two multilayer monochromator crystals are used
-to filter X-rays with an energy of 11 keV. A 20 \selectlanguage{greek}μ\selectlanguage{english}m thick scintillator
+to filter X-rays with an energy of 11 keV. A \SI{20}{\micro\meter} thick scintillator
 converts the X-rays into visible light, collected by a 10x objective onto a
-high-speed CMOS sensor with an effective pixel size of $0.65 \times 0.65$
-\selectlanguage{greek}μ\selectlanguage{english}m$^2$. The exposure time for each tomographic scan was set at 100 ms per
+high-speed CMOS sensor with an effective pixel size of $0.65 \times
+\SI{0.65}{\micro\meter\squared}$. The exposure time for each tomographic scan was set at 100 ms per
 projection, with 1801 projections.
 
 The radiographies on the laboratory source were taken on a symmetric
-Talbot-Lau interferometer (see fig.~\ref{248327}) with a grating pitch of 5.4 \selectlanguage{greek}μ\selectlanguage{english}m and an intergrating
+Talbot-Lau interferometer (see fig.~\ref{248327}) with a grating pitch of
+\SI{5.4}{\micro\meter} and an intergrating
 distance of 26 cm, the phase-shift grating provides a phase shift of $\pi$
 at 45 keV. The average visibility of the interference pattern without any
 sample is 8\%. The source is a Comet MXR-225/26 X-ray tube operated at 100
 kV and 6 mA. The source size is 1 mm. The detector is a prototype based on
-Santid CdTe by Dectris Ltd. The CdTe 750 \selectlanguage{greek}μ\selectlanguage{english}m sensor provides high quantum
-efficiency at high energies (>90\% at 60 keV) with a pixel size of 75 x 75
-\selectlanguage{greek}μ\selectlanguage{english}m$^2$. The phase-stepping procedure was performed with 31 phase steps with
-1 s exposure per step.\selectlanguage{english}
+Santid CdTe by Dectris Ltd. The CdTe \SI{750}{\micro\meter} sensor provides high quantum
+efficiency at high energies (>90\% at 60 keV) with a pixel size of
+$75\times\SI{75}{\micro\meter\squared}$. The phase-stepping procedure was performed with 31 phase steps with
+1 s exposure per step.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.70\columnwidth]{figures/lung-setup/lung-setup}
+\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/lung-setup/lung-setup}
 \caption{{Talbot-Lau interferometer with three gratings G0, G1 and G2, used for
 the radiographies on the laboratory source.
 {\label{248327}}%
@@ -141,10 +142,10 @@ radiography:
     B &= \dfrac{a_{1,s}}{a_{1,f}}\dfrac{a_{0,f}}{a_{0,s}}\\
     R &= \dfrac{\log(B)}{\log(A)}.
     \label{eqn:definitions}
-\end{align*}\selectlanguage{english}
+\end{align*}
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.70\columnwidth]{figures/KO373-LL-smoke/WT256-LL-smoke}
+\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/KO373_LL_smoke/WT256_LL_smoke}
 \caption{{Example of an ex vivo lung interferometric radiography on a laboratory
 source. Sample labelled WT256.
 {\label{590406}}%
@@ -161,15 +162,14 @@ beam of wavelength $\lambda$ is:
 \begin{equation}
 \mu_B = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
     \begin{cases}
-    D' & \text{if } D' \leqslant 1\\
-    \begin{align}
+    D' & \text{if } D' \leq 1\\
+    \begin{aligned}
     & D' - \sqrt{D'^2 - 1}\\
     & (1 + D'^{-2}/2) \\
     & + (D'^{-1} + D'^{-3} / 4) \\
     & \log\left(\frac{D' + \sqrt{D'^2 - 1}}{D' - \sqrt{D'^2 - 1}}\right)
-    \end{align} & \text{otherwise.}
-    \end{cases}
-    \label{eqn:lynch}
+    \end{aligned} & \text{otherwise.}
+    \end{cases}\label{eqn:lynch}
 \end{equation}
 
 The autocorrelation length is $d = L\lambda / p$ with $L$ the sample to
@@ -200,15 +200,16 @@ $s(\energy)$:
 \end{equation}
 
 This formula was first tested on monodisperse solution of silicon dioxide
-spheres with sizes ranging from 0.166 \selectlanguage{greek}μ\selectlanguage{english}m to 7.760 \selectlanguage{greek}μ\selectlanguage{english}m, with a volume fraction of 20\%
+spheres with sizes ranging from \SI{0.166}{\micro\meter} to
+\SI{7.760}{\micro\meter}, with a volume fraction of 20\%
 in glycerine. This model yields a good agreement between the continuous line
 and the experimental data representing radiographies of the silicon dioxide
-sphere samples recorded on the laboratory source interferometer.\selectlanguage{english}
+sphere samples recorded on the laboratory source interferometer.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.70\columnwidth]{figures/summary/summary}
+\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/summary/summary}
 \caption{{Silicon dioxide monodisperse microspheres in a 20\% solution of
-glicerine. as a function of sphere diameter. The continuous line is the
+glicerine as a function of sphere diameter. The continuous line is the
 function in eq. {\ref{eqn:lynchpolychromatic}}.
 {\label{725462}}%
 }}
@@ -248,10 +249,10 @@ tomographic scan. The average and standard deviation of the $R$ values are
 calculated and plotted in fig.~\ref{206272} (black dots and errorbars). The expected
 values according to eq.~\ref{eqn:totalsum} are calculated with the inputs from the
 microtomographic datasets, as described in section~\ref{sec:tomoprocessing}, and are plotted on
-fig.~\ref{206272} with red dots for each sample.\selectlanguage{english}
+fig.~\ref{206272} with red dots for each sample.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.70\columnwidth]{figures/samples/samples}
+\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/samples/samples}
 \caption{{\(R\) value for each lung in the laboratory setup
 radiography (measured, black dots with errorbars) compared to the
 expected value modelled from microtomographic inputs (theory).

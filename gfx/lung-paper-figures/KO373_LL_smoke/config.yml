@@ -1,0 +1,20 @@
+---
+version: 2
+multicolumn: false
+web-width: 500px
+align: center
+float: h!
+grid:
+  rows: 1
+  columns: 1
+  grid_elements:
+  - path: figures/KO373_LL_smoke/WT256_LL_smoke.png
+    type: static
+    from:
+    - 1
+    - 1
+    to:
+    - 1
+    - 1
+    folder_url: "/users/53595/articles/278308/master/folder/figures/KO373_LL_smoke"
+    url: "/users/53595/articles/278308/master/file/figures/KO373_LL_smoke/WT256_LL_smoke.png"

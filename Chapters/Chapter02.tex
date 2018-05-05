@@ -22,9 +22,9 @@ sequence of approximation to Maxwell's equations in a medium:
     \label{eq:ampere}.
 \end{align}
 
-In general, the electric field \vec{E}, the magnetic field \vec{H}, the
-electric displacement field \vec{D} and the magnetic induction field
-\vec{B}, the charge density $\rho$ and the current density \vec{J} are
+In general, the electric field $\vec{E}$, the magnetic field $\vec{H}$, the
+electric displacement field $\vec{D}$ and the magnetic induction field
+$\vec{B}$, the charge density $\rho$ and the current density $\vec{J}$ are
 functions of the three spatial coordinates and time. 
 
 However, a number of restrictions and approximations can be introduced to
@@ -42,14 +42,14 @@ taking the curl of~\eqref{eq:induction} yields
 
 \begin{equation}
     \nabla \times (\nabla \times \vec{E}) + \partial_t(\nabla \cdot \vec{B}) = 0,
-    \label{<++>}
+    \label{}
 \end{equation}
 where the second summand is zero by equation~\eqref{eq:nomonopoles}:
 
 \begin{align}
     \nabla \times (\nabla \times \vec{E}) &= 0\\
     \nabla^2 \vec{E} - \nabla (\nabla \cdot \vec{E}) = 0.
-    \label{<++>}
+    \label{}
 \end{align}
 
 Similarly, the electric field can be eliminated from
@@ -146,7 +146,7 @@ usually explicitly considered:
 \end{equation*}
 
 Since both $\delta \ll 1$ and $\beta \ll 1$ the terms of order $\beta^2$ and
-$\delta^$ can be neglected in equation~\eqref{eq:helmoltz.perturbation}.
+$\delta^2$ can be neglected in equation~\eqref{eq:helmoltz.perturbation}.
 The solution is then easily found by integrating with respect to $z$
 
 \begin{equation}
@@ -507,7 +507,7 @@ interference effect to occur as
 
 Synchrotron sources can achieve the required coherence without additional
 optical elements, but laboratory sources have a much larger focal spot. If
-for instance $\ell = \SI{1}{\meter}$, $\D_j = \SI{10}{\centi\meter}$, then
+for instance $\ell = \SI{1}{\meter}$, $D_j = \SI{10}{\centi\meter}$, then
 the source has to be smaller than \SI{5}{\micro\meter} which is only
 achievable with a microfocus source, which can only provide a very small
 amount of radiation for imaging.

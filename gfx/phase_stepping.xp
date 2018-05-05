@@ -1,0 +1,56 @@
+/* -*-ePiX-*- */
+#include "epix.h"
+using namespace ePiX;
+
+void grating(float offset, int structures, float pitch, float x) {
+    fill(Black());
+    for(int i = 0; i < structures; i++) {
+        float y = ymin() + offset + i * pitch / 2;
+        float y_2 = ymin() + offset + (i + 0.5) * pitch / 2;
+        rect(P(x, y), P(x + 0.09, y_2));
+    }
+    nofill();
+}
+
+double psc(double x) {
+    return 0.5 + 0.4 * Sin(3 * x);
+}
+
+int main() {
+    picture(P(0, -0.5), P(3, 1.5), "4.6 x 3in");
+
+    begin();
+
+    fill(Black());
+    int structures = 4;
+    float pitch = 1;
+    grating(0.25, structures, pitch, 0.4);
+    grating(0.15, structures, pitch, 0.51);
+    float y_max_g2 = ymin() + 0.15 + (structures - 0.5) * pitch / 2;
+    label(P(0.63, 0.7), P(0, 0), "\\G{2}", r);
+
+    bold();
+    arrow(P(0.80, 0.5),
+        P(1.1, 0.8),
+        P(1.4, 0.55));
+    plain();
+
+    float up_arrow_x = 0.555;
+    arrow(P(up_arrow_x, y_max_g2 + 0.05), P(up_arrow_x, y_max_g2 + 0.2));
+    arrow(P(1, 0), P(xmax(), 0));
+    arrow(P(1.5, ymin() + 0.3), P(1.5, ymax() - 0.3));
+    plot(psc, 1.2, xmax(), 100);
+
+    line_style("-  -");
+    line(P(1.4, 0.5), P(2.7, 0.5));
+    arrow(P(5 * M_PI / 6, 0.5), P(5 * M_PI / 6, 0.9));
+    line(P(5 * M_PI / 6, -0.1), P(5 * M_PI / 6, 0.05));
+
+    label(P(1.52, 0.55), P(0, 0), "$a_0$", r);
+    label(P(5 * M_PI / 6 + 0.02, 0.7 - 0.02), P(0, 0), "$a_1$", r);
+    label(P(5 * M_PI / 6, 0.1), P(0, 0), "$\\theta$", t);
+    label(P(2, -0.15), P(0, 0), "position of \\G{2}", t);
+    label_angle(M_PI / 2);
+    label(P(1.4, 0.7), P(0, 0), "intensity", t);
+    end();
+}

@@ -1,0 +1,56 @@
+%% Generated from grating_interferometer.xp on Sam Mai  5 17:55:09 CEST 2018 by
+%% ePiX-1.2.17
+%% 
+%%   Cartesian bounding box: [0,3] x [-1,1]
+%%   Actual size: 4.6 x 2in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (4.6in,2in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](0.306667in,0in)--(0.444667in,0in)--
+  (0.444667in,0.25in)--(0.306667in,0.25in)--(0.306667in,0in)--cycle;
+\draw [fill](0.306667in,0.5in)--(0.444667in,0.5in)--
+  (0.444667in,0.75in)--(0.306667in,0.75in)--(0.306667in,0.5in)--cycle;
+\draw [fill](0.306667in,1in)--(0.444667in,1in)--
+  (0.444667in,1.25in)--(0.306667in,1.25in)--(0.306667in,1in)--cycle;
+\draw [fill](0.306667in,1.5in)--(0.444667in,1.5in)--
+  (0.444667in,1.75in)--(0.306667in,1.75in)--(0.306667in,1.5in)--cycle;
+\draw [fill](2.3in,0in)--(2.438in,0in)--(2.438in,0.25in)--
+  (2.3in,0.25in)--(2.3in,0in)--cycle;
+\draw [fill](2.3in,0.5in)--(2.438in,0.5in)--(2.438in,0.75in)--
+  (2.3in,0.75in)--(2.3in,0.5in)--cycle;
+\draw [fill](2.3in,1in)--(2.438in,1in)--(2.438in,1.25in)--
+  (2.3in,1.25in)--(2.3in,1in)--cycle;
+\draw [fill](2.3in,1.5in)--(2.438in,1.5in)--(2.438in,1.75in)--
+  (2.3in,1.75in)--(2.3in,1.5in)--cycle;
+\draw [fill](4.29333in,0in)--(4.43133in,0in)--(4.43133in,0.25in)--
+  (4.29333in,0.25in)--(4.29333in,0in)--cycle;
+\draw [fill](4.29333in,0.5in)--(4.43133in,0.5in)--
+  (4.43133in,0.75in)--(4.29333in,0.75in)--(4.29333in,0.5in)--cycle;
+\draw [fill](4.29333in,1in)--(4.43133in,1in)--(4.43133in,1.25in)--
+  (4.29333in,1.25in)--(4.29333in,1in)--cycle;
+\draw [fill](4.29333in,1.5in)--(4.43133in,1.5in)--
+  (4.43133in,1.75in)--(4.29333in,1.75in)--(4.29333in,1.5in)--cycle;
+\pgftext[at={\pgfpoint{0.383333in}{1.9375in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\G{0}}}}
+\pgftext[at={\pgfpoint{2.37667in}{1.9375in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\G{1}}}}
+\pgftext[at={\pgfpoint{4.37in}{1.9375in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}\G{2}}}}
+\draw (1.37233in,0.875in)--(0.46in,0.875in);
+\draw [fill](0.574155in,0.875in)--(0.574155in,0.895756in)--
+  (0.46in,0.875in)--(0.574155in,0.854244in)--(0.574155in,0.875in)--cycle;
+\draw (1.37233in,0.875in)--(2.28467in,0.875in);
+\draw [fill](2.17051in,0.875in)--(2.17051in,0.854244in)--
+  (2.28467in,0.875in)--(2.17051in,0.895756in)--(2.17051in,0.875in)--cycle;
+\draw (3.36567in,0.875in)--(2.45333in,0.875in);
+\draw [fill](2.56749in,0.875in)--(2.56749in,0.895756in)--
+  (2.45333in,0.875in)--(2.56749in,0.854244in)--(2.56749in,0.875in)--cycle;
+\draw (3.36567in,0.875in)--(4.278in,0.875in);
+\draw [fill](4.16384in,0.875in)--(4.16384in,0.854244in)--
+  (4.278in,0.875in)--(4.16384in,0.895756in)--(4.16384in,0.875in)--cycle;
+\pgftext[at={\pgfpoint{1.30333in}{1.025in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$\ell$}}}
+\pgftext[at={\pgfpoint{3.45in}{1.025in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$D_j$}}}
+\end{tikzpicture}

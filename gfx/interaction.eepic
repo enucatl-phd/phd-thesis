@@ -1,0 +1,61 @@
+%% Generated from interaction.xp on Mon Mar 17 10:41:19 CET 2014 by
+%% ePiX-1.2.12
+%% 
+%%   Cartesian bounding box: [-1,6] x [-1,6]
+%%   Actual size: 5 x 3.5in
+%%   Figure offset: left by 0in, down by 0in
+%% 
+%% usepackages tikz
+%% 
+\xdefinecolor{rgb_000000}{rgb}{0,0,0}%
+\xdefinecolor{rgb_cccccc}{rgb}{0.8,0.8,0.8}%
+\begin{tikzpicture}
+\pgfsetlinewidth{0.4pt}
+\useasboundingbox (0in,0in) rectangle (5in,3.5in);
+\draw (0.714286in,1.75in)--(4.28571in,1.75in);
+\pgfsetfillcolor{rgb_000000}
+\draw [fill](4.17156in,1.75in)--(4.17156in,1.72924in)--
+  (4.28571in,1.75in)--(4.17156in,1.77076in)--(4.17156in,1.75in)--cycle;
+\pgftext[at={\pgfpoint{4.28571in}{1.65in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$z$}}}
+\pgfsetlinewidth{0.8pt}
+\draw (1.42857in,0.5in)--(1.42857in,3in);
+\pgftext[at={\pgfpoint{1.44241in}{0.45in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$z = 0$}}}
+\draw (3.21429in,0.5in)--(3.21429in,3in);
+\pgftext[at={\pgfpoint{3.35714in}{0.45in}}] {\makebox(0,0)[t]{\hbox{\color{rgb_000000}$z = z_0$}}}
+\pgfsetlinewidth{0.4pt}
+\draw (0.714286in,0.5in)--(1.21429in,0.5in);
+\draw [fill](1.10013in,0.5in)--(1.10013in,0.479244in)--
+  (1.21429in,0.5in)--(1.10013in,0.520756in)--(1.10013in,0.5in)--cycle;
+\draw (0.714286in,0.5in)--(1.21429in,0.5in);
+\draw [fill](1.10013in,0.5in)--(1.10013in,0.479244in)--
+  (1.21429in,0.5in)--(1.10013in,0.520756in)--(1.10013in,0.5in)--cycle;
+\draw (0.714286in,1in)--(1.21429in,1in);
+\draw [fill](1.10013in,1in)--(1.10013in,0.979244in)--
+  (1.21429in,1in)--(1.10013in,1.02076in)--(1.10013in,1in)--cycle;
+\draw (0.714286in,1in)--(1.21429in,1in);
+\draw [fill](1.10013in,1in)--(1.10013in,0.979244in)--
+  (1.21429in,1in)--(1.10013in,1.02076in)--(1.10013in,1in)--cycle;
+\draw (0.714286in,1.5in)--(1.21429in,1.5in);
+\draw [fill](1.10013in,1.5in)--(1.10013in,1.47924in)--
+  (1.21429in,1.5in)--(1.10013in,1.52076in)--(1.10013in,1.5in)--cycle;
+\draw (0.714286in,1.5in)--(1.21429in,1.5in);
+\draw [fill](1.10013in,1.5in)--(1.10013in,1.47924in)--
+  (1.21429in,1.5in)--(1.10013in,1.52076in)--(1.10013in,1.5in)--cycle;
+\draw (0.714286in,2in)--(1.21429in,2in);
+\draw [fill](1.10013in,2in)--(1.10013in,1.97924in)--
+  (1.21429in,2in)--(1.10013in,2.02076in)--(1.10013in,2in)--cycle;
+\draw (0.714286in,2in)--(1.21429in,2in);
+\draw [fill](1.10013in,2in)--(1.10013in,1.97924in)--
+  (1.21429in,2in)--(1.10013in,2.02076in)--(1.10013in,2in)--cycle;
+\draw (0.714286in,2.5in)--(1.21429in,2.5in);
+\draw [fill](1.10013in,2.5in)--(1.10013in,2.47924in)--
+  (1.21429in,2.5in)--(1.10013in,2.52076in)--(1.10013in,2.5in)--cycle;
+\draw (0.714286in,2.5in)--(1.21429in,2.5in);
+\draw [fill](1.10013in,2.5in)--(1.10013in,2.47924in)--
+  (1.21429in,2.5in)--(1.10013in,2.52076in)--(1.10013in,2.5in)--cycle;
+\draw (0.714286in,3in)--(1.21429in,3in);
+\draw [fill](1.10013in,3in)--(1.10013in,2.97924in)--
+  (1.21429in,3in)--(1.10013in,3.02076in)--(1.10013in,3in)--cycle;
+\pgfsetfillcolor{rgb_cccccc}
+\draw [fill](1.5in,2.15in)--(3.14286in,2.5in)--(2.14286in,0.85in)--(1.5in,2.15in)--cycle;
+\end{tikzpicture}
