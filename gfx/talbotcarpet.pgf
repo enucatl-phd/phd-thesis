@@ -339,7 +339,7 @@
 %
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=0.300667in,y=1.742156in,rotate=90.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\select periods of \(\displaystyle G_1\)}}
+\pgftext[left,bottom,x=0.300667in,y=1.742156in,rotate=90.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont periods of \(\displaystyle G_1\)}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
