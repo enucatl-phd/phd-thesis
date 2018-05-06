@@ -188,7 +188,6 @@ where $\energy$ is the energy of the beam, $C = 3 fL / 4p$ is a constant
 depending only on the setup geometry and the volume fraction $f$ occupied by
 the spheres and $\energy$ is the energy of the beam.
 
-
 In the case of a polychromatic source, we tested a model where different
 energies interact with the sample independently of each other, thus allowing
 an incoherent sum of the dark-field signals over the spectral weights
@@ -216,6 +215,55 @@ function in eq. {\ref{eqn:lynchpolychromatic}}.
 \end{center}
 \end{figure}
 
+A more general approach\cn links this dark-field extinction coefficient
+$\mu_d$ with far-field scattering experiments.
+The intensity of the scattered radiation from particles in a solution as a function of momentum transfer $q$ can be written as\cn
+\begin{equation}
+    I(q) = f|\Delta n| V P(q) S(q),
+    \label{eq:scattering.intensity}
+\end{equation}
+where $V$ is the volume of the particle, $f$ is again the volume fraction
+occupied by the particles, $P(q)$ is the form factor of each particle. For a
+homogeneous sphere of radius $r$ this function is\cn
+\begin{equation}
+    P(q) = \left(\frac{3(\sin(qr) - qr\cos(qr))}{qr^3}\right)^2.
+    \label{eq:sphere.form.factor}
+\end{equation}
+The function $S(q)$ determines the intensity of interference between
+particles. For diluted systems with $f \leq \SI{15}{\percent}$ this can
+be neglected, as $S(q) \sim 1$. However, for higher concentrations this term
+becomes more relevant, and will reduce the scattering intensity.
+
+Once this scattering intensity function is calculated, the extinction
+coefficient can be calculated by taking the Fourier transform of $I$ with respect
+to $q$, and by using the classical electron radius $r_e$:
+
+\begin{equation}
+\mu_B = (2 \pi r_e)^2 [\Fq I(0) - \Fq I(d)].
+    \label{eq:autocorrelation}
+\end{equation}
+
+This formula, implemented in a publicly available python
+package\footnote{\url{https://github.com/Enucatl/structure-factors/blob/master/structure_factors/saxs.py}},
+is used in all the following calculations, where we used the approximation
+$S(q) = 1$.
+
+The equivalence between the two calculations can be checked explicitly, for
+instance for a system with $p_2 = \SI{2}{\micro\meter}$, $L =
+\SI{12}{\centi\meter}$, a solution of silicon dioxide spheres in glicerine
+with $f = 0.4$ results in estimates of the dark-field extinction coefficient
+according to equations~\eqref{eqn:lynch} and~\eqref{eq:autocorrelation},
+which align along the same curve (figure~\ref{fig:equivalence-lynch-saxs}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\columnwidth]{gfx/lynch-vs-saxs/plot.png}
+    \caption{Comparison of equations~\eqref{eqn:lynch}, or \emph{gi} method,
+    and~\eqref{eq:autocorrelation}, or \emph{usaxs} method for the
+estimation of the scattering intensity, as seen through the dark-field
+extinction coefficients. The two methods are equivalent.}
+    \label{fig:equivalence-lynch-saxs}
+\end{figure}
 
 A model of the sample is required to calculate the spectral weights
 $s(\energy)$ in order to avoid beam hardening artefacts. The source spectrum is

@@ -48,7 +48,18 @@ namespace :gfx do
     sh "python #{f.prerequisites[1]} #{f.source} #{f.name} 2.5"
   end
 
+  file "gfx/lynch-vs-saxs/plot.png" => ["gfx/lynch-vs-saxs/plot_lynch_saxs.R", "gfx/lynch-vs-saxs/lynch.csv", "gfx/lynch-vs-saxs/saxs.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.prerequisites[2]} #{f.name}"
+  end
+
   desc "all images"
-  task :all => EEPIC.ext(".eepic") + ["gfx/visibility_visibility_100kev.pgf", "gfx/visibility_S00618.pgf", "gfx/images_S00052.pgf", "gfx/images_S00075_S00071.pgf", "gfx/images_S00613.pgf"]
+  task :all => EEPIC.ext(".eepic") + [
+    "gfx/visibility_visibility_100kev.pgf",
+    "gfx/visibility_S00618.pgf",
+    "gfx/images_S00052.pgf",
+    "gfx/images_S00075_S00071.pgf",
+    "gfx/images_S00613.pgf",
+    "gfx/lynch-vs-saxs/plot.png",
+  ]
 
 end
