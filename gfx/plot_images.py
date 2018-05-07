@@ -40,14 +40,16 @@ def draw(input_file_name, output_file_name, height,
     img1.set_clim(*limits)
     ax1.axis("off")
     ax1.set_title(absorption_image_title, size="medium")
-    img2 = ax2.imshow(differential_phase_image)
+    img2 = ax2.imshow(differential_phase_image,
+                      cmap=plt.cm.Greys, aspect='auto')
     limits = stats.mstats.mquantiles(differential_phase_image,
                                      prob=[0.02, 0.98])
     #limits = (-3, 3)
     img2.set_clim(*limits)
     ax2.axis("off")
     ax2.set_title(differential_phase_image_title, size="medium")
-    img3 = ax3.imshow(dark_field_image)
+    img3 = ax3.imshow(dark_field_image,
+                      cmap=plt.cm.Greys, aspect='auto')
     ax3.set_title(dark_field_image_title, size="medium")
     ax3.axis("off")
     limits = stats.mstats.mquantiles(dark_field_image,

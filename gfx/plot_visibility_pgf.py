@@ -12,7 +12,7 @@ from readimages.dpc.commandline_parser import commandline_parser
 from readimages.utils.hadd import hadd
 
 commandline_parser.add_argument("--language",
-                                default="it",
+                                default="en",
                                 choices=["it", "en"],
                                 help="language for the text")
 args = commandline_parser.parse_args()

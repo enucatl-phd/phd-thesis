@@ -3,7 +3,7 @@
 %************************************************
 This chapter is also featured in\cn Th\"uring T, Abis M, Wang Z, David C,
 Stampanoni M, \emph{X-ray phase-contrast imaging at \SI{100}{\kilo\eV} on a
-conventional source.}
+conventional source}. Additional material and details are presented here.
 
 \section{Introduction}
 High-energy Talbot interferometry has been reported so far using a
@@ -104,7 +104,50 @@ Grating design and fabrication is nonstandard and involves a complex mask
 design, as shown in Fig.~\ref{Fig:grating_mask}. Multiple gratings can reside on a
 silicon chip with their specific structure length and curvature. For the
 current experiments, a symmetric interferometer with a grating period of $p
-= \SI{2.8}{\micro\metre}$ for all gratings has been used. The design energy
+= \SI{2.8}{\micro\metre}$ for all gratings has been used.
+
+The variance of the differential phase signal, with a Poisson variance of
+the counts $\sigma_{\text{det}}^2$ in a detector pixel, is given by~\cite{Raupach2011}
+\begin{equation}
+    \sigma_\alpha = \frac{p_2}{\pi D_j}
+    \frac{\sqrt{2}}{v}\sigma_{\text{det}}.\label{eq:variance}
+\end{equation}
+In order to obtain the maximum sensitivity it would be necessary to
+fabricate gratings with a very small period
+$p_2$, within technical constraint of the fabrication
+techniques~\cite{David2007,Kenntner2010}.
+
+For a constant total length $\ell + D_j$ of the interferometer, the factor
+$p_2/D_j$ can be rewritten through~\eqref{eq:p0} in~\eqref{eq:variance}
+\begin{equation*}
+    \frac{p_2}{D_j} = \frac{p_0 + p_2}{\ell + D_j}.
+\end{equation*}
+The technical challenges for the fabrication of the two absorption gratings
+\G0 and \G2 are obviously the same, therefore the maximum sensitivity is
+achieved for the smallest achievable periods that are the same for both
+gratings.
+
+This is why we chose to realize symmetrical setups with $\ell = D_j'$ and $p_0 = p_1 = p_2$.
+
+The second critical factor in~\eqref{eq:variance} is the visibility~$v$. The
+variance is indeed not necessarily decreased by increasing the distance
+$D_j$ for two reasons:
+\begin{aenumerate}
+    \item the relative noise introduced by the detector
+        $\sigma_{\text{det}}/N$, for
+        $N$ counts, is proportional to $1 / \sqrt{N}$, with the inverse
+        square relationship $N \propto
+        D_j^{-2}$
+    \item the width of the spectrum positively contributing to the
+        interference pattern decreases with distance according
+        to~\eqref{eq:acceptance}. A theoretical maximum\cn of
+        \SI{26}{\percent} for the first order $j = 1$ is reduced to
+        $\SI{10}{\percent}$ for $j = 5$.
+\end{aenumerate}
+For this reason all interferometers are designed for the first Lohmann
+distance $D_1 = p_1^2 / 8 \lambda$.
+
+The design energy
 is $\SI{100}{\kilo\electronvolt}$ and the beam splitter grating periodically
 shifts the phase by zero and $\pi$ at this energy~\cite{David2002}. Using
 gold as the phase shifting material, a structure length of
@@ -144,7 +187,7 @@ more than $\SI{160}{\kilo\electronvolt}$) and the high attenuation efficiencies 
 the source and analyzer gratings (more than $90\%$ up to
 $\SI{160}{\kilo\electronvolt}$), the voltage of the X-ray source was set to
 the maximum of $\SI{160}{\kilo\volt}$. With a structure height of
-approximately $\SI{100}{\micro \metre}$, the field of view in the vertical
+approximately $\SI{100}{\micro\metre}$, the field of view in the vertical
 direction is limited to one detector pixel row. In the horizontal direction,
 the field of view is only limited by the grating size to
 $\SI{30}{\milli\metre}$, but wider gratings can be fabricated with the same
@@ -152,6 +195,91 @@ method and the available technology on larger wafers. In addition to the standar
 camera, interferometer), two optical slits, one in front of the source
 grating, the other in front of the camera, were required for the collimation
 of the beam in the vertical direction. 
+
+Two setups have been realized, for a \SI{100}{\kilo\eV} and
+\SI{120}{\kilo\eV} with similar performance. All gratings are
+plated with gold, with the exception of \G1 for the \SI{120}{\kilo\eV}
+design energy, with a period of~\SI{2.8}{\micro\metre}, and an extension in
+the vertical $y$ direction of~\SI{100}{\micro\metre}. The 
+duty cycle is 0.5.
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{*4c}
+        \toprule
+        grating & design energy (\si{\kilo\eV}) & curvature radius
+        (\si{\centi\metre}) & thickness (\si{\micro\metre}) \\
+        \midrule
+        $G_0$ & \num{100}/\num{120} & \num{23} & \num{800} \\
+        $G_1$ & \num{100} & \num{38.8} & \num{42.2} \\
+        $G_1$ & \num{120} & \num{42.0} & \num{19.4} \\
+        $G_2$ & \num{100} & \num{54.5} & \num{800} \\
+        $G_2$ & \num{120} & \num{60.9} & \num{800} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parameters for the gratings of the two setups.}
+    \label{tab:gratings}
+\end{table}
+
+The visibility of the systems has an inverse proportionality with the
+standard deviation of the refraction angle, according
+to~\eqref{eq:variance}, and it is therefore the fundamental parameter to
+characterize the performance of the experiment. It is unfortunately affected
+by defects in the grating structures as shown by scanning electron
+microscope investigations, with deformations (figure~\ref{fig:deformazioni})
+and an incomplete electroplating (figure~\ref{fig:galvanizzazione})
+negatively affecting the visibility.
+
+Periodical variations in the visibility as a function of the transverse
+position $x$ are usually related to residual Moir\'e fringes that could not
+be eliminated through alignment. This is likely given by a mismatch in the
+duty cycles of the gratings, that were measured as varying between 
+\num{0.35} and \num{0.6}, with a significan variation from the nominal value
+of \num{0.5}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/Au_Grating_003.png}
+    \caption{}
+    \label{fig:deformazioni}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/Au_Grating_010.png}
+    \caption{}
+    \label{fig:galvanizzazione}
+    \end{subfigure}
+    \caption[Electron microscope images of a gold grating.]{Scanning
+        electron microscope images of a gold grating.
+        Deformations in the grating lines~(\ref{fig:deformazioni}) and an
+        incomplete electroplating~(\ref{fig:galvanizzazione}) can be seen.
+    }
+\end{figure}
+
+The maximum visibility achieved by the two setups is shown in 
+figure~\ref{fig:visibility100} and~\ref{fig:visibility120}.
+
+\begin{figure}[htb]
+    \centering
+    \input{gfx/visibility_visibility_100kev.pgf}
+    \caption[Visibility \SI{100}{\kilo\eV}.]{Visibility of the grating
+        interferometer with
+        \SI{100}{\kilo\eV} design energy. Exposure time \SI{10}{\second}
+        $\times$ \num{24} phase steps.}
+    \label{fig:visibility100}
+\end{figure}
+\begin{figure}[htb]
+    \centering
+    \input{gfx/visibility_S00618.pgf}
+    \caption[Visibility \SI{120}{\kilo\eV}.]{Visibility of the grating
+        interferometer with
+        \SI{120}{\kilo\eV} design energy. Exposure time \SI{10}{\second}
+        $\times$ \num{24} phase steps.}
+    \label{fig:visibility120}
+\end{figure}
 
 Fig.~\ref{Fig:img_chip} shows the first X-ray images acquired with our new setup, based on
 edge-on illuminated grating interferometry powered by a conventional X-ray
@@ -182,6 +310,22 @@ contrast reduction of the soldering points under the resistors in the
 phase image of the chip. This example shows one of the potential benefits of
 phase contrast X-ray imaging at high energies, which may be useful to
 identify flaws in multilayered structures such as electronic chips.
+
+Figure~\ref{fig:screw} shows a scan with \num{100} lines over
+\SI{1}{\centi\metre} of a zinc screw
+with \num{24} phase steps and \SI{15}{\second} exposure time.
+The edge-enhancement effects of the differential phase signal are
+particularly visible at the edges, where the
+derivative~\eqref{eq:refraction.angle} is a maximum.
+
+\begin{figure}[hbt]
+    \centering
+    \input{gfx/images_S00052.pgf}
+    \caption[Radiography of a zinc screw.]{Radiography of a zinc screw.
+        Vertical scan of \SI{1}{\centi\metre} with \num{100} lines,
+        \num{24} phase steps $\times$ \SI{15}{\second} exposure time.}
+    \label{fig:screw}
+\end{figure}
 
 \section{Discussion}
 

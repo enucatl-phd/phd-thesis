@@ -38,31 +38,31 @@
 \pgfusepath{fill}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.507639in}{3.785028in}}{\pgfqpoint{3.915694in}{1.860611in}}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{4.190894in}}{\pgfqpoint{3.915694in}{1.454745in}}%
 \pgfusepath{clip}%
-\pgfsys@transformshift{0.507639in}{3.785028in}%
-\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=1.863333in]{images_S00052-img0.png}}%
+\pgfsys@transformshift{0.507639in}{4.190894in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=1.456667in]{images_S00052-img0.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgftext[x=2.465486in,y=5.728972in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont absorption}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.507639in}{2.509834in}}{\pgfqpoint{3.915694in}{0.790970in}}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{2.304808in}}{\pgfqpoint{3.915694in}{1.454745in}}%
 \pgfusepath{clip}%
-\pgfsys@transformshift{0.507639in}{2.509834in}%
-\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=0.793333in]{images_S00052-img1.png}}%
+\pgfsys@transformshift{0.507639in}{2.304808in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=1.456667in]{images_S00052-img1.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=2.465486in,y=3.384138in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont differential phase}%
+\pgftext[x=2.465486in,y=3.842886in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont differential phase}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfpathrectangle{\pgfqpoint{0.507639in}{0.699820in}}{\pgfqpoint{3.915694in}{0.790970in}}%
+\pgfpathrectangle{\pgfqpoint{0.507639in}{0.418722in}}{\pgfqpoint{3.915694in}{1.454745in}}%
 \pgfusepath{clip}%
-\pgfsys@transformshift{0.507639in}{0.699820in}%
-\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=0.793333in]{images_S00052-img2.png}}%
+\pgfsys@transformshift{0.507639in}{0.418722in}%
+\pgftext[left,bottom]{\pgfimage[interpolate=true,width=3.916667in,height=1.456667in]{images_S00052-img2.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[x=2.465486in,y=1.574124in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont dark field}%
+\pgftext[x=2.465486in,y=1.956800in,,base]{\rmfamily\fontsize{11.000000}{13.200000}\selectfont dark field}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
