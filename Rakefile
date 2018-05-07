@@ -29,11 +29,11 @@ namespace :gfx do
   end
 
   file "gfx/visibility_visibility_100kev.pgf" => ["gfx/visibility_100kev.hdf5", "gfx/plot_visibility_pgf.py"] do |f|
-    sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source}"
+    sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
 
   file "gfx/visibility_S00618.pgf" => ["gfx/S00618.hdf5", "gfx/plot_visibility_pgf.py"] do |f|
-    sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source}"
+    sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
 
   file "gfx/images_S00052.pgf" => ["gfx/S00052.hdf5", "gfx/plot_images.py"] do |f|

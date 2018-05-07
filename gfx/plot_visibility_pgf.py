@@ -15,6 +15,7 @@ commandline_parser.add_argument("--language",
                                 default="en",
                                 choices=["it", "en"],
                                 help="language for the text")
+commandline_parser.add_argument("output_file_name", nargs=1)
 args = commandline_parser.parse_args()
 
 mpl.use("pgf")
@@ -27,6 +28,7 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
 input_file_name = hadd(args.file)
+output_file_name = args.output_file_name[0]
 if not os.path.exists(input_file_name):
     raise(OSError("{0} not found".format(input_file_name)))
 
@@ -63,5 +65,4 @@ axis.yaxis.tick_left()
 axis.yaxis.set_major_formatter(FuncFormatter(
     lambda x, pos=0: "{0:.0%}".format(x)))
 plt.tight_layout()
-plt.savefig('visibility_{0}.pgf'.format(
-    os.path.splitext(os.path.basename(input_file_name))[0]))
+plt.savefig(output_file_name)
