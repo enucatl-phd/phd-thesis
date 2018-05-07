@@ -461,9 +461,9 @@ The alignment steps are as follows:
         around
     the beam axis $z$. The one-dimensional beam is scanned across the
     grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
-five different positions of the rotation-$z$ motor in order to choose the
-best alignment, which in this case lies in an intermediate position between
-the fourth and fifth section from the top. The same scan is then repeated
+    five different positions of the rotation-$z$ motor in order to choose the
+    best alignment, which in this case lies in an intermediate position between
+    the fourth and fifth section from the top. The same scan is then repeated
 with finer steps in order to achieve a high precision in the alignment.}
     \label{fig:alignment-z}
 \end{figure}
@@ -474,21 +474,55 @@ with finer steps in order to achieve a high precision in the alignment.}
     \caption{Alignment of the \G2 grating with respect to the rotation
     around the $x$ axis. The one-dimensional beam is scanned across the
     grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
-five different positions of the rotation-$x$ motor in order to choose the
-best alignment, this is achieved when the grating edges are well defined in
-the absorption picture and the grating appears thinnest, as in the second
+    five different positions of the rotation-$x$ motor in order to choose the
+    best alignment, this is achieved when the grating edges are well defined in
+    the absorption picture and the grating appears thinnest, as in the second
 section from the top.}
     \label{fig:alignment-x}
 \end{figure}
 
-\section{Acknowledgements}
-We thank Gordan Mikuljan, Peter Modregger and István Mohácsi from the Paul
-Scherrer Institute (PSI), Switzerland, for the
-work on the mechanical design, the scientific advice, and the \ac{SEM} images
-respectively, Joachim Schulz and Marco Walter from
-Microworks GmbH, Germany, for the competent support on grating design
-issues, Christian Kottler and Vincent Revol from Centre Suisse
-d'\'Electronique et de Microtechnique (CSEM), Switzerland for the fruitful
-discussions on the design of the system. This work has been partially
-supported by the Competence Centre for Materials Science and Technology
-(CCMX) of the ETH Board, Project Nr. 61 and by the ERC Grant ERC-2012-StG 310005-PhaseX.
+\section{Material and structure discrimination through dark field}
+A number of studies have been published over the last few years\cn
+connecting the intensity of the recorded dark-field signal to physical
+properties of a sample, most notably its structure and its composition. A
+preliminary study to determine if such a goal would be attainable in the
+edge-on and high-energy configuration has been designed.
+
+This consists of the interferometer with a design energy of
+\SI{120}{\kilo\eV} (see table~\ref{tab:gratings}) with a specially modified
+detector from the detector group of the Paul Scherrer Institute. The
+module is a strip detector with 1280 photon counting channels, arranged to
+match the fan beam curvature at a distance of \SI{70}{\centi\meter} from the
+source. The strips are also designed to lie on the beam plane as to achieve
+a maximum efficiency as the full \SI{1}{\centi\meter} thickness of silicon
+is used to detect the incoming photons. The resolution of the detector is
+\SI{50}{\micro\meter}.
+
+Rectangular plastic blocks filled with different substances are scanned
+under different angles in the interferometer. This allows to record images
+for different thicknesses of the same material by only changing the rotation
+angle, with \num{9} phase steps and \SI{5}{\second} exposure per step.
+
+The images are segmented so that the region containing the material, that is
+with the most absorption, is selected. More in detail, the minimum value in
+the transmission profile is selected, and values up to
+\SI{10}{\percent} higher than the minimum are kept.
+
+The data are then averaged, and shown here with $R = \log(B) / \log(A)$ as
+function of X-ray transmission, indicating different thicknesses
+(figure~\ref{fig:powders}).
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/powders-aggregated.png}
+    \caption{Ratio $R = \log(B) / \log(A)$ as a function of sample
+    thickness, indicated by X-ray transmission, for different materials.}
+    \label{fig:powders}
+\end{figure}
+
+The results at this stage are mainly qualitative in nature, as the samples
+are very heterogeneous and contain particles of different sizes, but suggest
+that powders have a stronger dark field signal than homogeneous samples,
+thus indicating that further investigations, presented in
+chapter~\ref{ch:lung-dark-field}, should be carried out to determine a more
+precise model.
