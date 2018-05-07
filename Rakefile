@@ -52,6 +52,15 @@ namespace :gfx do
     sh "./#{f.source} #{f.prerequisites[1]} #{f.prerequisites[2]} #{f.name}"
   end
 
+  file "gfx/alignment-rot-x.png" => ["gfx/image_series.py", "#{ENV["HOME"]}/afsproject_backup/raw_data/2015/mythen/2015.06.22/S00000-00999/S00083.hdf5"] do |f|
+    sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
+  file "gfx/alignment-rot-z.png" => ["gfx/image_series.py", "#{ENV["HOME"]}/afsproject_backup/raw_data/2015/mythen/2015.06.22/S00000-00999/S00035.hdf5"] do |f|
+    sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
+
   desc "all images"
   task :all => EEPIC.ext(".eepic") + [
     "gfx/visibility_visibility_100kev.pgf",
@@ -60,6 +69,7 @@ namespace :gfx do
     "gfx/images_S00075_S00071.pgf",
     "gfx/images_S00613.pgf",
     "gfx/lynch-vs-saxs/plot.png",
+    "gfx/alignment-rot-x.png",
   ]
 
 end

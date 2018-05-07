@@ -432,9 +432,14 @@ The alignment steps are as follows:
         in small steps and noting in which position the grating enters and
         exits the fan beam during the scan. The middle point is then
         chosen;
-    \item rotation along $z$ is fixed when the upper edge of each grating,
-        as visible in an absorption scan, is parallel to a detector pixel;
-    \item rotation along the $y$ and a fine translation along $z$ of the
+    \item rotation around $z$ is fixed when the upper edge of each grating,
+        as visible in an absorption scan, is parallel to a detector
+        pixel (see figure~\ref{fig:alignment-z});
+    \item rotation around the $x$ axis is fixed by observing the appearance
+        of the grating on a transmission image. It is best when the edges of
+        the grating are defined and the area blocked by the grating itself
+        appears smallest (see figure~\ref{fig:alignment-x});
+    \item rotation around the $y$ and a fine translation along $z$ of the
         absorption gratings are fixed by maximizing the flux of X-rays
         through these two gratings.
     \item rotation along the $y$ axis and the position along $z$
@@ -448,6 +453,33 @@ The alignment steps are as follows:
         residual corrections: on each scan the location with maximum
         visibility is kept.
 \end{enumerate}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/alignment-rot-z.png}
+    \caption{Alignment of the \G2 grating with respect to the rotation
+        around
+    the beam axis $z$. The one-dimensional beam is scanned across the
+    grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
+five different positions of the rotation-$z$ motor in order to choose the
+best alignment, which in this case lies in an intermediate position between
+the fourth and fifth section from the top. The same scan is then repeated
+with finer steps in order to achieve a high precision in the alignment.}
+    \label{fig:alignment-z}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/alignment-rot-x.png}
+    \caption{Alignment of the \G2 grating with respect to the rotation
+    around the $x$ axis. The one-dimensional beam is scanned across the
+    grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
+five different positions of the rotation-$x$ motor in order to choose the
+best alignment, this is achieved when the grating edges are well defined in
+the absorption picture and the grating appears thinnest, as in the second
+section from the top.}
+    \label{fig:alignment-x}
+\end{figure}
 
 \section{Acknowledgements}
 We thank Gordan Mikuljan, Peter Modregger and István Mohácsi from the Paul
