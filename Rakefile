@@ -60,6 +60,18 @@ namespace :gfx do
     sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
+  file "gfx/delta-beta-comparison/delta-beta-comparison.png" => ["gfx/delta-beta-comparison/delta_beta_plot.R", "gfx/delta-beta-comparison/delta_beta.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
+  file "gfx/delta-beta-comparison/delta_beta.csv" => ["gfx/delta-beta-comparison/delta_beta_comparison.py"] do |f|
+    sh "python #{f.source} #{f.name}"
+  end
+
+  file "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png" => ["gfx/sinusoidal-phase-stepping/sinusoidal_phase_stepping.py"] do |f|
+    sh "python #{f.source} #{f.name}"
+  end
+
 
   desc "all images"
   task :all => EEPIC.ext(".eepic") + [
@@ -70,6 +82,8 @@ namespace :gfx do
     "gfx/images_S00613.pgf",
     "gfx/lynch-vs-saxs/plot.png",
     "gfx/alignment-rot-x.png",
+    "gfx/delta-beta-comparison/delta-beta-comparison.png",
+    "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png",
   ]
 
 end

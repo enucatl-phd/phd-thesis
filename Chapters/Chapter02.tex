@@ -71,9 +71,10 @@ exclude magnetic materials by setting $\vec{B} = \mu_0 \vec{H}$.
 
 These two equations do not couple the magnetic and the electric field, but
 they still mix different cartesian components of each components of each
-field. If the electron density varies slowly with respect to the wavelength
-of the X-rays, we can neglect the mixed derivative terms, and obtain a
-scalar equation for each cartesian component of the electric field
+field through their second derivatives. If the electron density varies slowly
+with respect to the wavelength of the X-rays, we can neglect such mixed
+derivative terms, and obtain a scalar equation for each cartesian component
+of the electric field
 
 \begin{equation}
     \left( \varepsilon(\vec{x}) \mu_0 \frac{\partial^2}{\partial t^2} - \nabla^2
@@ -148,6 +149,15 @@ usually explicitly considered:
 Since both $\delta \ll 1$ and $\beta \ll 1$ the terms of order $\beta^2$ and
 $\delta^2$ can be neglected in equation~\eqref{eq:helmoltz.perturbation}.
 The solution is then easily found by integrating with respect to $z$
+(figure~\ref{fig:propagation})
+
+\begin{figure}[htb]
+    \centering
+    \input{gfx/interaction.eepic}
+    \caption[Plane wave propagation.]{A plane wave propagates along the $z$
+        axis through an object from $z = 0$ to $z = z_0$.}
+    \label{fig:propagation}
+\end{figure}
 
 \begin{equation}
     \tilde{\psi}(\omega, x, y, z_0) = \exp\left\{-ik\int_{z=0}^{z=z_0}(\delta_\omega - i
@@ -168,27 +178,48 @@ amplitude $I = |\psi|^2$, according to the Beer-Lambert law
     I(\omega, x, y, 0).\label{eq:beer-lambert}
 \end{equation}
 
-The coefficients $\delta$ and $\beta$ can be directly linked to the
-interaction of X-rays with the electron clouds of the atoms that constitute
-the sample
+We can then conclude that the interaction of X-rays with a sample, that is
+with the electron clouds of the atoms that make it up, is determined by
+two energy-dependent coefficients $\delta$ and $\beta$. These have been
+thoroughly studied and tabulated\cn{NIST database} through the atomic form
+factors $f_1$ and $f_2$ respectively. The relationship between the
+refractive index, $delta$, $beta$ and the atomic form factors $f_1$ and
+$f_2$ that is used to calculate the expected theoretical values in this
+thesis is:
 
 \begin{equation}
     n = 1 - \delta + i\beta = 1 - \frac{r_e\lambda^2}{2\pi}(f_1 + if_2).
     \label{eq:atom.factors}
 \end{equation}
 
-For all comparisons between measured and expected theoretical values in this
-thesis, the
-tabulated values of $f_1$ and $f_2$ from [NIST citation] together with
-equation~\eqref{eq:atom.factors} have been used.
-
 Far from absorption edges, these coefficients depend on the atomic number
-$Z$ roughly as $\beta \propto Z^3 / k^4$ and $\delta \propto Z / k^2$,
+$Z$ roughly as $\beta \propto Z^3 / k^4$ and $\delta \propto Z / k^2$.
 which leads to the conclusion that the phase term $\delta$ becomes
-relatively more important as the energy of the beam is increased. This is
-the fundamental motivation of this experimental work, to assess the
-feasibility and characteristics of X-ray interferometric techniques for
-standard laboratory sources with a higher beam energy.
+relatively more important as the energy of the beam and the atomic number
+are increased~(see figure~\ref{fig:delta.beta}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/delta-beta-comparison/delta-beta-comparison.png}
+    \caption[Values of $\delta/\beta$ as a function of energy for different
+    materials.]{Ratio of $\delta$ to $\beta$. $\delta$ contributes to the
+    phase interaction, while $\beta$ is the term for absorption in the
+refractive index. The ratio shows that the phase interaction is stronger
+than absorption interaction and that it also becomes relatively stronger as
+the energy increases up to stabilizing at a value that is larger for
+materials with a higher atomic number.}
+    \label{fig:delta.beta}
+\end{figure}
+
+
+A voltage of 60 to \SI{140}{\kilo\voltpeak} is commonly used for medical and
+security applications, or even higher for material sciences for the
+inspection of large volumes or materials with a high atomic number.
+Phase-contrast with grating interferometers has seen so far only limited
+applications\cn to a lower energy range.
+This is the fundamental motivation of this experimental work, in order to
+assess the feasibility and characteristics of X-ray interferometric
+techniques for standard laboratory sources with a higher beam energy.
 
 \section{Interferometry}
 
@@ -199,7 +230,9 @@ the refractive index $\delta$. Unfortunately, only the intensity $I =
 |\psi|^2$ of the X-ray beam can be directly detected, and an interferometric
 setup is needed to convert phase differences into intensity modulations.
 Various approaches have been presented in the last decades, on different
-applications and source types.
+applications and source types. The main methods are summarized in the
+following sections, with a detailed description of Talbot-Lau interferometry
+which will be our weapon of choice.
 
 \subsection{Propagation-based phase contrast}
 Techniques based on free-space propagation of X-rays have been widely
@@ -239,7 +272,7 @@ polychromatic sources, although the presence of the first crystal acting as
 a monochromator with low efficiency also leads to long exposure times,
 especially on low brilliance laboratory sources. The beam is also collimated
 to a fan beam on the plane and the sample needs to be scanned through it, in
-addition to the scanning of the rocking curve. An device composed by an
+addition to the scanning of the rocking curve. A device composed by an
 array of crystals has been proposed as a solution to this issue.
 
 \subsection{Bonse-Hart interferometry}
@@ -283,9 +316,16 @@ thesis. The Talbot effect will be therefore described in detail.
 
 The Helmoltz equation~\eqref{eq:helmoltz.fourier} provides the solution for
 the propagation of a plane wave in a vacuum, where $n \equiv 1$. Plane waves
-are solutions $\psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}}$ with $k^2
-= k_x^2 + k_y^2 + k_z^2 = c^2 \omega^2$. We can then isolate the direction
-of propagation $z$, by writing the solution in the form
+are solutions
+
+\begin{equation}
+    \psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}} \qquad \text{with} k^2
+    = k_x^2 + k_y^2 + k_z^2 = c^2 \omega^2.
+    \label{eq:plane.wave.solution}
+\end{equation}
+
+We can then isolate the direction
+of propagation $z$, by writing the solution~\eqref{eq:plane.wave.solution} in the form
 \begin{equation}
     \psi(\omega, x, y, z) = e^{i(k_x x + k_y y)}e^{iz\sqrt{k^2 - k_x^2 -
     k_y^2}}.
@@ -300,17 +340,24 @@ equation~\eqref{eq:helmoltz.fourier}, it can be decomposed as a sum of plane
 waves through the Fourier transform $\Fxy$ with respect to $x$ and $y$. Each
 plane wave then propagates according to
 equation~\eqref{eq:free.propagation}. The propagated wave can be then
-recovered with the inverse transformation
+recovered with the inverse Fourier transform $Fxy^-1$
 \begin{equation}
     \psi(\omega, x, y, z_0) = \Fxy^{-1}e^{i z_0 \sqrt{k^2 - k_x^2 -
-    k_y^2}}\Fxy    \psi(\omega, x, y, 0) 
+    k_y^2}}\Fxy    \psi(\omega, x, y, 0).
     \label{eq:full.propagator}
 \end{equation}
 The paraxial approximation in this context translates to the fact that the
 transverse components of the wave vector $\vec{k}$ are much smaller than the
 component along the beam path $|k_x|, |k_y| \ll |k_z|$. The square root can
-then be approximated to the first order $\sqrt{k^2 - k_x^2 - k_y^2} \approx
-k - \frac{k_x^2 + k_y^2}{2k}$ to obtain the final form of the propagator
+then be approximated to the first order
+
+\begin{equation}
+    \sqrt{k^2 - k_x^2 - k_y^2} \approx k - \frac{k_x^2 + k_y^2}{2k}.
+    \label{eq:square.root.approximation}
+\end{equation}
+
+This yields the final form of the propagator that will be used in the rest
+of our analyis
 \begin{equation}
     \psi(\omega, x, y, z_0) = e^{i k z_0}\Fxy^{-1}e^{-i z_0\frac{k_x^2 +
     k_y^2}{2k}}\Fxy\psi(\omega, x, y, 0). \label{eq:paraxial.propagator}
@@ -330,20 +377,22 @@ to calculate the Fourier transform with respect to $x$
     \Fx\psi(\omega, x, 0) = \sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}),
 \end{equation*}
-in terms of $k_{xj} = 2\pi j/ p_1$ and of the Dirac $\delta$.
+in terms of $k_{xj} = 2\pi j/ p_1$ and of the Dirac $\delta$. This is
+because the field is periodic with period $p_1$ and only the terms related
+to the frequencies $k_{xj}$ will be nonzero after the transform.
 
 By then propagating according to equation~\eqref{eq:paraxial.propagator}
 
 \begin{align}
-    \Fx\psi(\omega, x, z_0) &= e^{ikz_0} e^{-i z_0\frac{k_x^2}{2k}}\sum_j \psi_j(\omega)\delta(k_x -
+    \Fx\psi(\omega, x, z_0) &= \exp(ikz_0)\exp(-i z_0\frac{k_x^2}{2k})\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}) \\
-    &= e^{ikz_0}e^{-i z_0\frac{k_{xj}^2}{2k}}\sum_j \psi_j(\omega)\delta(k_x -
+    &= \exp(ikz_0)\exp(-i z_0\frac{k_{xj}^2}{2k})\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}).
     \label{eq:talbot1}
 \end{align}
 
 The effect of the Dirac $\delta$ is to replace $k_x$ with $k_{xj}$, which
-means that the propagator will, apart from an irrelevant constant phase
+means that the propagator will, apart from an irrelevant overall constant phase
 factor, be equal to one at distances
 
 \begin{equation*}
@@ -352,7 +401,8 @@ factor, be equal to one at distances
 
 The source field at $z = 0$ creates a
 self-image, exactly replicating its periodic intensity pattern at each
-distance $\Delta_n$ downstream.
+distance $\Delta_n$ downstream, as long as the approximations we introduced
+are valid.
 
 This effect can be observed by introducing a grating with absorbing lines in
 the beam. However, the resulting intensity will be also reduced by a factor
@@ -430,11 +480,23 @@ two rectangular shapes of the grating transmissions. However, a finite
 source size also affects the shape of the curve by convolving the signal
 with the image of the source. The result is calculated in detail in\cn, we
 are here interested in the result pictured in
-figure~\ref{fig:phase.stepping}: the curve is well approximated by a
+figure~\ref{fig:phase.stepping.sinusoidal}: the curve is well approximated by a
 sinusoid
 \begin{equation*}
     s(x) = a_0 + a_1 \cos \left(\frac{2 \pi}{p_2} x + \theta\right).
 \end{equation*}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png}
+    \caption[Convolution of two rectangular and a gaussian signal.]{The
+        plotted function is the result of the convolution of two rectangular
+        signals, representing the self image of the phase grating \G1 and the
+        transmission function of the analyzer grating \G2, and a gaussian
+    signal representing a finite source profile.}
+    \label{fig:phase.stepping.sinusoidal}
+\end{figure}
+
 
 A number of \emph{phase steps} are then recorded for different displacements
 $x$ of \G2 and the three parameters $a_0$, $a_1$ and $\theta$ are determined
@@ -450,7 +512,19 @@ with the sample in the beam, or \emph{sample} curve
     \label{eq:flat}
 \end{align}
 
-Three complementary signals can be determined by these parameters:
+\begin{figure}[htb]
+    \centering
+    \input{gfx/phase_stepping.eepic}
+    \caption[Phase stepping curve.]{The analyzer grating \G{2} scans the
+    interference pattern by sliding on a direction perpendicular to the
+    fringes. An intensity curve is recorded on each pixel, allowing the
+    retrieval of three parameters: the average $a_0$, the amplitude $a_1$
+and the phase $\theta$.}
+    \label{fig:phase.stepping}
+\end{figure}
+
+Three complementary signals can be determined by these parameters
+(figure~\ref{fig:phase.stepping}):
 \begin{description}
     \item[transmission,] given by the ratio $A = a_{0,c} / a_{0,f}$, is the
         intensity of the transmitted radiation, as in conventional
@@ -486,7 +560,8 @@ acceptance at the $j$th Lohmann distance is
     \frac{\Delta \lambda}{\lambda} = \frac{1}{2j - 1}.\label{eq:acceptance}
 \end{equation}
 Our experiments are designed for sources with a high voltage and a wide
-spectrum. Therefore, given the inverse proportionality between Lohmann order
+spectrum, typical of security, medical and material science applications.
+Therefore, given the inverse proportionality between Lohmann order
 and spectral acceptance, our interferometers operate at the first order.
 
 Spatial coherence is more critical for the formation of the self-image of
@@ -510,16 +585,17 @@ Synchrotron sources can achieve the required coherence without additional
 optical elements, but laboratory sources have a much larger focal spot. If
 for instance $\ell = \SI{1}{\meter}$, $D_j = \SI{10}{\centi\meter}$, then
 the source has to be smaller than \SI{5}{\micro\meter} which is only
-achievable with a microfocus source, which can only provide a very small
-amount of radiation for imaging.
+achievable with a microfocus source. This source would provide a very small
+amount of radiation for imaging, requiring long exposure times.
 
 This problem can be overcome by placing an additional grating \G0 in front
-of the source. This grating creates an array of individually coherent but
-mutually incoherent sources, whose interference patterns superimpose with the
+of the source. The \G0 grating creates an array of individually coherent but
+mutually incoherent sources, whose interference patterns superimpose if the
 geometrical constraint
 \begin{equation}
-    p_0 = p_2 \frac{\ell}{D_j}.\label{eq:p0}
+    p_0 = p_2 \frac{\ell}{D_j}\label{eq:p0}
 \end{equation}
+is met.
 
 Laboratory sources on a compact setup which are the goal of our experiments
 also introduce a significant geometrical magnification. The equations above
@@ -536,3 +612,11 @@ The period of the grating $p_2$ is rescaled by the same factor
     p_2^\prime = p_2 \frac{1}{1 -
         \dfrac{D_j}{\ell}}.\label{eq:magnification}
 \end{equation}
+
+As a conclusion, we opt for Talbot-Lau interferometry as our tool since it
+provides three different and complementary sources of contrast and it is
+possible to install it on laboratory sources with a wide spectrum. The
+Talbot effect is the key to providing an interference pattern at a
+macroscopic distance from the optical elements composing the interferometer
+so that there is space to insert a sample and compare the interference
+pattern with and without sample to determine its properties.
