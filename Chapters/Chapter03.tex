@@ -3,26 +3,40 @@
 %************************************************
 This chapter is also featured in\cn Th\"uring T, Abis M, Wang Z, David C,
 Stampanoni M, \emph{X-ray phase-contrast imaging at \SI{100}{\kilo\eV} on a
-conventional source}. Additional material and details are presented here.
+conventional source}.
 
 \section{Introduction}
 High-energy Talbot interferometry has been reported so far using a
 synchrotron source at nominal energies of
-$\SI{82}{\kilo\electronvolt}$~\cite{Willner2013}. Using a low-brilliance
-X-ray tube, Talbot-Lau interferometry was applied so far at
-$\SI{60}{\kilo\electronvolt}$ design energy~\cite{Donath2009a}. Medical imaging
-applications may benefit from phase contrast at higher energies: chest or
-abdominal radiography or \ac{CT} require an acceleration voltage between
-\num{100} and $\SI{150}{\kilo\voltpeak}$. Other potential applications are
-homeland security or chip failure analysis, which require high energies for
-the visualization of materials of high density and atomic number.
+$\SI{82}{\kilo\electronvolt}$~\cite{Willner2013}, although with a relatively
+large residual transmission through the absorbing lines of the gratings.
+Using a low-brilliance X-ray tube, Talbot-Lau interferometry was applied so
+far at $\SI{60}{\kilo\electronvolt}$ design energy~\cite{Donath2009a}.
+Medical imaging applications may benefit from phase contrast at higher
+energies: chest or abdominal radiography or \ac{CT} require an acceleration
+voltage between \num{100} and $\SI{150}{\kilo\voltpeak}$. Other potential
+applications are homeland security or chip failure analysis, which require
+high energies for the visualization of materials of high density and atomic
+number.
+
+The main difficulty in the design and operation of a Talbot-Lau grating
+interferometer for higher energies is related to the fabrication of the
+absorption gratings. Increasing the energy of the beam requires at the same
+time a smaller period of the gratings and a larger absorption depth to block
+the photons. This leads to thin but long grating lines that are very
+difficult to electroplate homogeneously with enough absorbing metal, since
+transporting the gold powder to the bottom of a deep groove is unreliable.
+The resulting structures are also more fragile and prone to collapsing
+afterwards.
+
+We will show here that we can realize a one-dimensional interferometer that
+uses a collimated beam and gratings illuminated through one side, as opposed
+to the usual \emph{face-on} two-dimensional geometry.
 
 \section{Results}
 We introduce a method for phase contrast imaging which works on
 conventional X-ray sources, covers the entire diagnostic X-ray energy range
-and is compatible with compact imaging arrangements. The approach is based
-on Talbot-Lau interferometry~\cite{Pfeiffer2006} and employs an edge-on
-illumination approach for the grating design and arrangement. Our solution
+and is compatible with compact imaging arrangements. Our solution
 removes one of the major hurdles which prevented grating interferometry from
 being applied at high energies so far, namely the fabrication of gratings
 with high aspect ratios. The aspect ratio, given by
@@ -38,12 +52,21 @@ Moreover, when using a broad spectrum, photons above the design energy
 should also be efficiently blocked by the gratings, thus requiring even
 higher aspect ratios. The largest aspect ratios achieved by current
 fabrication techniques~\cite{David2007,Kenntner2010} are around 60.
-For a given setup length these parameters depend on the target energy $E$
-according to $p \propto 1/\sqrt{E}$ and $h \propto E^3$, and therefore
-$\textnormal{R} \propto E^{7/2}$~\cite{Momose2003a}. If at
-$E=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the absorption grating
+For a given setup length the parameter $p$ depends on the design energy
+$\energy$ according to~\eqref{eq:talbot.distance}
+
+\begin{equation}
+    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad \Leftrightarrow \qquad p \propto 1/\sqrt{\energy}.\label{eq:period.energy}
+\end{equation}
+
+The grating height $h$ has to be proportional to $\energy^3$, in order to
+keep the absorption efficiency constant as in
+equation~\ref{eq:delta.beta.energy} with an absorption coefficient $\mu
+= 2k\beta$.
+As a result, the aspect ratio $\textnormal{r}$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}. If at
+$\energy=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the absorption grating
 around $\textnormal{R}=30$ is sufficient, it would have to be at least
-$\num{128}$ for $E=\SI{100}{\kilo\electronvolt}$. With our design, we reach
+$\num{128}$ for $\energy=\SI{100}{\kilo\eV}$. With our design, we reach
 an aspect ratio of \num{143}, satisfying the above condition with a
 transmission of less than \SI{1}{\percent} at \SI{100}{\kilo\eV}. As a
 comparison, a recent interferometer implemented at a third generation
@@ -82,6 +105,12 @@ lines are circularly aligned with a radius equal to the distance to the
 source. This allows to achieve an arbitrarily large field of view in a
 fan-beam geometry, a significant improvement compared to face-on based and
 glancing angle~\cite{Stutman2012a} approaches.
+Face-on gratings can sometimes be manufactured on very thin silicon,
+graphite or even titanium substrates\cn that can be bent to accomodate the beam
+curvature at least in one direction for a two-dimensional setup. However,
+this procedure involves the risk of destroying the grating if a too small
+radius of curvature is chosen, or a defect in the substrate provokes a
+crack.
 
 The combination of edge-on illumination and circularly aligned structures
 enables phase-contrast imaging at arbitrary design energies and with a
@@ -101,10 +130,10 @@ tomographic images, the approach allows single slice \ac{CT} or full 3D
 imaging in scanning mode.
 
 Grating design and fabrication is nonstandard and involves a complex mask
-design, as shown in Fig.~\ref{Fig:grating_mask}. Multiple gratings can reside on a
-silicon chip with their specific structure length and curvature. For the
-current experiments, a symmetric interferometer with a grating period of $p
-= \SI{2.8}{\micro\metre}$ for all gratings has been used.
+design, as shown in Fig.~\ref{Fig:grating_mask}. Multiple gratings can
+reside on a silicon chip with their specific structure length and curvature.
+For the current experiments, a symmetric interferometer with a grating
+period of $p = \SI{2.8}{\micro\metre}$ for all gratings has been used.
 
 The variance of the differential phase signal, with a Poisson variance of
 the counts $\sigma_{\text{det}}^2$ in a detector pixel, is given by~\cite{Raupach2011}

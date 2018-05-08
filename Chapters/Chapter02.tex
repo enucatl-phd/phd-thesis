@@ -193,8 +193,15 @@ thesis is:
 \end{equation}
 
 Far from absorption edges, these coefficients depend on the atomic number
-$Z$ roughly as $\beta \propto Z^3 / k^4$ and $\delta \propto Z / k^2$.
-which leads to the conclusion that the phase term $\delta$ becomes
+$Z$ roughly as
+
+\begin{align}
+    \beta &\propto Z^3 / k^4
+    \delta &\propto Z / k^2.
+    \label{eq:delta.beta.energy}
+\end{align}
+
+This leads to the conclusion that the phase term $\delta$ becomes
 relatively more important as the energy of the beam and the atomic number
 are increased~(see figure~\ref{fig:delta.beta}).
 
@@ -239,12 +246,25 @@ Techniques based on free-space propagation of X-rays have been widely
 explored on both monochromatic and polychromatic sources. If a weakly
 absorbing object si placed at a distance $R_1$ from a coherent X-ray source,
 it will introduce phase differences whose laplacian can be observed as an
-intensity modulation at a distance $R_2$ downstream:
+intensity modulation at a distance $R_2$ downstream (figure~\ref{fig:propagation.based}), with
+$M = (R_1 + R_2) / R_1$ as the geometrical magnification:
 \begin{equation}
     I(x, y) = \frac{I_0}{M^2}\left(1 + \frac{R_2\lambda}{2\pi M^2}\nabla_\perp^2
     \varphi(x, y)\right).
     \label{eq:free.space.propagation}
 \end{equation}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/propagation-based_imaging.png}
+    \caption[Propagation-based setup.]{A propagation-based phase contrast
+    setup\cn. The intensity modulations producing edge-enhancing effects can
+be observed at different distances in order to reconstruct the phase
+differences introduced by the sample according to
+equation~\eqref{eq:free.space.propagation}.}
+    \label{fig:propagation.based}
+\end{figure}
+
 In general, this technique requires recording such diffraction patterns at
 multiple distances $R_2$ from the sample in order to unambiguously
 reconstruct the phase and therefore the electron density of the sample.
@@ -262,18 +282,27 @@ one after the source, to obtain a monochromatic and collimated X-ray beam;
 one before the detector, acting as an extremely sensitive angular filter.
 
 The intensity on the detector is modulated by changing the incidence angle
-$\vartheta$ of the beam on the second grating. The intensity in each pixel
-is then recorded through multiple exposures as a function of $\vartheta$,
-producing a \emph{rocking curve}. These rocking curves are sensitive to
-refraction in a direction perpendicular to the beam and to the axis of
-rotation of the analyzer grating, and can provide a differential phase
-image, as well as a scattering contrast. This technique is also suitable for
-polychromatic sources, although the presence of the first crystal acting as
-a monochromator with low efficiency also leads to long exposure times,
-especially on low brilliance laboratory sources. The beam is also collimated
-to a fan beam on the plane and the sample needs to be scanned through it, in
-addition to the scanning of the rocking curve. A device composed by an
-array of crystals has been proposed as a solution to this issue.
+$\vartheta$ of the beam on the second crystal (figure~\ref{fig:dei}).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/analyzer-based_imaging.png}
+    \caption[Analyzer-based setup.]{A setup for diffraction enhanced
+        imaging\cn. The fine angular deviations introduced in the
+    monochromatic beam are decoded through rotations of the analyzer crystal.}
+    \label{fig:dei}
+\end{figure}
+The intensity in each pixel is then recorded through multiple exposures as a
+function of $\vartheta$, producing a \emph{rocking curve}. These rocking
+curves are sensitive to refraction in a direction perpendicular to the beam
+and to the axis of rotation of the analyzer grating, and can provide a
+differential phase image, as well as a scattering contrast. This technique
+is also suitable for polychromatic sources, although the presence of the
+first crystal acting as a monochromator with low efficiency also leads to
+long exposure times, especially on low brilliance laboratory sources. The
+beam is also collimated to a fan beam on the plane and the sample needs to
+be scanned through it, in addition to the scanning of the rocking curve. A
+device composed by an array of crystals has been proposed as a solution to
+this issue.
 
 \subsection{Bonse-Hart interferometry}
 This method is the oldest approach to X-ray interferometry, where three
@@ -283,7 +312,19 @@ the third crystal, where they merge again forming an interference pattern
 whose characteristics depend on the phase displacements introduced by the
 sample. This third crystal is necessary since the fringes of this pattern
 have the same period as Bragg planes and are therefore too small to be
-directly recorded.
+directly recorded (figure~\ref{fig:bonse-hart}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/Crystal_interferometer.png}
+    \caption[Bonse-Hart interferometer.]{A Bonse-Hart crystal
+    interferometer\cn. Two coherent beams are created: one is used as a
+reference beam, while a sample interacts with the second beam. Imaging is
+performed through the
+comparison of the interference produced at the third grating by the
+reference beam with the sample beam.}
+    \label{fig:bonse-hart}
+\end{figure}
 
 Again, as for diffraction enhanced techniques, the use of crystals as
 optical elements means that only a very narrow bandwidth can be used from a
@@ -304,7 +345,19 @@ observed as a displacement of this curve. The same applies to each pixel in
 the detector, therefore the period of the source and detector masks have to
 be matched so that there is a one-to-one mapping from each aperture in the
 source mask to each aperture in the detector mask to each underlying
-detector pixel.
+detector pixel (figure~\ref{fig:edge-illumination}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/edgeillumination.png}
+    \caption[Edge illumination.]{An setup for edge illumination\cn. Angular
+        deviations of the beams introduced by the object are detected as
+        lateral displacements of the fringes of the first mask, analyzed
+        through the second mask.}
+    \label{fig:edge-illumination}
+\end{figure}
+
+
 
 This approach does not impose requirements on the spatial or temporal
 coherence of the source, and has been successfully run on conventional
@@ -319,7 +372,7 @@ the propagation of a plane wave in a vacuum, where $n \equiv 1$. Plane waves
 are solutions
 
 \begin{equation}
-    \psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}} \qquad \text{with} k^2
+    \psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}} \qquad \text{with } k^2
     = k_x^2 + k_y^2 + k_z^2 = c^2 \omega^2.
     \label{eq:plane.wave.solution}
 \end{equation}
@@ -395,9 +448,10 @@ The effect of the Dirac $\delta$ is to replace $k_x$ with $k_{xj}$, which
 means that the propagator will, apart from an irrelevant overall constant phase
 factor, be equal to one at distances
 
-\begin{equation*}
-    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad n \in \mathbb{N}.
-\end{equation*}
+\begin{equation}
+    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad n \in
+    \mathbb{N}.\label{eq:talbot.distance}
+\end{equation}
 
 The source field at $z = 0$ creates a
 self-image, exactly replicating its periodic intensity pattern at each
