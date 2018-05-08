@@ -56,26 +56,33 @@ For a given setup length the parameter $p$ depends on the design energy
 $\energy$ according to~\eqref{eq:talbot.distance}
 
 \begin{equation}
-    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad \Leftrightarrow \qquad p \propto 1/\sqrt{\energy}.\label{eq:period.energy}
+    \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad \Rightarrow \qquad p \propto 1/\sqrt{\energy}.\label{eq:period.energy}
 \end{equation}
 
 The grating height $h$ has to be proportional to $\energy^3$, in order to
 keep the absorption efficiency constant as in
-equation~\ref{eq:delta.beta.energy} with an absorption coefficient $\mu
-= 2k\beta$.
-As a result, the aspect ratio $\textnormal{r}$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}. If at
-$\energy=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the absorption grating
-around $\textnormal{R}=30$ is sufficient, it would have to be at least
-$\num{128}$ for $\energy=\SI{100}{\kilo\eV}$. With our design, we reach
-an aspect ratio of \num{143}, satisfying the above condition with a
-transmission of less than \SI{1}{\percent} at \SI{100}{\kilo\eV}. As a
-comparison, a recent interferometer implemented at a third generation
-synchrotron facility~\cite{Willner2013} reported an aspect ratio of
-\num{21} with a transmission as large as \SI{20}{\percent}
+equation~\eqref{eq:delta.beta.energy}
+
+\begin{equation}
+    \beta \propto Z^3 / k^4 \qquad \Rightarrow \qquad \mu = 2k\beta \propto
+    \energy^3
+    \label{eq:absorption.energy}
+\end{equation}
+
+As a result, the aspect ratio $\textnormal{r}$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}.
+
+If at $\energy=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the
+absorption grating around $\textnormal{R}=30$ is sufficient, it would have
+to be at least $\num{128}$ for $\energy=\SI{100}{\kilo\eV}$. With our
+design, we reach an aspect ratio of \num{143}, satisfying the above
+condition with a transmission of less than \SI{1}{\percent} at
+\SI{100}{\kilo\eV}. As a comparison, a recent interferometer implemented at
+a third generation synchrotron facility~\cite{Willner2013} reported an
+aspect ratio of \num{21} with a transmission as large as \SI{20}{\percent}
 at~\SI{82}{\kilo\eV}.
 
 Our design introduces edge-on illuminated,  circularly aligned structures.
-Edge-on illumination (Fig.~\ref{Fig:schematic}), as
+Edge-on illumination (Fig.~\ref{fig:schematic}), as
 opposed to face-on illumination, exploits the dimension along the grating
 lines to form a high aspect ratio of the structures in the direction of the beam. The
 effective structure height of the grating is then determined by the grating
@@ -83,7 +90,7 @@ dimension along the grating lines, which essentially allows arbitrarily high
 aspect ratios. 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=.7\textwidth]{gfx/figure1.eps}
+    \includegraphics[width=\textwidth]{gfx/figure1.eps}
     \caption{Schematic of a grating
         interferometer for X-ray energies between 60 and
         \SI{150}{\kilo\electronvolt} in edge-on illumination mode. The
@@ -95,7 +102,7 @@ aspect ratios.
     and the distance between the source grating and the phase grating is
     \SI{16}{\centi\metre}. That is also the distance from the phase grating
 to the analyzer grating.}%
-\label{Fig:schematic}
+\label{fig:schematic}
 \end{figure}
 
 Increasing the aspect ratio of the gratings typically leads to a reduction
@@ -197,7 +204,7 @@ incoherent sources~\cite{Pfeiffer2006}. It is also made of gold structures
 with a length of $h_0 = h_2 = \SI{800}{\micro \metre}$.
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=.6\textwidth]{gfx/grating_mask.eps}
+    \includegraphics[width=\textwidth]{gfx/grating_mask.eps}
     \caption{Grating design mask for
         the edge-on illumination approach and \ac{SEM}
         image of the grating. The top part of the 4 inch wafer shows
@@ -223,7 +230,15 @@ $\SI{30}{\milli\metre}$, but wider gratings can be fabricated with the same
 method and the available technology on larger wafers. In addition to the standard components (source,
 camera, interferometer), two optical slits, one in front of the source
 grating, the other in front of the camera, were required for the collimation
-of the beam in the vertical direction. 
+of the beam in the vertical direction (see figure~\ref{fig:edge.on.photos}). 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=.9\textwidth]{gfx/side.png}
+    \includegraphics[width=.9\textwidth]{gfx/line.png}
+    \caption{Photographs of the edge-on interferometer setup, seen
+    from the side and from the source.}\label{fig:edge.on.photos}
+\end{figure}
 
 Two setups have been realized, for a \SI{100}{\kilo\eV} and
 \SI{120}{\kilo\eV} with similar performance. All gratings are
@@ -333,7 +348,7 @@ in the phase image, they can clearly be identified. The reduced contrast of
 the soldering points in the absorption image is due to beam hardening. The
 spectrum impinging on these soldering point is hardened by the resistors in
 the upper layer, resulting in lower absorption contrast. Due to the weaker
-energy dependence of phase shifts ($1/E$ compared to $1/E^3$), phase-contrast
+energy dependence of phase shifts ($1/\energy$ compared to $1/\energy^3$), phase-contrast
 images are less sensitive to beam hardening~\cite{Chabior2011a}, which explains the lower
 contrast reduction of the soldering points under the resistors in the
 phase image of the chip. This example shows one of the potential benefits of
