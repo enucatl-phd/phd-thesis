@@ -32,6 +32,10 @@ namespace :gfx do
     sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
 
+  file "gfx/visibility_titlis.png" => ["gfx/plot_visibility_histogram.py"] do |f|
+    sh "python #{f.source} /sls/X02DA/data/e14980/Data20/High_Energy_Setup/EIGER_DATA/2016_09_05/series.160906.141212783061_series.160906.141509877056.h5 #{f.name}"
+  end
+
   file "gfx/visibility_S00618.pgf" => ["gfx/S00618.hdf5", "gfx/plot_visibility_pgf.py"] do |f|
     sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
@@ -64,6 +68,10 @@ namespace :gfx do
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
+  file "gfx/spectrum-visibility/spectrum-100kV.png" => ["gfx/spectrum-visibility/spectrum.R", "gfx/spectrum-visibility/spectrum-100kV.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
   file "gfx/spectrum-visibility/spectrum.png" => ["gfx/spectrum-visibility/spectrum.R", "gfx/spectrum-visibility/12-full-spectrum.csv"] do |f|
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
@@ -93,7 +101,9 @@ namespace :gfx do
     "gfx/delta-beta-comparison/delta-beta-comparison.png",
     "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png",
     "gfx/spectrum-visibility/spectrum.png",
+    "gfx/spectrum-visibility/spectrum-100kV.png",
     "gfx/spectrum-visibility/visibility.png",
+    "gfx/visibility_titlis.png",
   ]
 
 end
