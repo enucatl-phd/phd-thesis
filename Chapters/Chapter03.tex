@@ -279,10 +279,37 @@ The alignment steps are as follows:
     \item rotation around $z$ is fixed when the upper edge of each grating,
         as visible in an absorption scan, is parallel to a detector
         pixel (see figure~\ref{fig:alignment-z});
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=\textwidth]{gfx/alignment-rot-z.png}
+            \caption{Alignment of the \G2 grating with respect to the rotation
+                around
+            the beam axis $z$. The one-dimensional beam is scanned across the
+            grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
+            five different positions of the rotation-$z$ motor from \num{-2} to
+            \SI{+2}{\degree} in order to choose the
+            best alignment, which in this case lies in an intermediate position between
+            the fourth and fifth section from the top. The same scan is then repeated
+        with finer steps in order to achieve a high precision in the alignment.}
+            \label{fig:alignment-z}
+        \end{figure}
     \item rotation around the $x$ axis is fixed by observing the appearance
         of the grating on a transmission image. It is best when the edges of
         the grating are defined and the area blocked by the grating itself
         appears smallest (see figure~\ref{fig:alignment-x});
+        \begin{figure}[htb]
+            \centering
+            \includegraphics[width=\textwidth]{gfx/alignment-rot-x.png}
+            \caption{Alignment of the \G2 grating with respect to the rotation
+            around the $x$ axis. The one-dimensional beam is scanned across the
+            grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
+            five different positions of the rotation-$x$ motor from \num{-1} to
+            \SI{+1}{\degree} in order to choose the
+            best alignment, this is achieved when the grating edges are well defined in
+            the absorption picture and the grating appears thinnest, as in the second
+        section from the top.}
+            \label{fig:alignment-x}
+        \end{figure}
     \item rotation around the $y$ and a fine translation along $z$ of the
         absorption gratings are fixed by maximizing the flux of X-rays
         through these two gratings.
@@ -298,33 +325,6 @@ The alignment steps are as follows:
         visibility is kept.
 \end{enumerate}
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{gfx/alignment-rot-z.png}
-    \caption{Alignment of the \G2 grating with respect to the rotation
-        around
-    the beam axis $z$. The one-dimensional beam is scanned across the
-    grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
-    five different positions of the rotation-$z$ motor in order to choose the
-    best alignment, which in this case lies in an intermediate position between
-    the fourth and fifth section from the top. The same scan is then repeated
-with finer steps in order to achieve a high precision in the alignment.}
-    \label{fig:alignment-z}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{gfx/alignment-rot-x.png}
-    \caption{Alignment of the \G2 grating with respect to the rotation
-    around the $x$ axis. The one-dimensional beam is scanned across the
-    grating on a range of \SI{0.6}{\milli\metre}. This is repeated across
-    five different positions of the rotation-$x$ motor in order to choose the
-    best alignment, this is achieved when the grating edges are well defined in
-    the absorption picture and the grating appears thinnest, as in the second
-section from the top.}
-    \label{fig:alignment-x}
-\end{figure}
-
 \section{Performance}
 The visibility of the systems, that is the ratio of the amplitude to the
 mean value of the phase stepping curve, has an inverse proportionality with the
@@ -335,13 +335,6 @@ by defects in the grating structures as shown by scanning electron
 microscope investigations, with deformations (figure~\ref{fig:deformazioni})
 and an incomplete electroplating (figure~\ref{fig:galvanizzazione})
 negatively affecting the visibility.
-
-Periodical variations in the visibility as a function of the transverse
-position $x$ are usually related to residual Moir\'e fringes that could not
-be eliminated through alignment. This is likely given by a mismatch in the
-duty cycles of the gratings, that were measured as varying between 
-\num{0.35} and \num{0.6}, with a significan variation from the nominal value
-of \num{0.5}.
 
 \begin{figure}[htb]
     \centering
@@ -365,8 +358,16 @@ of \num{0.5}.
     }
 \end{figure}
 
+Periodical variations in the visibility as a function of the transverse
+position $x$ are usually related to residual Moir\'e fringes that could not
+be eliminated through alignment. This is likely given by a mismatch in the
+duty cycles of the gratings, that were measured as varying between 
+\num{0.35} and \num{0.6}, with a significant deviation from the nominal value
+of \num{0.5}.
+
 The maximum visibility achieved by the two setups is shown in 
-figure~\ref{fig:visibility100} and~\ref{fig:visibility120}.
+figure~\ref{fig:visibility100} and~\ref{fig:visibility120}, between \num{5} and
+\SI{6}{\percent} on average.
 
 \begin{figure}[htb]
     \centering
@@ -386,6 +387,61 @@ figure~\ref{fig:visibility100} and~\ref{fig:visibility120}.
         $\times$ \num{24} phase steps.}
     \label{fig:visibility120}
 \end{figure}
+
+The maximum visibility of the interference pattern can be theoretically
+estimated according to the formula from~\cite{Thuering20130027} for the visibility as a function
+of energy $\energy$ with a $\pi$ shift in the phase grating, a design energy
+$\energy_0$ and a Lohmann order $j$:
+\begin{equation}
+            v(\energy) = \frac{2}{\pi} \left\lvert \sin^2
+            \Big(\frac{\pi}{2}\frac{\energy_0}{\energy}\Big) 
+            \sin
+            \Big(\frac{j\pi}{2}\frac{\energy_0}{\energy}\Big) 
+            \right\rvert.
+    \label{eq:visibility.energy}
+\end{equation}
+
+This formula indicates how energies different from the design energy of the
+interferometer contribute to the visibility of the interference pattern. The
+spectrum of the source simulated with the SpekCalc sofware~\cite{spekcalc}
+and equation~\eqref{eq:visibility.energy} are shown in
+figure~\ref{fig:visibility.energy}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/spectrum.png}
+    \caption{}
+    \label{fig:spectrum}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/visibility.png}
+    \caption{}
+    \label{fig:visibility}
+    \end{subfigure}
+    \caption[Spectrum and theoretical visibility of the \SI{100}{\kilo\eV}
+    interferometer.]{Spectrum of the source~\ref{fig:spectrum} at \SI{160}{\kilo\voltpeak}
+simulated with the SpekCalc software~\cite{spekcalc}. Visibility as a
+function of energy for a design energy of \SI{100}{\kilo\eV} at the first
+Lohmann distance, calculated according to
+equation~\ref{eq:visibility.energy} from~\cite{Thuering20130027}.}
+\end{figure}
+
+Running the calculation for our case with the spectral weights $w(\energy)$ shown in
+figure~\ref{fig:spectrum} and by summing each contribution to the total
+visibility we obtain a theoretical maximum of
+
+\begin{equation}
+    v_{theory} = \sum_\energy w(\energy)v(\energy) = 0.26.
+    \label{eq:maximum.visibility}
+\end{equation}
+
+The achieved values are much lower, around \SI{5}{\percent}, but it is clear
+that there is the chance to at least double or triple this value as more
+advanced fabrication techniques for the absorption gratings are established.
 
 \section{Results}
 We introduce a method for phase contrast imaging which works on
@@ -430,16 +486,16 @@ of the beam in the vertical direction (see figure~\ref{fig:edge.on.photos}).
     from the side and from the source.}\label{fig:edge.on.photos}
 \end{figure}
 
-Figure~\ref{Fig:img_chip} shows the first X-ray images acquired with our new setup, based on
+Figure~\ref{fig:img_chip} shows the first X-ray images acquired with our new setup, based on
 edge-on illuminated grating interferometry powered by a conventional X-ray
 source operated at \SI{160}{\kilo\voltpeak} and with a design energy of
 \SI{100}{\kilo\eV}.  
-\begin{figure}[h!]
+\begin{figure}[htp]
     \centering
     \input{gfx/images_S00075_S00071.pgf}
     \caption{Radiographic scan of an electronic chip. The image was acquired
         with 24 phase steps per line and an exposure time of \SI{15}{\second} per
-    step. The top right image shows the differential absorption image.}\label{Fig:img_chip}
+    step. The top right image shows the differential absorption image.}\label{fig:img_chip}
 \end{figure}
 
 Several resistors and integrated circuits located on different
@@ -478,7 +534,6 @@ derivative~\eqref{eq:refraction.angle} is a maximum.
 \end{figure}
 
 \section{Discussion}
-
 Possible usages of edge-on grating interferometry encompass applications
 ranging from medical imaging to non-destructive testing and homeland
 security. All these applications seek for high (greater than
@@ -525,7 +580,7 @@ is $\SI{80}{\micro\metre}$. The collimating slit right after the source is
 $\SI{25}{\micro\metre}$ wide, while the second slit before the detector is
 $\SI{100}{\micro\metre}$.
 
-In figure~\ref{Fig:img_chip}, image acquisition involved 24 phase steps per
+In figure~\ref{fig:img_chip}, image acquisition involved 24 phase steps per
 line and an exposure time of 15 seconds per step. The long
 exposure times are mostly constrained by the low average visibility of the
 gratings (\SI{5}{\percent}). The exposure time was chosen in order to
@@ -539,7 +594,13 @@ Smaller regions of these gratings already exhibit a visibility up
 to~\SI{14}{\percent}, indicating that this goal is reachable as the
 fabrication becomes more reliable and uniform.
 
-\section{Material and structure discrimination through dark field}
+\section{Towards quantitative evaluations}
+In the previous sections, the results providing the \emph{first light}
+through Talbot-Lau interferometers at \SI{160}{\kilo\voltpeak} have been
+shown (figures~\ref{fig:img_chip} and~\ref{fig:screw}). It would therefore
+be appropriate to test if the quantitative studies on the differential phase
+and dark field signals could be replicated and extended to these setups.
+
 A number of studies have been published over the last few years\cn
 connecting the intensity of the recorded dark-field signal to physical
 properties of a sample, most notably its structure and its composition. A
@@ -556,10 +617,107 @@ a maximum efficiency as the full \SI{1}{\centi\meter} thickness of silicon
 is used to detect the incoming photons. The resolution of the detector is
 \SI{50}{\micro\meter}.
 
-Rectangular plastic blocks filled with different substances are scanned
-under different angles in the interferometer. This allows to record images
-for different thicknesses of the same material by only changing the rotation
-angle, with \num{9} phase steps and \SI{5}{\second} exposure per step.
+The new, custom made, detector matching the circular wave front provides a
+significant benefit for the visibility of the interference fringes, which is
+improved to an average of \SI{7.5}{\percent}, as shown in
+figure~\ref{fig:mythen-visibility}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/visibility.png}
+    \caption{}
+    \label{fig:mythen-visibility}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/pixel_visibility.png}
+    \caption{}
+    \label{fig:mythen-visibility-pixel}
+    \end{subfigure}
+    \caption[Visibility of the edge-on grating interferometer with a custom
+    detector.]{Visibility histogram and visibility as a function of pixel
+        number for the \SI{120}{\kilo\eV} design-energy interferometer with
+        a custom silicon sensor matching the wave front curvature attached
+        to a Mythen module\cn.
+    }
+\end{figure}
+
+\subsection{Testing phase sensitivity}
+A quantitative test of the differential phase signal can be performed by
+using samples in a shape of a wedge with an an angle $\theta$. Such a sample
+introduces a constant deviation in the X-ray beam that can be measured and
+then averaged across the whole field of view
+(figure~\ref{fig:wedge.deviation}).
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.5\textwidth]{gfx/wedge-deviation.png}
+    \caption{Deviation of X-rays introduced by a wedge sample with an angle
+    $\theta$.}
+    \label{fig:wedge.deviation}
+\end{figure}
+
+According to equation~\eqref{eq:phase.deviation}, a thickness $z$ of a
+homogeneous material with refractive index $\delta$ introduces a change in
+the phase of the X-ray beam according to $\phi = -k\delta z$. In the wedge,
+the thickness $z$ depends on the position $x$ according to $z = x\tan
+\theta$. Equation~\eqref{eq:differential.phase} shows that the grating
+interferometer is not actually sensitive to $\phi$ but to its derivative
+along the direction $x$, perpendicular to the grating lines. This is the
+reason the wedge is an ideal shape for such measurements, since now the
+relationship becomes very simply
+
+\begin{align}
+    \alpha &= -\frac{1}{k}\partial_x\phi = \delta\tan\theta\\
+    \delta &= \frac{2 \pi p_2 \tan \theta}{D_1}P,
+    \label{eq:measuring.differential.phase}
+\end{align}
+
+where $P$ is the differential phase signal directly as measured with the
+interferometer. With this relationship between the real part of the
+refractive index $\delta$ and the measured differential phase value $P$ we
+can test our experiment by scanning three wedges made of plastic materials
+and $\theta = \pi/6$: \ac{PMMA}, \ac{PS} and \ac{HDPE}.
+The samples are scanned with an exposure time of \SI{5}{\second} for each of
+the \num{9} phase steps.                 
+
+The comparison with the expected values of $\delta$, taken at the average
+energy of the spectrum (\SI{50}{\kilo\eV}), and the measured values shows a
+good agreement (table~\ref{tab:delta.experiment})
+
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{*3c}
+        \toprule
+        material & $\delta_{\text{NIST}}$ ($\cdot 10^{-9})$ &
+        $\delta_{\text{exp}}$ ($\cdot 10^{-9})$ \\
+        \midrule
+        PMMA & \num{102} & $92 \pm 19$\\
+        PS & \num{90} & $81 \pm 21$\\
+        HDPE & \num{88} & $87 \pm 14$\\
+        \bottomrule
+    \end{tabular}
+    \caption{Comparison between values of the real part of the refractive
+        index $\delta$ as measured with the \SI{120}{\kilo\eV} Talbot-Lau
+        interferometer and taken from the NIST database\cn{NIST}.}
+    \label{tab:delta.experiment}
+\end{table}
+
+\subsection{Testing dark field sensitivity to microstructures}
+It has been reported in many studies that the dark field contrast arises
+whenever the sample contains very small structures, on the scale of few
+micrometers, that cannot be resolved by a detector pixel, but contribute to
+decreasing the visibility of the interference pattern in a Talbot-Lau
+interferometer.
+
+In order to reproduce this phenomenon, rectangular plastic blocks filled
+with different substances are scanned under different angles in the
+interferometer. This allows to record images for different thicknesses of
+the same material by only changing the rotation angle, with \num{9} phase
+steps and \SI{5}{\second} exposure per step.
 
 The images are segmented so that the region containing the material, that is
 with the most absorption, is selected. More in detail, the minimum value in

@@ -60,6 +60,14 @@ namespace :gfx do
     sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
+  file "gfx/spectrum-visibility/visibility.png" => ["gfx/spectrum-visibility/visibility.R", "gfx/spectrum-visibility/12-full-spectrum.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
+  file "gfx/spectrum-visibility/spectrum.png" => ["gfx/spectrum-visibility/spectrum.R", "gfx/spectrum-visibility/12-full-spectrum.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
   file "gfx/delta-beta-comparison/delta-beta-comparison.png" => ["gfx/delta-beta-comparison/delta_beta_plot.R", "gfx/delta-beta-comparison/delta_beta.csv"] do |f|
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
@@ -84,6 +92,8 @@ namespace :gfx do
     "gfx/alignment-rot-x.png",
     "gfx/delta-beta-comparison/delta-beta-comparison.png",
     "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png",
+    "gfx/spectrum-visibility/spectrum.png",
+    "gfx/spectrum-visibility/visibility.png",
   ]
 
 end
