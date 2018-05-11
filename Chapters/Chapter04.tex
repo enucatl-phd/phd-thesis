@@ -1,7 +1,6 @@
 \chapter{Quantitative dark-field imaging}\label{ch:lung-dark-field}
 This chapter is also presented in Abis M, Lovric G, Schittny J, Stampanoni
-M, \emph{Quantitative modelling of lung microstructural data with X-ray
-dark-field grating interferometry on a laboratory source}.
+M, \emph{Quantitative lung microstructure mapping with X-ray dark-field grating interferometry on a laboratory source}.
 \section{Introduction}\label{sec:introduction}
 X-ray grating interferometry has been developed over the course of the last
   fifteen years on both synchrotron and laboratory
@@ -101,11 +100,11 @@ equation~\eqref{eq:magnification-distance}
     \label{eq:intergrating-distance}
 \end{equation}
 
-The detector is a prototype based on
-Santis CdTe by Dectris Ltd. The cadmium telluride sensor with a thickness of \SI{750}{\micro\meter} provides
-high quantum efficiency at high energies (>\SI{90}{\percent} at
-\SI{60}{\kilo\eV}) with a pixel size
-of $75\times\SI{75}{\micro\meter\squared}$. 
+The detector is a prototype based on Santis CdTe by Dectris Ltd. The cadmium
+telluride sensor with a thickness of \SI{750}{\micro\meter} provides high
+quantum efficiency at high energies (>\SI{90}{\percent} at
+\SI{60}{\kilo\eV}) with a pixel size of
+$75\times\SI{75}{\micro\meter\squared}$. 
 
 The average visibility of the interference pattern without any
 sample is 14\% (figure~\ref{fig:visibility-titlis}). The source is a Comet
@@ -150,8 +149,37 @@ ring is 400 mA, top-up mode. Two multilayer monochromator crystals are used
 to filter X-rays with an energy of 11 keV. A \SI{20}{\micro\meter} thick scintillator
 converts the X-rays into visible light, collected by a 10x objective onto a
 high-speed CMOS sensor with an effective pixel size of $0.65 \times
-\SI{0.65}{\micro\meter\squared}$. The exposure time for each tomographic scan was set at 100 ms per
-projection, with 1801 projections.
+\SI{0.65}{\micro\meter\squared}$. The exposure time for each tomographic
+scan was set at 100 ms per projection, with 1801 projections.
+
+The sample is aligned as shown in figure~\ref{fig:lung-alignment} with an
+optical camera as to record the exact location of the lung at which the X-ray
+tomography is taken. This is then matched to the same area in the
+radiography on the laboratory setup for the data analysis.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/lung-paper-figures/KO202_LL_control_1_00degree.png}
+    \caption{}
+    \label{fig:reconstructed}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/lung-paper-figures/KO202_LL_control_1_90degree.png}
+    \caption{}
+    \label{fig:lung-alignment}
+    \end{subfigure}
+    \caption[Alignment for lung microtomography.]{Alignment positions
+    for the microtomography of the sample labelled KO202. These are recorded
+just before each tomographic scan in order to mark the exact location of the
+scan itself. This is then relevant to gather data from the radiography on
+the Talbot-Lau interferometer on the same area.}
+\end{figure}
+
+
 
 \subsection{Processing of the tomographic data}\label{sec:tomoprocessing}
 The tomographic sinograms are preprocessed with the Paganin
@@ -313,7 +341,7 @@ where $V$ is the volume of the particle, $f$ is again the volume fraction
 occupied by the particles, $P(q)$ is the form factor of each particle. For a
 homogeneous sphere of radius $r$ this function is\cn
 \begin{equation}
-    P(q) = \left(\frac{3(\sin(qr) - qr\cos(qr))}{qr^3}\right)^2.
+    P(q) = \left[\frac{3(\sin(qr) - qr\cos(qr))}{qr^3}\right]^2.
     \label{eq:sphere.form.factor}
 \end{equation}
 The function $S(q)$ determines the intensity of interference between
