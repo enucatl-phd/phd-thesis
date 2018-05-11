@@ -11,9 +11,11 @@ def main(input_file_name, output_file_name):
         dataset = input_file["entry/data/threshold_0/data_000001"][
             285:345, 800:900]
         print(dataset.shape)
-        plt.imshow(dataset, cmap=plt.cm.Greys_r, aspect="auto")
-        plt.colorbar()
-        plt.savefig(output_file_name)
+        plt.imshow(dataset, cmap=plt.cm.Greys_r)
+        cbar = plt.colorbar()
+        cbar.set_label("counts")
+        plt.savefig(output_file_name, dpi=300)
+
         # plt.show()
 
 
