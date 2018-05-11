@@ -3,6 +3,7 @@ Parts of this chapter have been submitted as Kagias M, Abis M, Wang Z,
 Jefimovs K, Stampanoni M,
 \emph{Generalized omnidirectional scattering sensitivity}.
 
+\section{Introduction}
 The Talbot-Lau interferometer described in chapter~\ref{ch:review} is one
 method of exploiting the self-imaging phenomenon for a periodical wave in
 order to transform phase differences into intensity modulations.
@@ -88,6 +89,104 @@ at the angle $\phi$ and taking the ratio of the $N$-th to the zeroth component
     \label{eq:dark-field-omnidirectional}
 \end{equation}
 
+\section{An omnidirectional setup for laboratory sources}
 These are the features of omnidirectional dark-field imaging so far reported
 in~\cite{PhysRevLett.116.093902}, our goal is now to export the same
 technique from a synchrotron to a conventional X-ray source.
+As described in~\cite{kagias2018omnidir}, the problem arises of resolving
+the very fine self-image of the grating with a period on the order of the
+micrometer. The detector used for this experiment in the same as in
+chapter~\ref{ch:lung-dark-field}, the cadmium telluride prototype Santis
+CdTe by Dectris Ltd. While this provides excellent efficiency at high
+energy, its resolution of \SI{75}{\micro\meter} cannot be compared with the
+submicron resolution available for the synchrotron experiment employing a tenfold optical magnification.
+
+This issue can be overcome by designing each unit cell as a beam splitter
+grating~\ref{fig:beam-splitter}. The resulting intensity profile in the far
+field has one central maximum, a minimum and a secondary maximum along the
+radial direction away from the center. This cell
+is then repeated across the field of view and the Talbot effect is then used
+to form a self-image of this larger pattern with period $P$.
+
+In order to form this Talbot self-image the coherence requirements of
+section~\ref{sec:coherence} have to be satisfied. With reference to
+figure~\ref{fig:omnidirectional-lab}, the source size has to be
+smaller than
+\begin{equation}
+    s < \frac{p_2L}{2D}.
+    \label{eq:source.size.omnidirectional}
+\end{equation}
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/omnidirectional/schematic-with-arrows.png}
+    \caption{Experimental setup for omnidirectional dark-field imaging on a
+    laboratory source. The incoherent source is masked by an absorption
+grating \G0, similar to Talbot-Lau interferometry, which produces an array
+of individually coherent but mutually incoherent
+sources~\cite{kagias2018omnidir}.}
+    \label{fig:omnidirectional-lab}
+\end{figure}
+
+As in the case of the Talbot interferometer, while this can be achieved in
+normal operating conditions for synchrotron experiments, the required
+coherence is enforced on the laboratory source with a focal spot size of
+\SI{1}{\milli\meter} by introducing an absorption grating \G0, in this case
+a two-dimensional array of pinholes with period $p_0$ and diameter $s$ in a \SI{100}{\micro\meter} tungsten
+plate. This achieves the required coherence according to
+equation~\eqref{eq:source.size.omnidirectional}, while the interference
+patterns from different sources superimpose constructively if
+condition~\eqref{eq:p0} is met
+\begin{equation}
+    p_0 = p_2 \frac{L}{D}.\label{eq:p0.omnidirectional},
+\end{equation}
+where $p_2$ is the magnified period $P$ at the detector plane.
+
+\section{Results}
+For our experiment, the beam splitter grating is a silicon grating with
+period\cn and a thickness of \SI{40}{\micro\meter}, resulting in a phase
+shift of $\pi$ at the energy of \SI{30}{\kilo\eV}. The source is the same as
+in chapter~\ref{ch:lung-dark-field}, an MXR-225/26 X-ray tube operated at
+\SI{60}{\kilo\voltpeak} and \SI{10}{\milli\ampere}.
+The geometry satisfies
+\begin{align*}
+    L &= \SI{57}{\centi\meter}\\
+    D &= \SI{110}{\centi\meter}.
+\end{align*}
+
+The sample is a knot made with carbon fibers, exhibiting a strong
+directional scattering related to the direction of the fibers. The exposure
+time was chosen to be \SI{100}{\second}.
+Results are shown in figure~\ref{fig:knot-reconstruction}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/omnidirectional/filtered.png}
+    \caption{Knot made of carbon fibers reconstructed with
+        equation~\eqref{eq:dark-field-omnidirectional}. The arrow points to
+    the spatial direction perpendicular to the largest measured scattering
+intensity, its size and colors measure the scattering
+strength~\cite{kagias2018omnidir}.}
+    \label{fig:omnidirectional-lab}
+\end{figure}
+
+It was possible to follow the direction of the alignment of the
+carbon fibers around the loop from a single-shot radiography recorded on a
+laboratory source.
+
+The performance of this first realization of the interferometer is on par
+with the other experiments, with a visibility of the flat image ranging
+between \SI{5}{\percent} and \SI{10}{\percent}. The flat image showing the
+self image of the unit cells recorded by the detector is shown in
+figure~\ref{fig:cells}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/omnidirectional/visibility-omnidirectional.png}
+    \caption{Self-image of the unit cell pattern recorded in the flat image
+        for the exposure of~\ref{fig:omnidirectional-lab}. The intensity
+        pattern of figure~\ref{fig:beam-splitter} can be recognized.
+        Exposure time of~\SI{100}{\second}, the recorded number of counts in
+    each pixel is shown.}
+    \label{fig:cells}
+\end{figure}

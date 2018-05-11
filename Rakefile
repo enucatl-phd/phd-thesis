@@ -88,6 +88,10 @@ namespace :gfx do
     sh "python #{f.source} #{f.name}"
   end
 
+  file "gfx/omnidirectional/visibility-omnidirectional.png" => ["gfx/omnidirectional/plot_image.py", "gfx/omnidirectional/171004.144941111316.h5"] do |f|
+    sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
 
   desc "all images"
   task :all => EEPIC.ext(".eepic") + [
@@ -104,6 +108,7 @@ namespace :gfx do
     "gfx/spectrum-visibility/spectrum-100kV.png",
     "gfx/spectrum-visibility/visibility.png",
     "gfx/visibility_titlis.png",
+    "gfx/omnidirectional/visibility-omnidirectional.png",
   ]
 
 end
