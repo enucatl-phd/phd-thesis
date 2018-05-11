@@ -32,10 +32,6 @@ namespace :gfx do
     sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
 
-  file "gfx/visibility_titlis.png" => ["gfx/plot_visibility_histogram.py"] do |f|
-    sh "python #{f.source} /sls/X02DA/data/e14980/Data20/High_Energy_Setup/EIGER_DATA/2016_09_05/series.160906.141212783061_series.160906.141509877056.h5 #{f.name}"
-  end
-
   file "gfx/visibility_S00618.pgf" => ["gfx/S00618.hdf5", "gfx/plot_visibility_pgf.py"] do |f|
     sh "python #{f.prerequisites[1]} --steps 25 --pixel 510 #{f.source} #{f.name}"
   end
@@ -76,6 +72,10 @@ namespace :gfx do
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
+  file "gfx/mythen-edge-on/efficiency.png" => ["gfx/mythen-edge-on/plot_efficiency.R", "gfx/mythen-edge-on/efficiency.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
   file "gfx/delta-beta-comparison/delta-beta-comparison.png" => ["gfx/delta-beta-comparison/delta_beta_plot.R", "gfx/delta-beta-comparison/delta_beta.csv"] do |f|
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
@@ -98,6 +98,7 @@ namespace :gfx do
     "gfx/visibility_visibility_100kev.pgf",
     "gfx/visibility_S00618.pgf",
     "gfx/images_S00052.pgf",
+    "gfx/mythen-edge-on/efficiency.png",
     "gfx/images_S00075_S00071.pgf",
     "gfx/images_S00613.pgf",
     "gfx/lynch-vs-saxs/plot.png",
@@ -107,7 +108,6 @@ namespace :gfx do
     "gfx/spectrum-visibility/spectrum.png",
     "gfx/spectrum-visibility/spectrum-100kV.png",
     "gfx/spectrum-visibility/visibility.png",
-    "gfx/visibility_titlis.png",
     "gfx/omnidirectional/visibility-omnidirectional.png",
   ]
 

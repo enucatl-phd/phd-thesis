@@ -428,6 +428,7 @@ simulated with the SpekCalc software~\cite{spekcalc}. Visibility as a
 function of energy for a design energy of \SI{100}{\kilo\eV} at the first
 Lohmann distance, calculated according to
 equation~\ref{eq:visibility.energy} from~\cite{Thuering20130027}.}
+    \label{fig:visibility.energy}
 \end{figure}
 
 Running the calculation for our case with the spectral weights $w(\energy)$ shown in
@@ -489,7 +490,28 @@ of the beam in the vertical direction (see figure~\ref{fig:edge.on.photos}).
 Figure~\ref{fig:img_chip} shows the first X-ray images acquired with our new setup, based on
 edge-on illuminated grating interferometry powered by a conventional X-ray
 source operated at \SI{160}{\kilo\voltpeak} and with a design energy of
-\SI{100}{\kilo\eV}.  
+\SI{100}{\kilo\eV}. The sample is an electronic chip, pictured in
+figure~\ref{fig:chip_photo}, along with a superposition of the differential
+phase X-ray reconstruction.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/chip_overlay_empy.png}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/chip_overlay_full.png}
+    \caption{}
+    \end{subfigure}
+    \caption{The electronic chip reconstructed in figure~\ref{fig:img_chip},
+comparing an optical picture and the reconstructed X-ray differential phase
+image.}
+    \label{fig:chip_photo}
+\end{figure}
+
 \begin{figure}[htp]
     \centering
     \input{gfx/images_S00075_S00071.pgf}
@@ -613,9 +635,30 @@ detector from the detector group of the Paul Scherrer Institute. The
 module is a strip detector with 1280 photon counting channels, arranged to
 match the fan beam curvature at a distance of \SI{70}{\centi\meter} from the
 source. The strips are also designed to lie on the beam plane as to achieve
-a maximum efficiency as the full \SI{1}{\centi\meter} thickness of silicon
-is used to detect the incoming photons. The resolution of the detector is
+a maximum efficiency as the full \SI{2}{\centi\meter} thickness of silicon
+is used to detect the incoming photons (see
+figure~\ref{fig:mythen-edge-on}). The resolution of the detector is
 \SI{50}{\micro\meter}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/mythen.png}
+    \caption{}
+    \end{subfigure}
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/efficiency.png}
+    \caption{}
+    \end{subfigure}
+    \caption{A Mythen detector module\cn{mythen} with \SI{2}{\centi\meter} silicon
+strips arranged to match a curved fan beam in the edge-on configuration.
+This large thickness allows to reach a very high efficiency for a silicon
+sensor, without compromising the resolution. The calculated efficiency is above
+\SI{50}{\percent} up to \SI{160}{\kilo\eV}.}
+    \label{fig:mythen-edge-on}
+\end{figure}
 
 The new, custom made, detector matching the circular wave front provides a
 significant benefit for the visibility of the interference fringes, which is
