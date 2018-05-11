@@ -1,5 +1,5 @@
-%% Generated from foam_sample.xp on Mon Mar 17 10:41:20 CET 2014 by
-%% ePiX-1.2.12
+%% Generated from foam_sample.xp on Fre Mai 11 22:38:01 CEST 2018 by
+%% ePiX-1.2.17
 %% 
 %%   Cartesian bounding box: [-4,4] x [-4,4]
 %%   Actual size: 4 x 3in
@@ -1634,9 +1634,9 @@
   (2.05152in,2.17183in)--(2.05156in,2.18482in)--
   (2.05161in,2.19782in)--(2.05165in,2.21085in)--
   (2.05169in,2.2239in)--(2.05174in,2.23698in)--(2.05178in,2.25008in);
-\pgftext[at={\pgfpoint{2.88655in}{0.76242in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}raggi X}}}
-\pgftext[at={\pgfpoint{2.96291in}{1.5376in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}polistirolo}}}
-\pgftext[at={\pgfpoint{2in}{2.44843in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}acciaio}}}
+\pgftext[at={\pgfpoint{2.88655in}{0.76242in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}X-rays}}}
+\pgftext[at={\pgfpoint{2.96291in}{1.5376in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}polystyrene}}}
+\pgftext[at={\pgfpoint{2in}{2.44843in}}] {\makebox(0,0)[b]{\hbox{\color{rgb_000000}steel}}}
 \draw (2.87918in,0.26426in)--(2.22731in,1.1805in);
 \pgfsetfillcolor{rgb_000000}
 \draw [fill](2.26686in,1.12491in)--(2.28377in,1.13694in)--

@@ -19,9 +19,9 @@ int main() {
     fill(Black());
     plot(cylinder, C);
     nofill();
-    label(P(0.3, -5, 0.3), P(0, 0), "raggi X", t);
-    label(P(1, -3, 1), P(0, 0), "polistirolo", t);
-    label(P(0, 0, 2.5), P(0, 0), "acciaio", t);
+    label(P(0.3, -5, 0.3), P(0, 0), "X-rays", t);
+    label(P(1, -3, 1), P(0, 0), "polystyrene", t);
+    label(P(0, 0, 2.5), P(0, 0), "steel", t);
     arrow(P(0, -6, 0), P(0, -2.3, 0));
     end();
 }

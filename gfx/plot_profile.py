@@ -21,6 +21,7 @@ def draw(input_file_name, absorption_image, differential_phase_image, dark_field
     absorption_image_title = "assorbimento"
     differential_phase_image_title = "fase differenziale"
     dark_field_image_title = "riduzione di visibilit\\`a"
+    dark_field_image = dark_field_image / absorption_image ** 2
     absorption_profile = np.mean(absorption_image, axis=0)
     dark_field_profile = np.mean(dark_field_image, axis=0)
     plt.figure(figsize=(4.6, 4.6 * 0.618))
@@ -29,12 +30,12 @@ def draw(input_file_name, absorption_image, differential_phase_image, dark_field
     plt.ylabel("A, B")
     pixels = np.arange(absorption_profile.shape[0])
     plt.plot(pixels, absorption_profile,
-            label="assorbimento $A$",
+            label="transmission $A$",
             color="black",
             linestyle="--",
             linewidth=1)
     plt.plot(pixels, dark_field_profile,
-            label="riduzione di\nvisibilit\\`a $B$",
+            label="dark field $B$",
             color="black",
             linewidth=1)
     handles, labels = axis.get_legend_handles_labels()
@@ -58,9 +59,9 @@ absorption_image_name = "postprocessing/absorption"
 differential_phase_image_name = "postprocessing/differential_phase"
 visibility_reduction_image_name = "postprocessing/visibility_reduction"
 
-absorption_image = input_file[absorption_image_name]
-differential_phase_image = input_file[differential_phase_image_name]
-visibility_reduction_image = input_file[visibility_reduction_image_name]
+absorption_image = input_file[absorption_image_name][...]
+differential_phase_image = input_file[differential_phase_image_name][...]
+visibility_reduction_image = input_file[visibility_reduction_image_name][...]
 
 draw(input_file_name, absorption_image,
         differential_phase_image, visibility_reduction_image)
