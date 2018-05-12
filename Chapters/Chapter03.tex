@@ -332,7 +332,8 @@ standard deviation of the refraction angle, according
 to~\eqref{eq:variance}, and it is therefore the fundamental parameter to
 characterize the performance of the experiment. It is unfortunately affected
 by defects in the grating structures as shown by scanning electron
-microscope investigations, with deformations (figure~\ref{fig:deformazioni})
+microscope investigations, with deformations (figures~\ref{fig:deformazioni}
+and~\ref{fig:defects-tomcat})
 and an incomplete electroplating (figure~\ref{fig:galvanizzazione})
 negatively affecting the visibility.
 
@@ -358,6 +359,16 @@ negatively affecting the visibility.
     }
 \end{figure}
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/mythen-edge-on/tomcat-grating.png}
+    \caption{Phase grating \G1 for the \SI{100}{\kilo\eV} grating
+interferometer, as seen in a high resolution transmission image at the X02DA
+TOMCAT beamline. The red arrow points to a region where large scale
+deformations in the orientation of the structures are visible.}
+    \label{fig:defects-tomcat}
+\end{figure}
+
 Periodical variations in the visibility as a function of the transverse
 position $x$ are usually related to residual Moir\'e fringes that could not
 be eliminated through alignment. This is likely given by a mismatch in the
@@ -369,23 +380,22 @@ The maximum visibility achieved by the two setups is shown in
 figure~\ref{fig:visibility100} and~\ref{fig:visibility120}, between \num{5} and
 \SI{6}{\percent} on average.
 
-\begin{figure}[htb]
+\begin{figure}[h!]
     \centering
-    \input{gfx/visibility_visibility_100kev.pgf}
-    \caption[Visibility \SI{100}{\kilo\eV}.]{Visibility of the grating
-        interferometer with
-        \SI{100}{\kilo\eV} design energy. Exposure time \SI{10}{\second}
+    \begin{subfigure}[b]{.49\textwidth}
+        \resizebox{\textwidth}{!}{\input{gfx/visibility_visibility_100kev.pgf}}
+        \caption{}
+        \label{fig:visibility100}
+    \end{subfigure}
+    \begin{subfigure}[b]{.49\textwidth}
+        \resizebox{\textwidth}{!}{\input{gfx/visibility_S00618.pgf}}
+        \caption{}
+        \label{fig:visibility120}
+    \end{subfigure}
+    \caption{Visibility of the grating
+        interferometers with
+        \SI{100}{\kilo\eV} and \SI{120}{\kilo\eV} design energy. Exposure time \SI{10}{\second}
         $\times$ \num{24} phase steps.}
-    \label{fig:visibility100}
-\end{figure}
-\begin{figure}[htb]
-    \centering
-    \input{gfx/visibility_S00618.pgf}
-    \caption[Visibility \SI{120}{\kilo\eV}.]{Visibility of the grating
-        interferometer with
-        \SI{120}{\kilo\eV} design energy. Exposure time \SI{10}{\second}
-        $\times$ \num{24} phase steps.}
-    \label{fig:visibility120}
 \end{figure}
 
 The maximum visibility of the interference pattern can be theoretically
@@ -615,4 +625,3 @@ in the last ten years.
 Smaller regions of these gratings already exhibit a visibility up
 to~\SI{14}{\percent}, indicating that this goal is reachable as the
 fabrication becomes more reliable and uniform.
-
