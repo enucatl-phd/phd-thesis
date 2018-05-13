@@ -76,6 +76,10 @@ namespace :gfx do
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
+  file "gfx/eiger/efficiency.png" => ["gfx/mythen-edge-on/plot_efficiency.R", "gfx/eiger/efficiency.csv"] do |f|
+    sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
   file "gfx/delta-beta-comparison/delta-beta-comparison.png" => ["gfx/delta-beta-comparison/delta_beta_plot.R", "gfx/delta-beta-comparison/delta_beta.csv"] do |f|
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
   end
@@ -109,6 +113,7 @@ namespace :gfx do
     "gfx/spectrum-visibility/spectrum-100kV.png",
     "gfx/spectrum-visibility/visibility.png",
     "gfx/omnidirectional/visibility-omnidirectional.png",
+    "gfx/eiger/efficiency.png",
   ]
 
 end

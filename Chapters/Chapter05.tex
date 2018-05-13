@@ -100,7 +100,43 @@ equation~\eqref{eq:magnification-distance}
     \label{eq:intergrating-distance}
 \end{equation}
 
-The detector is a prototype based on Santis CdTe by Dectris Ltd. The cadmium
+\section{Silicon and cadmium telluride detectors}
+
+The first available detector for two-dimensional radiography experiments is
+an Eiger 1M module by Dectris Ltd\cn. It features a silicon sensor
+with a thickness of~\SI{450}{\micro\meter} and a pixel size of
+$75\times\SI{75}{\micro\meter\squared}$. The efficiency of this sensor is
+shown in figure~\ref{fig:eiger-efficiency}, and it is clear that it is not
+very suitable for this kind of high-energy experiments since it does not
+provide enough quantum efficiency --- less than \SI{10}{\percent} above
+\SI{30}{\kilo\eV}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/eiger/efficiency.png}
+    \caption{Efficiency of the \SI{450}{\micro\meter} thick sensor of the
+Eiger 1M detector as a function of energy.}
+    \label{fig:eiger-efficiency}
+\end{figure}
+
+Nevertheless, it could be used for imaging a chicken paw, shown in
+figure~\ref{fig:eiger-chicken}.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/eiger/series_160729_170729669658_series_160729_171501073073.png}
+    \caption{Chicken paw scanned with a \SI{45}{\kilo\eV} two-dimensional
+grating interferometer and the silicon detector Eiger 1M.}
+    \label{fig:eiger-chicken}
+\end{figure}
+
+Unfortunately, imaging with this detector is unadvisable, as not only the lack of efficiency to
+high-energy photons negatively impacts the visibility and the exposure
+times, but the photons that go through the sensor are able to cause
+radiation damage in the electronic boards of the detector itself.
+
+For these reasons, another detector, a prototype based on Santis CdTe by
+Dectris Ltd., was used. The cadmium
 telluride sensor with a thickness of \SI{750}{\micro\meter} provides high
 quantum efficiency at high energies (>\SI{90}{\percent} at
 \SI{60}{\kilo\eV}) with a pixel size of
@@ -179,8 +215,6 @@ scan itself. This is then relevant to gather data from the radiography on
 the Talbot-Lau interferometer on the same area.}
 \end{figure}
 
-
-
 \subsection{Processing of the tomographic data}\label{sec:tomoprocessing}
 The tomographic sinograms are preprocessed with the Paganin
 algorithm~\cite{Paganin_2002} and
@@ -190,10 +224,11 @@ figure~\ref{fig:reconstructed} are then thresholded with the Otsu
 algorithm~\cite{Otsu_1979}, with independent thresholds for each slice, to
 provide a binary labelling for tissue and air. A cycle of
 erosion and dilation is applied to remove single pixel artifacts while still
-keeping the septa between neighboring alveoli (figure~\ref{fig:segmented}). This preserves the structures
-in the lung because septa, while possibly being only one pixel in thickness,
-are also connected to surrounding tissue. On the other hand, isolated pixels
-should be removed as they could affect the subsequent analysis.
+keeping the septa between neighboring alveoli (figure~\ref{fig:segmented}).
+This preserves the structures in the lung because septa, while possibly
+being only one pixel in thickness, are also connected to surrounding tissue.
+On the other hand, isolated pixels should be removed as they could affect
+the subsequent analysis.
 
 \begin{figure}[htb]
     \centering
