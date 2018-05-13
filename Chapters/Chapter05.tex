@@ -287,12 +287,12 @@ beneficial to examine the ratio of the logarithms $R$ in
 order to remove the local dependence on the thickness of the sample in the
 radiography:
 
-\begin{align*}
+\begin{align}
     A &= \dfrac{a_{0,s}}{a_{0,f}}\\
     B &= \dfrac{a_{1,s}}{a_{1,f}}\dfrac{a_{0,f}}{a_{0,s}}\\
     R &= \dfrac{\log(B)}{\log(A)}.
     \label{eqn:definitions}
-\end{align*}
+\end{align}
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/KO373_LL_smoke/WT256_LL_smoke}
@@ -502,3 +502,89 @@ not applied, as it is reported to be relevant for samples absorbing at least
 50\% of the incoming light. The beam hardening effect is considered insofar
 it affects the spectral weights of eq.~\ref{eqn:totalsum}, which are calculated
 after the sample. 
+
+\section{Water diffusion in cement: an application to material science}
+One of the applications of grating interferometry to material science is the
+study of diffusion of gas or water through porous materials, such as motor
+catalytic filters or diffusion of water through cement~\cite{feithesis}.
+
+We reproduced this result with the following experiment, where a cement
+cylinder is sealed on the sides and put in contact with a water layer on the
+bottom. The water slowly infiltrates the porous structures with time, and
+the height of the water column $h$ can be modeled with a simple
+proportionality to the square root of the time $t$ elapsed since the beginning
+of the experiment
+\begin{equation}
+    h = C\sqrt{t}.
+    \label{eq:sorptivity}
+\end{equation}
+
+Repeated radiographies are taken with \num{20} phase steps and an exposure
+time of \SI{0.2}{\second} per step, as the evolution of the sample is
+recorded for a period of time of two hours. Figure~\ref{fig:wet-cement}
+shows a comparison in the transmission and reconstructed ratio $R$
+(equation~\ref{eqn:definitions}) for the first scan and after one hour.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/wet-cement/0.png}
+    \caption{}
+    \label{fig:wet-cement-0}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/wet-cement/200.png}
+    \caption{}
+    \label{fig:wet-cement-200}
+    \end{subfigure}
+    \caption[Water uptake in cement.]{Transmission and ratio $R$ for the
+    water uptake in a cement cylinder as a function of time: first scan at
+$t=0$ (left) and after one hour (right). The fraction of the cylinder
+infiltrated by water can be determined with a larger contrast-to-noise ratio
+on the $R$ image than in the conventional transmission image (also see
+figure~\ref{fig:wet-cement-cnr}.}
+\end{figure}
+
+Figure~\ref{fig:wet-cement-cnr} shows the contrast-to-noise ratio between a
+region of the sample that is still dry against a region containing water. It
+is clear that the additional contrast provided by dark-field imaging is
+beneficial to this kind of analyses.
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/wet-cement/cnr_absorption.png}
+    \caption{}
+    \label{fig:wet-cement-cnr-absorption}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/wet-cement/cnr_ratio.png}
+    \caption{}
+    \label{fig:wet-cement-cnr-ratio}
+    \end{subfigure}
+    \caption[CNR for water in cement.]{Comparison of the contrast-to-noise
+    ratio between a manually selected wet and dry region in transmission and
+ratio $R$.}
+\label{fig:wet-cement-cnr}
+\end{figure}
+
+Finally, these data can be combined together to confirm the relationship in
+equation~\eqref{eq:sorptivity}: the histogram of the ratio images are
+calculated and thresholded, the pixels below the threshold are
+counted as wet pixels, the pixels above the threshold count as dry. The
+resulting fit is shown in figure~\ref{fig:position}, confirming the
+square root proportionality between the height of the water column and time.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/wet-cement/position.png}
+    \caption{Height of the water column in a cement cylinder as a function
+        of time, measured on $R$ images from the \SI{45}{\kilo\eV} grating
+    interferometer.}
+    \label{fig:position}
+\end{figure}
