@@ -98,6 +98,10 @@ def compare_sample_to_flat(sample, flat):
     return tf.stack([result0, result1, result2], axis=-1)
 \end{lstlisting}
 
+The modulus operation on the differential phase image is used to remove
+$2\pi$ discontinuities between adjacent pixels, known as \emph{phase
+wrapping}.
+
 \section{Command line program}
 The pipeline described above can be used on HDF5 files by calling the
 \texttt{dpc\_radiography} program. This takes a sequence of HDF5 files, each

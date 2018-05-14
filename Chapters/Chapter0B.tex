@@ -1,0 +1,128 @@
+%********************************************************************
+% Appendix
+%*******************************************************
+% If problems with the headers: get headings in appendix etc. right
+%\markboth{\spacedlowsmallcaps{Appendix}}{\spacedlowsmallcaps{Appendix}}
+\chapter{Laboratory controls with pyepics and HDF5}
+This appendix describes the programs used to control the motors and
+detectors used throughout the different experiments.
+
+The documentation refers to version \texttt{495333}, published on 
+\href{https://github.com/Enucatl/python-controls-high-energy/tree/495333d062067ada0331b8c688dd4067832981fc}{GitHub}~\cite{python-controls-high-energy}.
+
+\section{Prerequisites}
+The Eiger and Pilatus detector from Dectris Ltd.\ have been used, which
+require the \textsc{albula} software~\cite{albula}. For other detectors and
+for the motor controls other packages are required (Python 3.6.4):
+\begin{lstlisting}
+requests >= 2.18.4
+h5py >= 2.7.1
+click >= 6.7
+numpy >= 1.14.0
+scipy >= 1.0.0
+decorator >= 4.2.1
+pyepics >= 3.3.1
+ipython >= 6.2.1
+\end{lstlisting}
+
+\section{Installation}
+The code is installed on the system's python distribution as a standard
+package
+\begin{lstlisting}
+python setup.py develop
+\end{lstlisting}
+
+\section{Motors}
+The \texttt{controls.motors.Motor} class controls an EPICS motor, through
+its Python interface pyepics. Two methods should be available to the user:
+\begin{itemize}
+    \item \verb|motor.mv(absolute_position, timeout=9999)| moves the motor
+        to the specified absolute position;
+    \item \verb|motor.mvr(relative_position, timeout=9999)| moves the motor
+        to the specified position, relative to the current position.
+\end{itemize}
+
+\section{Detectors}
+A generic detector implements the following methods to control the operation
+of the detector during scans synchronized with motor movements:
+\begin{itemize}
+    \item \verb|detector.__init__(host, port, photon_energy, storage_path)|
+        connect to the detector at the network address \texttt{host:port}.
+        Set an energy threshold \texttt{photon\_energy} (\si{\eV}) and set the
+        output directory for the images to \texttt{storage\_path};
+    \item \verb|detector.arm()| prepares the detector before an exposure;
+    \item \verb|detector.disarm()| hook for post-exposure routines;
+    \item \verb|detector.trigger(exposure_time=1)| send a trigger to the
+        detector for an exposure of \texttt{exposure\_time} seconds;
+    \item \verb|detector.save()| grab all the exposures temporarily stored
+        on the detector memory after each \texttt{trigger} call, and save
+        them to local destination folder \texttt{storage\_path};
+    \item \verb|detector.snap(exposure_time=1)| trigger and save one
+        exposure. It calls \texttt{arm}, \texttt{trigger}, \texttt{disarm} and
+        \texttt{save}.
+\end{itemize}
+
+Calling \texttt{detector.save()} produces a timestamped HDF5 output file inside the
+folder \texttt{storage\_path}. The HDF5 file contains all the images
+recorded so far, in chronological order, as separate datasets.
+
+\section{Command line operation}
+The IPython~\cite{PER-GRA:2007} package allows for the easy programming of
+an enhanced Python interpreter, with the forementioned packages. This
+command line is started with the \texttt{bunker4controls} command, with
+the following arguments:
+
+\begin{itemize}
+    \item the \verb|--storage_path| is used to set the output path for all the images
+of the session;
+    \item the \verb|--threshold| sets the energy threshold of the detector;
+    \item the \verb|-v| flag can be repeated to increase the verbosity
+        level;
+    \item the \verb|--help| flag prints a description of the available command line
+        flags.
+\end{itemize}
+
+This command then launches the \texttt{controls/scripts/cli.py} program,
+initializing all the motors and detectors
+
+\begin{lstlisting}[language=Python]
+import click
+import IPython
+import logging.config
+import logging
+
+import controls.motors
+import controls.eiger
+import controls.remote_detector
+import controls.pilatus
+import controls.hamamatsu_flat_panel
+import controls.comet_tube
+import controls.scans
+import controls.log_config
+
+@click.command()
+@click.option("-v", "--verbose", count=True)
+@click.option("-s", "--storage_path",
+    default="/afs/psi.ch/project/hedpc/raw_data/2016/pilatus/2016.07.19",
+    type=click.Path(exists=True))
+@click.option("-t", "--threshold",
+    default=10000,
+    help="detector threshold energy (eV)")
+def main(verbose, storage_path, threshold):
+    logger = logging.getLogger()
+    logging.config.dictConfig(controls.log_config.get_dict(verbose))
+    g0trx = controls.motors.Motor("X02DA-BNK-HE:G0_TRX", "g0trx")
+    g0try = controls.motors.Motor("X02DA-BNK-HE:G0_TRY", "g0try")
+    g0trz = controls.motors.Motor("X02DA-BNK-HE:G0_TRZ", "g0trz")
+    ...
+    stptrx = controls.motors.Motor("X02DA-BNK-HE:STP_TRX", "stptrx")
+    detector = controls.eiger.Eiger(
+    "129.129.99.112",
+    storage_path=storage_path,
+    photon_energy=threshold)
+    IPython.embed()
+\end{lstlisting}
+
+This launches an enhanced IPython command line that can be used to move all
+the defined motors and detectors. These definitions should be changed in
+\texttt{controls/scripts/cli.py} if necessary.
