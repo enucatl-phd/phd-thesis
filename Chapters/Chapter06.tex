@@ -108,6 +108,16 @@ radial direction away from the center. This cell
 is then repeated across the field of view and the Talbot effect is then used
 to form a self-image of this larger pattern with period $P$.
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/omnidirectional/unit_cell.png}
+    \caption{Beam splitter grating for a low coherence omnidirectional
+    interferometer. An intensity profile consisting of a central maximum
+surrounded by a minimum and then a secondary maximum is produced. Designed
+by Dr. Kagias~\cite{kagias2018omnidir}.}
+    \label{fig:beam-splitter}
+\end{figure}
+
 In order to form this Talbot self-image the coherence requirements of
 section~\ref{sec:coherence} have to be satisfied. With reference to
 figure~\ref{fig:omnidirectional-lab}, the source size has to be
@@ -132,7 +142,9 @@ As in the case of the Talbot interferometer, while this can be achieved in
 normal operating conditions for synchrotron experiments, the required
 coherence is enforced on the laboratory source with a focal spot size of
 \SI{1}{\milli\meter} by introducing an absorption grating \G0, in this case
-a two-dimensional array of pinholes with period $p_0$ and diameter $s$ in a \SI{100}{\micro\meter} tungsten
+a two-dimensional array of pinholes with period $p_0 =
+\SI{455}{\micro\meter}$ and diameter $s = 50-\SI{100}{\micro\meter}$ in a
+\SI{100}{\micro\meter} thick tungsten
 plate. This achieves the required coherence according to
 equation~\eqref{eq:source.size.omnidirectional}, while the interference
 patterns from different sources superimpose constructively if
@@ -144,10 +156,11 @@ where $p_2$ is the magnified period $P$ at the detector plane.
 
 \section{Results}
 For our experiment, the beam splitter grating is a silicon grating with
-period\cn and a thickness of \SI{40}{\micro\meter}, resulting in a phase
-shift of $\pi$ at the energy of \SI{30}{\kilo\eV}. The source is the same as
-in chapter~\ref{ch:lung-dark-field}, an MXR-225/26 X-ray tube operated at
-\SI{60}{\kilo\voltpeak} and \SI{10}{\milli\ampere}.
+period of \SI{2}{\micro\meter} and a thickness of \SI{37}{\micro\meter},
+resulting in a phase shift of $\pi$ at the energy of \SI{30}{\kilo\eV}. The
+unit cell size is $P = \SI{300}{\micro\meter}$. The
+source is the same as in chapter~\ref{ch:lung-dark-field}, an MXR-225/26
+X-ray tube operated at \SI{60}{\kilo\voltpeak} and \SI{10}{\milli\ampere}.
 The geometry satisfies
 \begin{align*}
     L &= \SI{57}{\centi\meter}\\
