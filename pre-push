@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+rake ClassicThesis.pdf
+git add --all
+git commit -m "compiled before pushing"

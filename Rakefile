@@ -8,11 +8,20 @@ CLOBBER.include(FileList["*.pdf"])
 namespace :main do
 
   desc "main pdf"
-  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "gfx:all"] + PICTURES + LATEX_TEXT do |f|
+  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "gfx:all", "main:version"] + PICTURES + LATEX_TEXT do |f|
     sh "pdflatex ClassicThesis"
     sh "biber ClassicThesis"
     sh "pdflatex ClassicThesis"
     sh "pdflatex ClassicThesis"
+  end
+
+  desc "write version file"
+  task "version" do |f|
+    version_string = `git describe --long --dirty="-d" | tr -d '\n'`
+    p version_string
+    File.open "version.tex", "w" do |output|
+      output.write "\\newcommand{\\myVersion}{#{version_string}}"
+    end
   end
 
 end
