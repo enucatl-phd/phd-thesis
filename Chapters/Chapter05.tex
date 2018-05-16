@@ -103,7 +103,7 @@ equation~\eqref{eq:magnification-distance}
 \section{Silicon and cadmium telluride detectors}
 
 The first available detector for two-dimensional radiography experiments is
-an Eiger 1M module by Dectris Ltd\cn. It features a silicon sensor
+an Eiger 1M module by Dectris Ltd~\cite{dectris-eiger, 1748-0221-9-05-C05032}. It features a silicon sensor
 with a thickness of~\SI{450}{\micro\meter} and a pixel size of
 $75\times\SI{75}{\micro\meter\squared}$. The efficiency of this sensor is
 shown in figure~\ref{fig:eiger-efficiency}, and it is clear that it is not
@@ -245,8 +245,9 @@ the subsequent analysis.
     \caption{}
     \label{fig:segmented}
     \end{subfigure}
-    \caption[Reconstruction of a lung microtomography.]{Reconstruction and
-        segmentation of a local microtomography of the sample KO202,
+    \caption[Reconstruction of a lung microtomography.]{Reconstruction
+        (left) and
+        segmentation (right) of a local microtomography of the sample KO202,
         performed at the X02DA TOMCAT beamline.}
 \end{figure}
 
@@ -286,7 +287,6 @@ decay related to the thickness $t$ of the sample: $A = \exp(-\mu_A t)$, $B =
 beneficial to examine the ratio of the logarithms $R$ in
 order to remove the local dependence on the thickness of the sample in the
 radiography:
-
 \begin{align}
     A &= \dfrac{a_{0,s}}{a_{0,f}}\\
     B &= \dfrac{a_{1,s}}{a_{1,f}}\dfrac{a_{0,f}}{a_{0,s}}\\
@@ -308,7 +308,6 @@ Previous works~\cite{Lynch:11,Gkoumas2016} have demonstrated quantitative estima
 the dark-field signal for a monochromatic source and monodisperse solutions
 of micrometer-sized spheres. In particular, the coefficient $\mu_B$, for a
 beam of wavelength $\lambda$ is:
-
 \begin{equation}
 \mu_B = \frac{3\pi}{\lambda^2}f |\Delta n|^2 d
     \begin{cases}
@@ -329,7 +328,6 @@ the fraction of volume occupied by the scattering material and $n = 1 -
 \delta - i\beta$ is the complex refractive index.
 
 We rewrite this formula more concisely as
-
 \begin{equation}
     \mu_B(\energy) = C |\Delta n(\energy)|^2 \energy u(\energy),
     \label{eqn:lynchshort}
@@ -342,7 +340,6 @@ In the case of a polychromatic source, we tested a model where different
 energies interact with the sample independently of each other, thus allowing
 an incoherent sum of the dark-field signals over the spectral weights
 $s(\energy)$:
-
 \begin{equation}
     R = C \frac{\sum_\energy s(\energy)|\Delta n(\energy)|^2 \energy u(\energy)}{\sum_\energy s(\energy) \energy \beta}.
     \label{eqn:lynchpolychromatic}
@@ -365,16 +362,17 @@ function in eq. {\ref{eqn:lynchpolychromatic}}.
 \end{center}
 \end{figure}
 
-A more general approach\cn links this dark-field extinction coefficient
+A more general approach links this dark-field extinction coefficient
 $\mu_d$ with far-field scattering experiments.
-The intensity of the scattered radiation from particles in a solution as a function of momentum transfer $q$ can be written as\cn
+The intensity of the scattered radiation from particles in a solution as a
+function of momentum transfer $q$ can be written as~\cite{PEDERSEN1997171,Gkoumas2016}
 \begin{equation}
     I(q) = f|\Delta n| V P(q) S(q),
     \label{eq:scattering.intensity}
 \end{equation}
 where $V$ is the volume of the particle, $f$ is again the volume fraction
 occupied by the particles, $P(q)$ is the form factor of each particle. For a
-homogeneous sphere of radius $r$ this function is\cn
+homogeneous sphere of radius $r$ this function is~\cite{PEDERSEN1997171}
 \begin{equation}
     P(q) = \left[\frac{3(\sin(qr) - qr\cos(qr))}{qr^3}\right]^2.
     \label{eq:sphere.form.factor}
@@ -387,14 +385,13 @@ becomes more relevant, and will reduce the scattering intensity.
 Once this scattering intensity function is calculated, the extinction
 coefficient can be calculated by taking the Fourier transform of $I$ with respect
 to $q$, and by using the classical electron radius $r_e$:
-
 \begin{equation}
 \mu_B = (2 \pi r_e)^2 [\Fq I(0) - \Fq I(d)].
     \label{eq:autocorrelation}
 \end{equation}
 
-This formula, implemented in a publicly available python
-package\footnote{\url{https://github.com/Enucatl/structure-factors/blob/master/structure_factors/saxs.py}},
+This formula, implemented in a publicly available Python
+package~\cite{scattering-repository}
 is used in all the following calculations, where we used the approximation
 $S(q) = 1$.
 
@@ -433,7 +430,6 @@ the samples, leaving a denser material than in \emph{in vivo} conditions.
 
 The coefficient $\mu_B$ can then be expressed as a double summation over the spectrum
 $s(\energy)$ and over the distribution of sphere diameters $\rho(d)$:
-
 \begin{equation}
     \mu_{B,\text{total}} = \sum_{d}\sum_{\energy} \mu_B(r, E; n, f)\rho(d)s(\energy)
     \label{eqn:totalsum}.
@@ -506,7 +502,7 @@ after the sample.
 \section{Water diffusion in cement: an application to material science}
 One of the applications of grating interferometry to material science is the
 study of diffusion of gas or water through porous materials, such as motor
-catalytic filters or diffusion of water through cement~\cite{feithesis}.
+catalytic filters\cn or diffusion of water through cement~\cite{20.500.11850/268}.
 
 We reproduced this result with the following experiment, where a cement
 cylinder is sealed on the sides and put in contact with a water layer on the
@@ -585,6 +581,9 @@ square root proportionality between the height of the water column and time.
     \includegraphics[width=\textwidth]{gfx/wet-cement/position.png}
     \caption{Height of the water column in a cement cylinder as a function
         of time, measured on $R$ images from the \SI{45}{\kilo\eV} grating
-    interferometer.}
+    interferometer. The blue line is a linear fit according to
+    equation~\eqref{eq:sorptivity}, establishing the proportionality between
+the square root of the elapsed time in the experiment and the height of the
+water column infiltrating a porous material.}
     \label{fig:position}
 \end{figure}
