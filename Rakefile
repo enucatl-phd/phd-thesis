@@ -1,6 +1,6 @@
 require "rake/clean"
 
-LATEX_TEXT = FileList["*.tex, FrontBackmatter/*.tex, Chapters/*.tex"]
+LATEX_TEXT = FileList["*.tex", "FrontBackmatter/*.tex", "Chapters/*.tex"]
 PICTURES = FileList["gfx/*"]
 CLEAN.include(FileList["*.aux", "*.bbl", "*.blg", "*.brf", "*.idx", "*.ilg", "*.ind", "*.log"])
 CLOBBER.include(FileList["*.pdf"])
