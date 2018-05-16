@@ -1,6 +1,6 @@
 \chapter{Towards quantitative evaluations}
 \section{Introduction}
-In the previous sections, the results providing the \emph{first light}
+In the previous chapter, the results providing the \emph{first light}
 through Talbot-Lau interferometers at \SI{160}{\kilo\voltpeak} have been
 shown (figures~\ref{fig:img_chip} and~\ref{fig:screw}). It would therefore
 be appropriate to test if the quantitative studies on the differential phase
@@ -13,9 +13,10 @@ preliminary study to determine if such a goal would be attainable in the
 edge-on and high-energy configuration has been designed.
 
 \section{High efficiency with an edge-on detector}
-This consists of the interferometer with a design energy of
+The setup consisting of the interferometer with a design energy of
 \SI{120}{\kilo\eV} (see table~\ref{tab:gratings}) with a specially modified
-detector from the detector group of the Paul Scherrer Institute. The
+Mythen detector~\cite{SCHMITT2003267} from the detector group of the Paul Scherrer Institute is chosen
+for the purpose. The
 module is a strip detector with 1280 photon counting channels, arranged to
 match the fan beam curvature at a distance of \SI{70}{\centi\meter} from the
 source. The strips are also designed to lie on the beam plane as to achieve
@@ -36,7 +37,7 @@ figure~\ref{fig:mythen-edge-on}). The resolution of the detector is
     \includegraphics[width=\textwidth]{gfx/mythen-edge-on/efficiency.png}
     \caption{}
     \end{subfigure}
-    \caption{A Mythen detector module\cn{mythen} with \SI{2}{\centi\meter} silicon
+    \caption{A Mythen detector module~\cite{SCHMITT2003267} with \SI{2}{\centi\meter} silicon
 strips arranged to match a curved fan beam in the edge-on configuration.
 This large thickness allows to reach a very high efficiency for a silicon
 sensor, without compromising the resolution. The calculated efficiency is above
@@ -68,7 +69,7 @@ figure~\ref{fig:mythen-visibility}.
     detector.]{Visibility histogram and visibility as a function of pixel
         number for the \SI{120}{\kilo\eV} design-energy interferometer with
         a custom silicon sensor matching the wave front curvature attached
-        to a Mythen module\cn.
+        to a Mythen module~\cite{SCHMITT2003267}.
     }
 \end{figure}
 
@@ -101,18 +102,19 @@ phase image.
 
 \begin{figure}[htb]
     \centering
-    \begin{subfigure}[b]{.49\textwidth}
+    \begin{subfigure}[b]{.75\textwidth}
         \includegraphics[width=\textwidth]{gfx/mythen-edge-on/drift_fit.png}
         \caption{}
     \end{subfigure}
-    \begin{subfigure}[b]{.49\textwidth}
+    \begin{subfigure}[b]{.75\textwidth}
         \includegraphics[width=\textwidth]{gfx/mythen-edge-on/drift_pixels.png}
         \caption{}
     \end{subfigure}
     \caption{Drift of the differential phase signal for consecutive scans as
-    a function of the number of scans (left), and on average as a function
-of pixel (right). A linear correction can be applied, and it is
+    a function of the number of scans (top), and on average as a function
+of pixel (bottom). A linear correction can be applied, and it is
 approximately constant across the whole field of view.}
+    \label{fig:phase.drift}
 \end{figure}
 
 \subsection{Testing phase sensitivity}
@@ -138,14 +140,12 @@ the thickness $z$ depends on the position $x$ according to $z = x\tan
 interferometer is not actually sensitive to $\phi$ but to its derivative
 along the direction $x$, perpendicular to the grating lines. This is the
 reason the wedge is an ideal shape for such measurements, since now the
-relationship becomes very simply
-
+relationship becomes simply
 \begin{align}
     \alpha &= -\frac{1}{k}\partial_x\phi = \delta\tan\theta\\
     \delta &= \frac{2 \pi p_2 \tan \theta}{D_1}P,
     \label{eq:measuring.differential.phase}
 \end{align}
-
 where $P$ is the differential phase signal directly as measured with the
 interferometer. With this relationship between the real part of the
 refractive index $\delta$ and the measured differential phase value $P$ we
@@ -264,7 +264,7 @@ the visibility of the interference patterns. It has been
 reported~\cite{PhysRevLett.90.160401} that incoherent scattering of
 particles in a Talbot-Lau interferometer does lead in a loss of visibility
 --- encoded in the dark-field signal --- for a matter wave interferometer of
-fullerene $C_70$ molecules.
+fullerene $C_{70}$ molecules.
 
 \begin{quote}
     "Collisions with gas molecules localize the molecular center-of-mass
@@ -273,7 +273,8 @@ fullerene $C_70$ molecules.
         independently of the separation [of the sample from \(G_1\)]."\cite{PhysRevLett.90.160401}
 \end{quote}
 
-This is shown in figure~\ref{fig:incoherent-scattering-fullerene}. 
+This is also shown in figure~\ref{fig:incoherent-scattering-fullerene},
+reported from~\cite{PhysRevLett.90.160401}. 
 
 \begin{figure}[htb]
     \centering
@@ -286,7 +287,7 @@ interferometer, as shown by the solid line. Reprinted figure with permission
 from Hornberger K, Uttenthaler S, Brezger B, Hackerm\"uller L, Arndt M,
 Zeilinger A, \emph{Collisional Decoherence Observed in Matter Wave
 Interferometry}, Phys. Rev. Lett., 90, 16, 160401, 2003. Copyright 2003 by
-the American Physical Society.}
+the American Physical Society~\cite{PhysRevLett.90.160401}.}
     \label{fig:incoherent-scattering-fullerene}
 \end{figure}
 
@@ -308,8 +309,8 @@ interferometers, namely:
     typical collision."~\cite{PhysRevLett.90.160401}
 \end{quote}
 
-We can show that this is in fact not the case, as a photon typically does
-not enter the detector after a collision. Consider the sketch in
+We can show that this is in fact not the case in our experiments, as a photon typically does
+\emph{not} enter the detector after a collision. Consider the sketch in
 figure~\ref{fig:sketch-compton}.
 
 \begin{figure}[htb]
@@ -343,27 +344,27 @@ approximated with the Klein-Nishina formula~\cite{Klein1929}
 
 \begin{equation}
     \frac{\de \sigma}{\de \cos \alpha} =
-    \frac{\pi\bar{h}^2\alpha_{fs}^2}{m_e^2c^2}\left(
+    \frac{\pi\hslash^2\alpha_{fs}^2}{m_e^2c^2}\left(
     \frac{k^\prime}{k} \right)^2 \left( \frac{k}{k^\prime} +
     \frac{k^\prime}{k} - \sin^2 \alpha\right),
     \label{eq:klein-nishina}
 \end{equation}
 
-where $\bar h$ is the reduced Planck's constant, $c$ is the speed of light,
+where $\hslash$ is the reduced Planck's constant, $c$ is the speed of light,
 $m_e$ is the mass of the electron, $k$ is the momentum of the incident
 photon, $k^\prime$ is the momentum of the emitted photon and
 $\alpha_{fs} = 1/137$ is the fine structure constant. By comparing a plot of
 the scattering intensity as a function of scattering
 angle, figure~\ref{fig:klein-nishina}, it is immediately obvious that the
 distribution of scattering angles is many orders of magnitude above the
-angular acceptance~\eqref{acceptance-angle} of our interferometers.
+angular acceptance~\eqref{eq:acceptance-angle} of our interferometers.
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=.7\textwidth]{gfx/compton/Klein-Nishina_distribution.png}
     \caption{Klein-Nishina differential cross
         section~\eqref{eq:klein-nishina}. Reproduced from the public
-        domain~\url{https://upload.wikimedia.org/wikipedia/commons/0/09/Klein-Nishina_distribution.png}.}
+        domain~\cite{klein-nishina-plot}.}
     \label{fig:klein-nishina}
 \end{figure}
 
