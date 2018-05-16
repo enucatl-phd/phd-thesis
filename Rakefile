@@ -4,11 +4,29 @@ LATEX_TEXT = FileList["*.tex, FrontBackmatter/*.tex, Chapters/*.tex"]
 PICTURES = FileList["gfx/*"]
 CLEAN.include(FileList["*.aux", "*.bbl", "*.blg", "*.brf", "*.idx", "*.ilg", "*.ind", "*.log"])
 CLOBBER.include(FileList["*.pdf"])
+EEPIC = FileList["gfx/*.xp"]
+IMAGES = EEPIC.ext(".eepic") + [
+    "gfx/visibility_visibility_100kev.pgf",
+    "gfx/visibility_S00618.pgf",
+    "gfx/images_S00052.pgf",
+    "gfx/mythen-edge-on/efficiency.png",
+    "gfx/images_S00075_S00071.pgf",
+    "gfx/images_S00613.pgf",
+    "gfx/lynch-vs-saxs/plot.png",
+    "gfx/alignment-rot-x.png",
+    "gfx/delta-beta-comparison/delta-beta-comparison.png",
+    "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png",
+    "gfx/spectrum-visibility/spectrum.png",
+    "gfx/spectrum-visibility/spectrum-100kV.png",
+    "gfx/spectrum-visibility/visibility.png",
+    "gfx/omnidirectional/visibility-omnidirectional.png",
+    "gfx/eiger/efficiency.png",
+  ]
 
 namespace :main do
 
   desc "main pdf"
-  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "gfx:all", "main:version"] + PICTURES + LATEX_TEXT do |f|
+  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib"] + IMAGES + LATEX_TEXT do |f|
     sh "pdflatex ClassicThesis"
     sh "biber ClassicThesis"
     sh "pdflatex ClassicThesis"
@@ -28,7 +46,6 @@ end
 
 namespace :gfx do
 
-  EEPIC = FileList["gfx/*.xp"]
   for picture_filename in EEPIC do
     file picture_filename.ext(".eepic") => picture_filename do |t|
       Dir.chdir("gfx") do
@@ -105,24 +122,7 @@ namespace :gfx do
     sh "python #{f.source} #{f.prerequisites[1]} #{f.name}"
   end
 
-
   desc "all images"
-  task :all => EEPIC.ext(".eepic") + [
-    "gfx/visibility_visibility_100kev.pgf",
-    "gfx/visibility_S00618.pgf",
-    "gfx/images_S00052.pgf",
-    "gfx/mythen-edge-on/efficiency.png",
-    "gfx/images_S00075_S00071.pgf",
-    "gfx/images_S00613.pgf",
-    "gfx/lynch-vs-saxs/plot.png",
-    "gfx/alignment-rot-x.png",
-    "gfx/delta-beta-comparison/delta-beta-comparison.png",
-    "gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png",
-    "gfx/spectrum-visibility/spectrum.png",
-    "gfx/spectrum-visibility/spectrum-100kV.png",
-    "gfx/spectrum-visibility/visibility.png",
-    "gfx/omnidirectional/visibility-omnidirectional.png",
-    "gfx/eiger/efficiency.png",
-  ]
+  task :all => IMAGES
 
 end
