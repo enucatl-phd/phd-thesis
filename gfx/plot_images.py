@@ -44,6 +44,7 @@ def draw(input_file_name, output_file_name, height,
                       cmap=plt.cm.Greys, aspect='auto')
     limits = stats.mstats.mquantiles(differential_phase_image,
                                      prob=[0.02, 0.98])
+    dark_field_image = dark_field_image / absorption_image ** 2
     #limits = (-3, 3)
     img2.set_clim(*limits)
     ax2.axis("off")
@@ -104,9 +105,9 @@ if __name__ == '__main__':
     differential_phase_image_name = "postprocessing/differential_phase"
     visibility_reduction_image_name = "postprocessing/visibility_reduction"
 
-    absorption_image = input_file[absorption_image_name]
-    differential_phase_image = input_file[differential_phase_image_name]
-    visibility_reduction_image = input_file[visibility_reduction_image_name]
+    absorption_image = input_file[absorption_image_name][...]
+    differential_phase_image = input_file[differential_phase_image_name][...]
+    visibility_reduction_image = input_file[visibility_reduction_image_name][...]
 
     draw(input_file_name, args.output[0], height, absorption_image,
          differential_phase_image, visibility_reduction_image,

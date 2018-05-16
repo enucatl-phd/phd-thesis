@@ -14,7 +14,7 @@ Using a low-brilliance X-ray tube, Talbot-Lau interferometry was applied so
 far at $\SI{60}{\kilo\electronvolt}$ design energy~\cite{Donath2009a}.
 Medical imaging applications may benefit from phase contrast at higher
 energies: chest or abdominal radiography or \ac{CT} require an acceleration
-voltage between \num{100} and $\SI{150}{\kilo\voltpeak}$. Other potential
+voltage up to $\SI{150}{\kilo\voltpeak}$. Other potential
 applications are homeland security or chip failure analysis, which require
 high energies for the visualization of materials of high density and atomic
 number.
@@ -25,9 +25,9 @@ absorption gratings. Increasing the energy of the beam requires at the same
 time a smaller period of the gratings and a larger absorption depth to block
 the photons. This leads to thin but long grating lines that are very
 difficult to electroplate homogeneously with enough absorbing metal, since
-transporting the gold powder to the bottom of a deep groove is unreliable.
+transporting the gold powder to the bottom of a deep groove is unreliable\cn.
 The resulting structures are also more fragile and prone to collapsing
-afterwards.
+afterwards\cn.
 
 We will show here that we can realize a one-dimensional interferometer that
 uses a collimated beam and gratings illuminated through one side, as opposed
@@ -37,10 +37,10 @@ to the usual \emph{face-on} two-dimensional geometry.
 \subsection{The edge-on arrangement}\label{sec:edge-on-arrangement}
 Illuminating the gratings from the side, that is in the edge-on
 configuration, removes one of the major hurdles which prevented grating interferometry from
-being applied at high energies so far, namely the fabrication of gratings
+being applied at high energies, namely the fabrication of gratings
 with high aspect ratios. The aspect ratio, given by
 \begin{equation}
-    \text{R} = \frac{2h}{p},
+    r = \frac{2h}{p},
 \end{equation}
 where $p$ is the
 grating period and $h$ the  structure height, is limited by the
@@ -53,27 +53,23 @@ higher aspect ratios. The largest aspect ratios achieved by current
 fabrication techniques~\cite{David2007,Kenntner2010} are around 60.
 For a given setup length the parameter $p$ depends on the design energy
 $\energy$ according to~\eqref{eq:talbot.distance}
-
 \begin{equation}
     \Delta_n = n \frac{p_1^2}{2 \lambda} \qquad \Rightarrow \qquad p \propto 1/\sqrt{\energy}.\label{eq:period.energy}
 \end{equation}
-
 The grating height $h$ has to be proportional to $\energy^3$, in order to
 keep the absorption efficiency constant as in
 equation~\eqref{eq:delta.beta.energy}
-
 \begin{equation}
     \beta \propto Z^3 / k^4 \qquad \Rightarrow \qquad \mu = 2k\beta \propto
     \energy^3
     \label{eq:absorption.energy}
 \end{equation}
-
-As a result, the aspect ratio $\textnormal{r}$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}.
+As a result, the aspect ratio $r$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}.
 
 If at $\energy=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the
-absorption grating around $\textnormal{R}=30$ is sufficient, it would have
+absorption grating around $r=30$ is sufficient, it would have
 to be at least $\num{128}$ for $\energy=\SI{100}{\kilo\eV}$. With our
-design, we reach an aspect ratio of \num{143}, satisfying the above
+design, we reach an aspect ratio of $\num{143}$, satisfying the above
 condition with a transmission of less than \SI{1}{\percent} at
 \SI{100}{\kilo\eV}. As a comparison, a recent interferometer implemented at
 a third generation synchrotron facility~\cite{Willner2013} reported an
@@ -138,8 +134,6 @@ imaging in scanning mode.
 Grating design and fabrication is nonstandard and involves a complex mask
 design, as shown in Fig.~\ref{Fig:grating_mask}. Multiple gratings can
 reside on a silicon chip with their specific structure length and curvature.
-For the current experiments, a symmetric interferometer with a grating
-period of $p = \SI{2.8}{\micro\metre}$ for all gratings has been used.
 
 \subsection{Designing the grating parameters}
 The grating parameters are chosen with the goal of optimizing the
@@ -159,15 +153,18 @@ techniques~\cite{David2007,Kenntner2010}.
 
 For a constant total length $\ell + D_j$ of the interferometer, the factor
 $p_2/D_j$ can be rewritten through~\eqref{eq:p0} in~\eqref{eq:variance}
-\begin{equation*}
+\begin{equation}
     \frac{p_2}{D_j} = \frac{p_0 + p_2}{\ell + D_j}.
-\end{equation*}
+\end{equation}
 The technical challenges for the fabrication of the two absorption gratings
 \G0 and \G2 are obviously the same, therefore the maximum sensitivity is
 achieved for the smallest achievable periods that are the same for both
 gratings.
 
-This is why we chose to realize symmetrical setups with $\ell = D_j'$ and $p_0 = p_1 = p_2$.
+This is why we chose to realize symmetrical setups with $\ell = D_j'$ and
+$p_0 = p_1 = p_2$. For the current experiments, a symmetric interferometer
+with a grating period of $p = \SI{2.8}{\micro\metre}$ for all gratings has
+been used.
 
 The second critical factor in~\eqref{eq:variance} is the visibility~$v$. The
 variance is indeed not necessarily decreased by increasing the distance
@@ -177,15 +174,68 @@ $D_j$ for two reasons:
         $\sigma_{\text{det}}/N$, for
         $N$ counts, is proportional to $1 / \sqrt{N}$, with the inverse
         square relationship $N \propto
-        D_j^{-2}$
+        D_j^{-2}$. This leads to $\sigma_{\text{det}}/N \propto D_j$,
+        therefore a shorter distance should be preferred if possible and for
+        the same sensitivity otherwise;
     \item the width of the spectrum positively contributing to the
         interference pattern decreases with distance according
         to~\eqref{eq:acceptance}. A theoretical maximum\cn of
         \SI{26}{\percent} for the first order $j = 1$ is reduced to
         $\SI{10}{\percent}$ for $j = 5$.
 \end{aenumerate}
-For this reason all interferometers are designed for the first Lohmann
-distance $D_1 = p_1^2 / 8 \lambda$.
+The maximum visibility of the interference pattern can be theoretically
+estimated according to the formula from~\cite{Thuering20130027} for the visibility as a function
+of energy $\energy$ with a $\pi$ shift in the phase grating, a design energy
+$\energy_0$ and a Lohmann order $j$:
+\begin{equation}
+            v(\energy) = \frac{2}{\pi} \left\lvert \sin^2
+            \Big(\frac{\pi}{2}\frac{\energy_0}{\energy}\Big) 
+            \sin
+            \Big(\frac{j\pi}{2}\frac{\energy_0}{\energy}\Big) 
+            \right\rvert.
+    \label{eq:visibility.energy}
+\end{equation}
+
+This formula indicates how energies different from the design energy of the
+interferometer contribute to the visibility of the interference pattern. The
+spectrum of the source simulated with the SpekCalc sofware~\cite{spekcalc}
+and equation~\eqref{eq:visibility.energy} are shown in
+figure~\ref{fig:visibility.energy}.
+
+\begin{figure}[htb]
+    \centering
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/spectrum.png}
+    \caption{}
+    \label{fig:spectrum}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/visibility.png}
+    \caption{}
+    \label{fig:visibility}
+    \end{subfigure}
+    \caption[Spectrum and theoretical visibility of the \SI{100}{\kilo\eV}
+    interferometer.]{Spectrum of the source~\ref{fig:spectrum} at \SI{160}{\kilo\voltpeak}
+simulated with the SpekCalc software~\cite{spekcalc}. Visibility as a
+function of energy~\cite{Thuering20130027} for a design energy of \SI{100}{\kilo\eV} at the first
+Lohmann distance, calculated according to
+equation~\ref{eq:visibility.energy}.}
+    \label{fig:visibility.energy}
+\end{figure}
+
+Running the calculation for our case with the spectral weights $w(\energy)$ shown in
+figure~\ref{fig:spectrum} and by summing each contribution to the total
+visibility we obtain a theoretical maximum of
+\begin{equation}
+    v_{theory} = \sum_\energy w(\energy)v(\energy) = 0.26.
+    \label{eq:maximum.visibility}
+\end{equation}
+For these reasons all interferometers are designed for the first Lohmann
+distance $D_1 = p_1^2 / 8 \lambda$~\cite{Weitkamp2005}, resulting in an
+intergrating distance of $\SI{158}{\milli\metre}$
 
 The design energy is $\SI{100}{\kilo\electronvolt}$ and the beam splitter
 grating periodically shifts the phase by zero and $\pi$ at this
@@ -196,9 +246,7 @@ for sensing slight changes of the interference pattern generated by the beam
 splitter~\cite{Momose2003a}. With a structure length of $h_2 =
 \SI{800}{\micro \metre}$
 it can absorb more than \SI{90}{\percent} of the incoming X-rays up to energies of 
-$\SI{160}{\kilo\electronvolt}$. The beam splitter and analyzer grating are
-separated at the first fractional Talbot order~\cite{Weitkamp2005},
-resulting in an intergrating distance of $\SI{158}{\milli\metre}$. However,
+$\SI{160}{\kilo\electronvolt}$. However,
 the precise position of the analyzer grating along the beam axis is not
 critical, and a change in visibility of less than \SI{1}{\percent} is
 observed by displacing it by as much as \SI{5}{\milli\metre}. The
@@ -210,8 +258,9 @@ with a length of $h_0 = h_2 = \SI{800}{\micro \metre}$.
 A second setup has also been realized, for a design energy of
 \SI{120}{\kilo\eV} with similar performance. All gratings are plated with
 gold, with the exception of \G1 for the \SI{120}{\kilo\eV}
-design energy, with a period of~\SI{2.8}{\micro\metre}, and an extension in
-the vertical $y$ direction of~\SI{100}{\micro\metre}. The 
+design energy, plated with nickel. The periods are equal
+to~\SI{2.8}{\micro\metre}, and the extension in
+the vertical $y$ direction is~\SI{100}{\micro\metre}. The 
 duty cycle is 0.5. The parameters are summarized in
 table~\ref{tab:gratings}.
 
@@ -264,8 +313,9 @@ figures that were effectively obtained in our experiments.
 The alignment protocol is more complex and time consuming than for a
 two-dimensional grating interferometer since it is impossible to rely on
 two-dimensional Moir\'e patterns as a guidance and it is necessary to scan
-each grating on the collimated beam in order to understand its position.
+each grating on the collimated beam in order to retrieve its current position.
 The alignment steps are as follows:
+
 \begin{enumerate}
     \item manual setting of the $z$ position of the gratings;
     \item alignment of the translation along $x$, with a previously
@@ -327,7 +377,8 @@ The alignment steps are as follows:
 
 \section{Performance}
 The visibility of the systems, that is the ratio of the amplitude to the
-mean value of the phase stepping curve, has an inverse proportionality with the
+mean value of the phase stepping curve
+(equation~\ref{eq:visibility-definition}) , has an inverse proportionality with the
 standard deviation of the refraction angle, according
 to~\eqref{eq:variance}, and it is therefore the fundamental parameter to
 characterize the performance of the experiment. It is unfortunately affected
@@ -398,57 +449,6 @@ figure~\ref{fig:visibility100} and~\ref{fig:visibility120}, between \num{5} and
         $\times$ \num{24} phase steps.}
 \end{figure}
 
-The maximum visibility of the interference pattern can be theoretically
-estimated according to the formula from~\cite{Thuering20130027} for the visibility as a function
-of energy $\energy$ with a $\pi$ shift in the phase grating, a design energy
-$\energy_0$ and a Lohmann order $j$:
-\begin{equation}
-            v(\energy) = \frac{2}{\pi} \left\lvert \sin^2
-            \Big(\frac{\pi}{2}\frac{\energy_0}{\energy}\Big) 
-            \sin
-            \Big(\frac{j\pi}{2}\frac{\energy_0}{\energy}\Big) 
-            \right\rvert.
-    \label{eq:visibility.energy}
-\end{equation}
-
-This formula indicates how energies different from the design energy of the
-interferometer contribute to the visibility of the interference pattern. The
-spectrum of the source simulated with the SpekCalc sofware~\cite{spekcalc}
-and equation~\eqref{eq:visibility.energy} are shown in
-figure~\ref{fig:visibility.energy}.
-
-\begin{figure}[htb]
-    \centering
-    \begin{subfigure}[b]{.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/spectrum.png}
-    \caption{}
-    \label{fig:spectrum}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{.49\textwidth}
-    \centering
-    \includegraphics[width=\textwidth]{gfx/spectrum-visibility/visibility.png}
-    \caption{}
-    \label{fig:visibility}
-    \end{subfigure}
-    \caption[Spectrum and theoretical visibility of the \SI{100}{\kilo\eV}
-    interferometer.]{Spectrum of the source~\ref{fig:spectrum} at \SI{160}{\kilo\voltpeak}
-simulated with the SpekCalc software~\cite{spekcalc}. Visibility as a
-function of energy for a design energy of \SI{100}{\kilo\eV} at the first
-Lohmann distance, calculated according to
-equation~\ref{eq:visibility.energy} from~\cite{Thuering20130027}.}
-    \label{fig:visibility.energy}
-\end{figure}
-
-Running the calculation for our case with the spectral weights $w(\energy)$ shown in
-figure~\ref{fig:spectrum} and by summing each contribution to the total
-visibility we obtain a theoretical maximum of
-
-\begin{equation}
-    v_{theory} = \sum_\energy w(\energy)v(\energy) = 0.26.
-    \label{eq:maximum.visibility}
-\end{equation}
 
 The achieved values are much lower, around \SI{5}{\percent}, but it is clear
 that there is the chance to at least double or triple this value as more
@@ -552,9 +552,9 @@ identify flaws in multilayered structures such as electronic chips.
 Figure~\ref{fig:screw} shows a scan with \num{100} lines over
 \SI{1}{\centi\metre} of a zinc screw
 with \num{24} phase steps and \SI{15}{\second} exposure time.
-The edge-enhancement effects of the differential phase signal are
+The contrast-enhancement effects of the differential phase signal are
 particularly visible at the edges, where the
-derivative~\eqref{eq:refraction.angle} is a maximum.
+derivative~\eqref{eq:refraction.angle} is maximum.
 
 \begin{figure}[hbt]
     \centering
