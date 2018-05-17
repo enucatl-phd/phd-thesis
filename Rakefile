@@ -66,7 +66,7 @@ namespace :main do
     end
     unless system("git describe --exact-match HEAD")
       #create tag if it doesnt exist
-      automatic_tag_name = `git describe --long`
+      automatic_tag_name = `git describe --long | tr -d '\n'`
       sh "git tag -a #{automatic_tag_name} -m 'automatic tag by rake main:publish'"
     end
     tag_name = `git describe --exact-match HEAD`
