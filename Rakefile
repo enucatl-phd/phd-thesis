@@ -35,7 +35,7 @@ namespace :main do
 
   desc "write version text"
   task "version" do |f|
-    version_string = `git describe --abbrev=6 | tr -d '\n'`
+    version_string = `git describe --tags | tr -d '\n'`
     current_version_string = `cat version.txt`
     if version_string != current_version_string
       File.open "version.txt", "w" do |output|
@@ -67,14 +67,14 @@ namespace :main do
     unless system("git describe --exact-match HEAD")
       #create tag if it doesnt exist
       automatic_tag_name = `git describe --long | tr -d '\n'`
-      sh "git tag -a #{automatic_tag_name} -m 'automatic tag by rake main:publish'"
+      sh "git tag #{automatic_tag_name} -m 'automatic tag by rake main:publish'"
     end
-    tag_name = `git describe --exact-match HEAD`
+    tag_name = `git describe --tags | tr -d '\n'`
     sh "git push"
     sh "git push --tags"
     Rake::Task["ClassicThesis.pdf"].invoke
     token = `cat ~/github_token`
-    sh "upload_release.py --owner Enucatl --repo phd-thesis --tag #{tag_name} --token #{token} ClassicThesis.pdf"
+    sh "upload-release.py -vvv --owner Enucatl --repo phd-thesis --tag #{tag_name} --token #{token} ClassicThesis.pdf"
   end
 
 end
