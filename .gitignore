@@ -1,5 +1,5 @@
 # by default ignore top-level pdf
-#/*.pdf
+/*.pdf
 
 # some typical editor bak files
 *~
