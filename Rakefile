@@ -64,9 +64,9 @@ namespace :main do
     unless clean_check.empty?
       abort "uncommitted changes, cannot publish"
     end
-    unless system("git describe --exact-match HEAD")
+    unless system("git describe --exact-match --tags HEAD")
       #create tag if it doesnt exist
-      automatic_tag_name = `git describe --long | tr -d '\n'`
+      automatic_tag_name = `git describe | tr -d '\n'`
       sh "git tag #{automatic_tag_name}"
     end
     tag_name = `git describe --tags | tr -d '\n'`
