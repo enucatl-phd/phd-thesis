@@ -73,7 +73,7 @@ namespace :main do
     sh "git push"
     sh "git push --tags"
     Rake::Task["ClassicThesis.pdf"].invoke
-    token = `cat ~/github_token`
+    token = `cat ~/github_token | tr -d '\n'`
     sh "upload-release.py -vvv --owner Enucatl --repo phd-thesis --tag #{tag_name} --token #{token} ClassicThesis.pdf"
   end
 
