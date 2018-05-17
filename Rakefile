@@ -35,7 +35,7 @@ namespace :main do
 
   desc "write version text"
   task "version" do |f|
-    version_string = `git describe --long --always --dirty="-d" | tr -d '\n'`
+    version_string = `git describe --abbrev=6 | tr -d '\n'`
     current_version_string = `cat version.txt`
     if version_string != current_version_string
       File.open "version.txt", "w" do |output|
@@ -56,6 +56,25 @@ namespace :main do
         output.write output_string
       end
     end
+  end
+
+  desc "publish compiled version to github"
+  task "publish" do |f|
+    clean_check = `git status --porcelain`
+    unless clean_check.empty?
+      abort "uncommitted changes, cannot publish"
+    end
+    unless system("git describe --exact-match HEAD")
+      #create tag if it doesnt exist
+      automatic_tag_name = `git describe --long`
+      sh "git tag -a #{automatic_tag_name} -m 'automatic tag by rake main:publish'"
+    end
+    tag_name = `git describe --exact-match HEAD`
+    sh "git push"
+    sh "git push --tags"
+    Rake::Task["ClassicThesis.pdf"].invoke
+    token = `cat ~/github_token`
+    sh "upload_release.py --owner Enucatl --repo phd-thesis --tag #{tag_name} --token #{token} ClassicThesis.pdf"
   end
 
 end
