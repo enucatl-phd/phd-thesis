@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-rake main:version
-rake ClassicThesis.pdf
