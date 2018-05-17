@@ -26,19 +26,35 @@ IMAGES = EEPIC.ext(".eepic") + [
 namespace :main do
 
   desc "main pdf"
-  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib"] + IMAGES + LATEX_TEXT do |f|
+  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "version.tex"] + IMAGES + LATEX_TEXT do |f|
     sh "pdflatex ClassicThesis"
     sh "biber ClassicThesis"
     sh "pdflatex ClassicThesis"
     sh "pdflatex ClassicThesis"
   end
 
-  desc "write version file"
+  desc "write version text"
   task "version" do |f|
-    version_string = `git describe --long --dirty="-d" | tr -d '\n'`
-    p version_string
-    File.open "version.tex", "w" do |output|
-      output.write "\\newcommand{\\myVersion}{#{version_string}}"
+    version_string = `git describe --long --always --dirty="-d" | tr -d '\n'`
+    current_version_string = `cat version.txt`
+    if version_string != current_version_string
+      File.open "version.txt", "w" do |output|
+        p "writing version #{version_string}"
+        output.write version_string
+      end
+    end
+  end
+
+  desc "write version file"
+  file "version.tex" => "main:version" do |f|
+    version_string = `cat version.txt`
+    current_version_string = `cat #{f.name}`
+    output_string = "\\newcommand{\\myVersion}{#{version_string}}"
+    if output_string != current_version_string
+      File.open f.name, "w" do |output|
+        p "writing version #{version_string}"
+        output.write output_string
+      end
     end
   end
 

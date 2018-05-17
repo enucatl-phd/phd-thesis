@@ -1,6 +1,7 @@
 # by default ignore top-level pdf
 /*.pdf
 version.tex
+version.txt
 
 # some typical editor bak files
 *~
