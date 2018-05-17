@@ -67,13 +67,13 @@ namespace :main do
     unless system("git describe --exact-match HEAD")
       #create tag if it doesnt exist
       automatic_tag_name = `git describe --long | tr -d '\n'`
-      sh "git tag #{automatic_tag_name} -m 'automatic tag by rake main:publish'"
+      sh "git tag #{automatic_tag_name}"
     end
     tag_name = `git describe --tags | tr -d '\n'`
     sh "git push"
     sh "git push --tags"
     Rake::Task["ClassicThesis.pdf"].invoke
-    token = `cat ~/github_token`
+    token = `cat ~/github_token | tr -d '\n'`
     sh "upload-release.py -vvv --owner Enucatl --repo phd-thesis --tag #{tag_name} --token #{token} ClassicThesis.pdf"
   end
 
