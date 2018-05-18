@@ -21,6 +21,7 @@ IMAGES = EEPIC.ext(".eepic") + [
     "gfx/spectrum-visibility/visibility.png",
     "gfx/omnidirectional/visibility-omnidirectional.png",
     "gfx/eiger/efficiency.png",
+    "gfx/mythen-edge-on/g1roty.png",
   ]
 
 namespace :main do
@@ -131,6 +132,10 @@ namespace :gfx do
 
   file "gfx/spectrum-visibility/spectrum.png" => ["gfx/spectrum-visibility/spectrum.R", "gfx/spectrum-visibility/12-full-spectrum.csv"] do |f|
     sh "./#{f.source} #{f.prerequisites[1]} #{f.name}"
+  end
+
+  file "gfx/mythen-edge-on/g1roty.png" => ["gfx/image_series.py", "#{ENV["HOME"]}/afsproject_backup/raw_data/2015/mythen/2015.03.03/S00000-00999/S00117.hdf5"] do |f|
+    sh "python #{f.source} --min_x 600 --max_x 1000 #{f.prerequisites[1]} #{f.name}"
   end
 
   file "gfx/mythen-edge-on/efficiency.png" => ["gfx/mythen-edge-on/plot_efficiency.R", "gfx/mythen-edge-on/efficiency.csv"] do |f|
