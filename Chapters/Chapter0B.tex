@@ -126,3 +126,39 @@ def main(verbose, storage_path, threshold):
 This launches an enhanced IPython command line that can be used to move all
 the defined motors and detectors. These definitions should be changed in
 \texttt{controls/scripts/cli.py} if necessary.
+
+\section{Scanning procedures}
+Scanning procedures are defined in \texttt{controls/scans.py} in order to
+coordinate motor movements with detector triggers. The two main functions are
+\texttt{dscan} and
+\texttt{phase\_stepping\_scan}.
+
+\begin{lstlisting}[language=Python]
+def dscan(detector, motor, begin, end, intervals, exposure_time=1)
+\end{lstlisting}
+this function moves \texttt{motor} from the relative position \texttt{begin}
+to \texttt{end} in \texttt{intervals} intervals, calling a
+\texttt{detector.trigger(exposure\_time)} at each motor position. It returns
+the \texttt{motor} to the original position after the sca to the original
+position after the scan.
+A single HDF5 output file is saved with one dataset per detector exposure
+inside.
+
+
+\begin{lstlisting}[language=Python]
+def phase_stepping_scan(
+        detector, motor, begin, end, intervals,
+        phase_stepping_motor, phase_stepping_begin, phase_stepping_end,
+        phase_steps, exposure_time=1)
+\end{lstlisting}
+this function moves \texttt{motor} from the relative position \texttt{begin}
+to \texttt{end} in \texttt{intervals}, then runs a phase stepping scan at
+each \texttt{motor} position. The phase stepping scan runs from
+\texttt{phase\_stepping\_begin} to
+\texttt{phase\_stepping\_end} (relative), by moving
+\texttt{phase\_stepping\_motor} with 
+\texttt{phase\_steps}. A \texttt{detector.trigger(exposure\_time)} is called
+at each phase step.
+All motors are returned to their original positions after the scan.
+A single HDF5 output file is saved with one dataset per detector exposure
+inside.
