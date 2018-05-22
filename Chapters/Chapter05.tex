@@ -4,23 +4,23 @@ M, \emph{Quantitative lung microstructure mapping with X-ray dark-field grating 
 \section{Introduction}\label{sec:introduction}
 X-ray grating interferometry has been developed over the course of the last
   fifteen years on both synchrotron and laboratory
-sources~\cite{David_2002,1347-4065-42-7B-L866,Weitkamp_2005,1347-4065-45-6R-5254,Pfeiffer2006}.
+sources~\parencite{David_2002,1347-4065-42-7B-L866,Weitkamp_2005,1347-4065-45-6R-5254,Pfeiffer2006}.
 Interferometric imaging allows simultaneous access to three independent
 images: the conventional absorption image, a differential phase signal and a
 dark-field signal, also known as visibility contrast. This last signal has
 been reported by multiple sources as being quantitatively linked to the
 presence of unresolved structures in the sample, much smaller than the pixel
 size of the detector, and typically of the order of the
-micrometer~\cite{Pfeiffer2008,Lynch:11,Yashiro:10}. Various clinically
-relevant applications~\cite{Wen_2009,Thilo2013} have been
-proposed, including lung microstructural analyses~\cite{Schleede17880,Meinel_2014,Meinel_2013,Yaroshenko_2013}.
+micrometer~\parencite{Pfeiffer2008,Lynch:11,Yashiro:10}. Various clinically
+relevant applications~\parencite{Wen_2009,Thilo2013} have been
+proposed, including lung microstructural analyses~\parencite{Schleede17880,Meinel_2014,Meinel_2013,Yaroshenko_2013}.
 
 In particular, emphysema is a pathological condition of the lung
 resulting in structural changes in the alveoli, that is at the smallest
 hierarchical level in the tissue. These changes are caused by the
 destruction of interalveolar septa, with larger air spaces progressively
 replacing the fine architecture of the lung
-parenchyma~\cite{Sharafkhaneh_2008}. These larger spaces have a less
+parenchyma~\parencite{Sharafkhaneh_2008}. These larger spaces have a less
 favorable surface-to-volume ratio, thus lowering the efficiency
 of respiratory exchanges. Absorption radiography proved to be accurate in
 diagnosing emphysema only in the advanced stages of the disease. 
@@ -66,13 +66,13 @@ still relevant, however, and a minimum thickness of \SI{100}{\micro\meter}
 is required, as this equals one attenuation length for gold at \SI{100}{\kilo\eV}.
 This is a thickness sufficient to reduce the intensity of the incoming beam
 by a factor of $\exp(-1)$. Fabrication
-techniques~\cite{David2007,Kenntner2010} can achieve aspect ratios below
+techniques~\parencite{David2007,Kenntner2010} can achieve aspect ratios below
 \num{60}, it was chosen to specify a period of \SI{5.4}{\micro\meter}. This
 translates to an aspect ratio of \num{40}.
 
 Given the relatively strong transmission through the grating lines at higher
 energies, the source voltage is limited to~\SI{100}{\kilo\voltpeak}. The
-spectrum, simulated with the SpekCalc software~\cite{spekcalc} is shown in
+spectrum, simulated with the SpekCalc software~\parencite{spekcalc} is shown in
 figure~\ref{fig:spectrum-100kV}.
 
 \begin{figure}[htb]
@@ -80,7 +80,7 @@ figure~\ref{fig:spectrum-100kV}.
     \includegraphics[width=\textwidth]{gfx/spectrum-visibility/spectrum-100kV.png}
     \caption{Spectrum of the laboratory source with an acceleration voltage of
         \SI{100}{\kilo\volt}. Simulated with the SpekCalc
-        software~\cite{spekcalc}.}
+        software~\parencite{spekcalc}.}
     \label{fig:spectrum-100kV}
 \end{figure}
 
@@ -103,7 +103,7 @@ equation~\eqref{eq:magnification-distance}
 \section{Silicon and cadmium telluride detectors}
 
 The first available detector for two-dimensional radiography experiments is
-an Eiger 1M module by Dectris Ltd~\cite{dectris-eiger, 1748-0221-9-05-C05032}. It features a silicon sensor
+an Eiger 1M module by Dectris Ltd~\parencite{dectris-eiger, 1748-0221-9-05-C05032}. It features a silicon sensor
 with a thickness of~\SI{450}{\micro\meter} and a pixel size of
 $75\times\SI{75}{\micro\meter\squared}$. The efficiency of this sensor is
 shown in figure~\ref{fig:eiger-efficiency}, and it is clear that it is not
@@ -217,11 +217,11 @@ the Talbot-Lau interferometer on the same area.}
 
 \subsection{Processing of the tomographic data}\label{sec:tomoprocessing}
 The tomographic sinograms are preprocessed with the Paganin
-algorithm~\cite{Paganin_2002} and
+algorithm~\parencite{Paganin_2002} and
 the 3D volume is then reconstructed with the gridrec
-algorithm~\cite{Marone:pp5022}. The volumes, shown in
+algorithm~\parencite{Marone:pp5022}. The volumes, shown in
 figure~\ref{fig:reconstructed} are then thresholded with the Otsu
-algorithm~\cite{Otsu_1979}, with independent thresholds for each slice, to
+algorithm~\parencite{Otsu_1979}, with independent thresholds for each slice, to
 provide a binary labelling for tissue and air. A cycle of
 erosion and dilation is applied to remove single pixel artifacts while still
 keeping the septa between neighboring alveoli (figure~\ref{fig:segmented}).
@@ -254,7 +254,7 @@ the subsequent analysis.
 Next, each lung sample is manually stitched from three or four local
 tomographies (figure~\ref{fig:stitched}), depending on the sample thickness, and the local air thickness
 map is calculated. The local thickness map is an algorithm developed for
-bone analysis or foam analysis in material science~\cite{6778077}, that aims
+bone analysis or foam analysis in material science~\parencite{6778077}, that aims
 at calculating the maximum diameter of a sphere fitting in each hole in the
 sample.
 
@@ -275,7 +275,7 @@ sphere, resulting in a model where the lung airways are a collection of
 spheres embedded in the background of the tissue.
 
 To obtain a distribution of sphere sizes, kernel density estimation in the R
-statistics package \emph{ks}~\cite{JSSv021i07} is used in order to avoid possible artifacts
+statistics package \emph{ks}~\parencite{JSSv021i07} is used in order to avoid possible artifacts
 resulting from the arbitrary binning of the histogram of sphere sizes.
 
 \subsection{Processing of the radiographic data}\label{sec:radioprocessing}
@@ -304,7 +304,7 @@ source. Sample labelled WT256.
 \end{figure}
 
 \section{Modelling the polychromatic dark-field signal}\label{sec:model}
-Previous works~\cite{Lynch:11,Gkoumas2016} have demonstrated quantitative estimation of
+Previous works~\parencite{Lynch:11,Gkoumas2016} have demonstrated quantitative estimation of
 the dark-field signal for a monochromatic source and monodisperse solutions
 of micrometer-sized spheres. In particular, the coefficient $\mu_B$, for a
 beam of wavelength $\lambda$ is:
@@ -365,14 +365,14 @@ function in eq. {\ref{eqn:lynchpolychromatic}}.
 A more general approach links this dark-field extinction coefficient
 $\mu_d$ with far-field scattering experiments.
 The intensity of the scattered radiation from particles in a solution as a
-function of momentum transfer $q$ can be written as~\cite{PEDERSEN1997171,Gkoumas2016}
+function of momentum transfer $q$ can be written as~\parencite{PEDERSEN1997171,Gkoumas2016}
 \begin{equation}
     I(q) = f|\Delta n| V P(q) S(q),
     \label{eq:scattering.intensity}
 \end{equation}
 where $V$ is the volume of the particle, $f$ is again the volume fraction
 occupied by the particles, $P(q)$ is the form factor of each particle. For a
-homogeneous sphere of radius $r$ this function is~\cite{PEDERSEN1997171}
+homogeneous sphere of radius $r$ this function is~\parencite{PEDERSEN1997171}
 \begin{equation}
     P(q) = \left[\frac{3(\sin(qr) - qr\cos(qr))}{qr^3}\right]^2.
     \label{eq:sphere.form.factor}
@@ -391,7 +391,7 @@ to $q$, and by using the classical electron radius $r_e$:
 \end{equation}
 
 This formula, implemented in a publicly available Python
-package~\cite{scattering-repository}
+package~\parencite{scattering-repository}
 is used in all the following calculations, where we used the approximation
 $S(q) = 1$.
 
@@ -414,8 +414,8 @@ extinction coefficients. The two methods are equivalent.}
 
 A model of the sample is required to calculate the spectral weights
 $s(\energy)$ in order to avoid beam hardening artefacts. The source spectrum is
-simulated with the SpekCalc~\cite{spekcalc} software, then attenuated
-according to NIST absorption tables~\cite{Hubbell_1995} for the sample in the beam path and the
+simulated with the SpekCalc~\parencite{spekcalc} software, then attenuated
+according to NIST absorption tables~\parencite{Hubbell_1995} for the sample in the beam path and the
 efficiency of the detector.
 
 In this work, we propose to model the lung sample as a solution of
@@ -423,7 +423,7 @@ polydisperse spherical air bubbles embedded in tissue. The distribution of
 the sphere diameters is extracted from the microtomographic data, together
 with the fraction of the volume occupied by the tissue. The density of the
 tissue is also estimated from tomographic projections: the composition is
-taken from the ICRU-44 lung tissue tables~\cite{White_1989}, while the density is increased to
+taken from the ICRU-44 lung tissue tables~\parencite{White_1989}, while the density is increased to
 1.6 g/cm$^3$ as to match the absorption values recorded on the tomographic
 projections. This results from the drying procedure for the fixation of
 the samples, leaving a denser material than in \emph{in vivo} conditions.
@@ -475,7 +475,7 @@ different distribution of shapes in the lung parenchyma, or additional
 effects of beam hardening which are known to influence the dark-field
 signal. In order to consider the effects of possible shape asymmetries, a
 single mouse lung sample was scanned at the X02DA TOMCAT beamline with the
-setup described in Kagias et al.~\cite{PhysRevLett.116.093902}. This
+setup described in Kagias et al.~\parencite{PhysRevLett.116.093902}. This
 technique is similar to Talbot interferometry, but it is able to detect
 scattering from unresolved microscopic structures under different angles in
 a single shot by
@@ -502,7 +502,7 @@ after the sample.
 \section{Water diffusion in cement: an application to material science}
 One of the applications of grating interferometry to material science is the
 study of diffusion of gas or water through porous materials, such as motor
-catalytic filters\cn or diffusion of water through cement~\cite{20.500.11850/268}.
+catalytic filters\cn or diffusion of water through cement~\parencite{20.500.11850/268}.
 
 We reproduced this result with the following experiment, where a cement
 cylinder is sealed on the sides and put in contact with a water layer on the

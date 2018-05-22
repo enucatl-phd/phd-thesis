@@ -7,19 +7,19 @@
 This appendix reports the technical structure and provides a manual for the
 use of the code reconstructing the imaging signals of the grating
 interferometer. The calculations are run with the TensorFlow
-framework~\cite{tensorflow2015-whitepaper}.
+framework~\parencite{tensorflow2015-whitepaper}.
 TensorFlow, the TensorFlow logo and any related marks are trademarks of
 Google Inc.
 
 The documentation refers to version \texttt{07afdb}, published on 
-\href{https://github.com/Enucatl/dpc_reconstruction/tree/420ed0e17fa827c710df1d25b96dc02a45ff0488}{GitHub}~\cite{dpc_reconstruction}.
+\href{https://github.com/Enucatl/dpc_reconstruction/tree/420ed0e17fa827c710df1d25b96dc02a45ff0488}{GitHub}~\parencite{dpc_reconstruction}.
 
 \section{Goals}
 This code takes the raw data with the phase stepping curves from the
 detector as input (see section~\ref{sec:gi-image-analysis}) and produces the
 three characteristic signals of grating interferometry as output:
 transmission, differential phase and dark field.
-Both inputs and outputs use the HDF5 file format~\cite{hdf5}.
+Both inputs and outputs use the HDF5 file format~\parencite{hdf5}.
 
 \section{Prerequisites}
 The following libraries and headers should be installed:
@@ -28,7 +28,7 @@ libpng, freetype, readline, bzip2, sqlite and hdf5. On Scientific Linux 6 this c
     su -c 'yum install {libpng,freetype,readline,bzip2,sqlite,hdf5}-devel'
 \end{lstlisting}
 Additionally, these python packages are required, tested on Python
-3.6.4~\cite{python}
+3.6.4~\parencite{python}
 \begin{lstlisting}
 h5py >= 2.7.1
 numpy >= 1.14.0
@@ -37,7 +37,7 @@ tensorflow >= 1.6
 \end{lstlisting}
 
 \section{Installation}
-A custom extension is added in C++~\cite{Stroustrup:2013:CPL:2543987} to
+A custom extension is added in C++~\parencite{Stroustrup:2013:CPL:2543987} to
 retrieve the differential phase signal. After the prerequisites are
 installed, the complete package can be compiled and installed simply with
 

@@ -1,18 +1,18 @@
 %*****************************************
 \chapter{Review of Talbot-Lau interferometry}\label{ch:review}
-This chapter follows the review of Talbot-Lau interferometry given in~\cite{galitesina}.
+This chapter follows the review of Talbot-Lau interferometry given in~\parencite{galitesina}.
 
 \section{X-ray interaction with matter}
 Immediately after their discovery in 1895, X-rays drew attention from the
 medical community for their unprecedented ability of generating an image of
-hidden part of a sample. What makes this kind of electromagnetic radiation
+the hidden part of a sample. What makes this kind of electromagnetic radiation
 particularly useful as a probe is the fact that it interacts with matter
 just strongly enough to carry information about the materials it passes
 through, yet weakly enough to penetrate the entire volume.
 
 In order to reconstruct some physical properties of a sample through the
 observation of its interaction with X-rays, it is possible to introduce a
-sequence of approximations to Maxwell's equations in a medium~\cite{jackson_classical_1999, Paganin2006b}:
+sequence of approximations to Maxwell's equations in a medium~\parencite{jackson_classical_1999, Paganin2006b}:
 \begin{align}
     \nabla \cdot \vec{D} &= \rho \label{eq:gauss-original}\\
     \nabla \cdot \vec{B} &= 0 \label{eq:nomonopoles-original}\\
@@ -110,7 +110,7 @@ c\sqrt{\varepsilon_\omega\mu_0}$:
 
 The fact that the interaction of X-rays with matter is both strong enough to
 be a meaningful probe of physical properties and weak enough to penetrate an
-entire macroscopical can be precisely expressed by the following
+entire macroscopical object can be precisely expressed by the following
 \emph{ansatz} to the solution of equation~\eqref{eq:helmoltz.fourier}:
     \begin{equation*}
  \psi(\omega, x, y, z) = \tilde{\psi}(\omega, x, y, z) \exp(ikz),    
@@ -199,7 +199,7 @@ expected database value is required for a comparison with a measured
 value in our experiments.
 
 Far from absorption edges, these coefficients depend on the atomic number
-$Z$ roughly as~\cite{knoll2000radiation,Momose2005}
+$Z$ roughly as~\parencite{knoll2000radiation,Momose2005}
 
 \begin{align}
     \beta &\propto Z^3 / k^4\\
@@ -249,7 +249,7 @@ which will be our focus.
 \subsection{Propagation-based phase contrast}
 Techniques based on free-space propagation of X-rays have been widely
 explored on both monochromatic and polychromatic sources. If a weakly
-absorbing object si placed at a distance $R_1$ from a coherent X-ray source,
+absorbing object is placed at a distance $R_1$ from a coherent X-ray source,
 it will introduce phase differences whose laplacian can be observed as an
 intensity modulation at a distance $R_2$ downstream (figure~\ref{fig:propagation.based}), with
 $M = (R_1 + R_2) / R_1$ as the geometrical magnification:
@@ -261,9 +261,9 @@ $M = (R_1 + R_2) / R_1$ as the geometrical magnification:
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.6\textwidth]{gfx/propagation-based_imaging.png}
+    \includegraphics[width=.8\textwidth]{gfx/propagation-based_imaging.png}
     \caption[Propagation-based setup.]{A propagation-based phase contrast
-        setup, reproduced from the public domain~\cite{propagation-based-picture}. The intensity modulations producing edge-enhancing effects can
+        setup, reproduced from the public domain~\parencite{propagation-based-picture}. The intensity modulations producing edge-enhancing effects can
 be observed at different distances in order to reconstruct the phase
 differences introduced by the sample according to
 equation~\eqref{eq:free.space.propagation}.}
@@ -279,32 +279,32 @@ the sample. The detector also needs to have a high spatial resolution in
 order to resolve the intensity modulations of
 equation~\eqref{eq:free.space.propagation}. All of these constraints tend to
 have a negative impact on exposure times, but a number of applications are
-possible, including tomographic imaging and even \emph{in vivo} imaging.
+possible, including tomographic imaging and even \emph{in vivo} imaging\cn.
 
 \subsection{Diffraction enhanced imaging}
 Diffraction enhanced --- or crystal-based --- methods employ two crystals:
 one after the source, to obtain a monochromatic and collimated X-ray beam;
-one before the detector, acting as an extremely sensitive angular filter.
+and an analyzer crystal before the detector, acting as an extremely sensitive angular filter.
 
 The intensity on the detector is modulated by changing the incidence angle
 $\vartheta$ of the beam on the second crystal (figure~\ref{fig:dei}).
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.6\textwidth]{gfx/analyzer-based_imaging.png}
+    \includegraphics[width=.8\textwidth]{gfx/analyzer-based_imaging.png}
     \caption[Analyzer-based setup.]{A setup for diffraction enhanced
-        imaging, reproduced from the public domain~\cite{analyzer-based-picture}. The fine angular deviations introduced in the
+        imaging, reproduced from the public domain~\parencite{analyzer-based-picture}. The fine angular deviations introduced in the
     monochromatic beam are decoded through rotations of the analyzer crystal.}
     \label{fig:dei}
 \end{figure}
 The intensity in each pixel is then recorded through multiple exposures as a
 function of $\vartheta$, producing a \emph{rocking curve}. These rocking
 curves are sensitive to refraction in a direction perpendicular to the beam
-and to the axis of rotation of the analyzer grating, and can provide a
-differential phase image, as well as a scattering contrast. This technique
+and to the axis of rotation of the analyzer crystal, and can provide a
+differential phase image, as well as scattering contrast. This technique
 is also suitable for polychromatic sources, although the presence of the
-first crystal acting as a monochromator with low efficiency also leads to
+first crystal acting as a monochromator with low efficiency leads to
 long exposure times, especially on low brilliance laboratory sources. The
-beam is also collimated to a fan beam on the plane and the sample needs to
+beam is collimated to a fan beam on the plane and the sample needs to
 be scanned through it, in addition to the scanning of the rocking curve. A
 device composed by an array of crystals has been proposed as a solution to
 this issue.
@@ -321,9 +321,9 @@ directly recorded (figure~\ref{fig:bonse-hart}).
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=.6\textwidth]{gfx/Crystal_interferometer.png}
+    \includegraphics[width=.8\textwidth]{gfx/Crystal_interferometer.png}
     \caption[Bonse-Hart interferometer.]{A Bonse-Hart crystal
-        interferometer, reproduced from the public domain~\cite{bonse-hart-picture}. Two coherent beams are created: one is used as a
+        interferometer, reproduced from the public domain~\parencite{bonse-hart-picture}. Two coherent beams are created: one is used as a
 reference beam, while a sample interacts with the second beam. Imaging is
 performed through the
 comparison of the interference produced at the third grating by the
@@ -356,7 +356,7 @@ detector pixel (figure~\ref{fig:edge-illumination}).
     \centering
     \includegraphics[width=.8\textwidth]{gfx/edgeillumination.png}
     \caption[Edge illumination.]{A setup for edge illumination, reproduced
-        from the public domain~\cite{edge-illumination-picture}. Angular
+        from the public domain~\parencite{edge-illumination-picture}. Angular
         deviations of the beams introduced by the object are detected as
         lateral displacements of the fringes of the first mask, analyzed
         through the second mask.}
@@ -391,7 +391,7 @@ of propagation $z$, by writing the solution~\eqref{eq:plane.wave.solution} in th
     \label{eq:free.propagation}
 \end{equation}
 It is then clear that to propagate the plane wave from $z = 0$ to $z = z_0$
-it is necessary to multiply by the factor $\exp(iz\sqrt{k^2 - k_x^2 -
+it is necessary to multiply by the factor $\exp(iz_{0}\sqrt{k^2 - k_x^2 -
 k_y^2})$.
 
 Given a general solution $\psi(\omega, x, y, z)$ to the Helmoltz
@@ -399,7 +399,7 @@ equation~\eqref{eq:helmoltz.fourier}, it can be decomposed as a sum of plane
 waves through the Fourier transform $\Fxy$ with respect to $x$ and $y$. Each
 plane wave then propagates according to
 equation~\eqref{eq:free.propagation}. The propagated wave can be then
-recovered with the inverse Fourier transform $Fxy^{-1}$.
+recovered with the inverse Fourier transform $\Fxy^{-1}$.
 This principle for the propagation of a wave front from $z=0$ to $z=z_0$ can
 be precisely written as:
 \begin{equation}
@@ -422,7 +422,7 @@ of our analysis
     k_y^2}{2k}}\Fxy\psi(\omega, x, y, 0). \label{eq:paraxial.propagator}
 \end{equation}
 
-The optical phenomenon discovered in 1836 by Talbot~\cite{Talbot1836} is the observation that
+The optical phenomenon discovered in 1836 by Talbot~\parencite{Talbot1836} is the observation that
 the propagator~\eqref{eq:paraxial.propagator} is equal to one for a periodic
 source wave at fixed distances, therefore called \emph{Talbot distances}.
 
@@ -443,9 +443,10 @@ to the frequencies $k_{xj}$ will be nonzero after the transform.
 By then propagating according to equation~\eqref{eq:paraxial.propagator}
 
 \begin{align}
-    \Fx\psi(\omega, x, z_0) &= \exp(ikz_0)\exp(-i z_0\frac{k_x^2}{2k})\sum_j \psi_j(\omega)\delta(k_x -
+    \Fx\psi(\omega, x, z_0) &= \exp(ikz_0)\exp\big(-i
+    z_0\frac{k_x^2}{2k}\big)\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}) \\
-    &= \exp(ikz_0)\exp(-i z_0\frac{k_{xj}^2}{2k})\sum_j \psi_j(\omega)\delta(k_x -
+    &= \exp(ikz_0)\exp\big(-i z_0\frac{k_{xj}^2}{2k}\big)\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}).
     \label{eq:talbot1}
 \end{align}
@@ -468,11 +469,12 @@ The periodic wave front can be created by introducing a grating with absorbing l
 the beam. However, the resulting intensity will be also reduced by a factor
 known as the \emph{duty cycle} of the grating, that is the ratio of the
 width of the opening to the pitch of the grating itself. This is not optimal
-as it affects exposure times, but it is possible to observe the same effect
-by introducing a phase periodicity in the source by letting the X-rays
-go through a grating whose lines change the phase of the radiation by a
+as it affects exposure times. It is possible to observe the same effect
+by introducing a phase periodicity in the source. A phase periodicity is
+introduced by letting the X-rays
+through a grating whose lines change the phase of the radiation by a
 factor of $\pi$. A self-image of the grating is then formed with double the
-spatial frequency at the Lohmann distances~\cite{Lohmann1971}
+spatial frequency at the Lohmann distances~\parencite{Lohmann1971}
 \begin{equation}
     D_j = \left(j - \frac{1}{2}\right) \frac{p_1^2}{4 \lambda} \qquad
     j\in\mathbb{N}.\label{eq:lohmann-distance}
@@ -519,7 +521,7 @@ the direction of propagation and to the direction of the grating lines is
 This deviation would be measurable as a lateral displacement of the
 interference fringes of the Talbot self-image of the grating \G1, with the
 \emph{caveat} that this interference pattern has a pitch of the order of
-few micrometers and is therefore not resolved by detectors with a pixel size
+few micrometers. Such a pattern is therefore not resolved by detectors with a pixel size
 that is one or two orders of magnitude larger, although some applications
 exist on synchrotron sources for a limited field of view\cn.
 
@@ -533,7 +535,7 @@ absorbing lines are superimposed to the dark lines the radiation is able to
 go through and a maximum intensity is recorded. Sliding the grating \G2
 along the rectangular interference pattern of \G1 corresponds to recording
 the convolution of the two signals. The result is a triangular signal, known
-as the \emph{phase stepping curve} (figure~ref{fig:phase.stepping}).
+as the \emph{phase stepping curve} (figure~\ref{fig:phase.stepping}).
 \begin{figure}[htb]
     \centering
     \input{gfx/phase_stepping.eepic}
@@ -570,7 +572,7 @@ sinusoid
 
 A number of \emph{phase steps} are then recorded for different displacements
 $x$ of \G2 and the three parameters $a_0$, $a_1$ and $\theta$ are determined
-with a linear fit performed by means of a discrete fast Fourier transform~\cite{FFTEquivalence}.
+with a linear fit performed by means of a discrete fast Fourier transform~\parencite{FFTEquivalence}.
 
 A reference, or \emph{flat}, curve is then compared to the curve observed
 with the sample in the beam, or \emph{sample} curve
@@ -660,7 +662,7 @@ or larger this would be impossible.
 
 This problem can be overcome by placing an additional grating \G0 in front
 of the source. The \G0 grating creates an array of individually coherent but
-mutually incoherent sources. As in equation~\eqref{eq:neighbouring-sources},
+mutually incoherent sources\cn. As in equation~\eqref{eq:neighbouring-sources},
 two neighbouring sources separated by a distance $p_0$ will have their
 interference pattern shifted by 
 distance have their
@@ -671,11 +673,17 @@ constraint
 \begin{equation}
     p_0 = p_2 \frac{\ell}{D_j}.\label{eq:p0}
 \end{equation}
+An interferometer with a beam splitter grating \G1 and an analyzer grating
+\G2 can operate on a source with sufficient coherence (equation
+\ref{eq:source.size}), and it is a \emph{Talbot interferometer}.
+The configuration with three gratings \G0, \G1 and \G2 can be installed on a
+low coherence source. The latter configuration is properly known as a
+\emph{Talbot-Lau interferometer}.
 
 Laboratory sources on a compact setup which are the goal of our experiments
 also introduce a significant geometrical magnification. The equations above
 all assume a plane wave geometry, but this can be easily adapted for a
-spherical wave front according to~\cite{Engelhardt2008}.
+spherical wave front according to~\parencite{Engelhardt2008}.
 
 The Lohmann distances are rescaled according to
 \begin{equation}
@@ -693,7 +701,7 @@ As a conclusion, we opt for Talbot-Lau interferometry as our tool since it
 provides three different and complementary sources of contrast and it is
 possible to install it on laboratory sources with a wide spectrum. The
 Talbot effect is the key to providing an interference pattern at a
-macroscopic distance from the optical elements composing the interferometer
-so that there is space to insert a sample and compare the interference
+macroscopic distance from the optical elements composing the interferometer.
+This distance is enough to insert a sample and compare the interference
 pattern with and without sample to determine its physical properties,
 through the X-ray interaction coefficients $\delta$ and $\beta$.

@@ -54,7 +54,7 @@ interferometry: predictive models and applications\xspace}
 \newcommand{\myUni}{Put data here\xspace}
 \newcommand{\myLocation}{Zurich\xspace}
 \newcommand{\myTime}{2018\xspace}
-\newcommand{\myVersion}{}
+\input{version}
 
 % ********************************************************************
 % Setup, finetuning, and useful commands
@@ -91,6 +91,8 @@ interferometry: predictive models and applications\xspace}
   citestyle=authoryear-brackets,
   sorting=nyt, % name, year, title
   maxbibnames=10, % default: 3, et al.
+  maxcitenames=1, % default: 3, et al.
+  uniquelist=false, % default: 3, et al.
   %backref=true,%
   %natbib=false % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}

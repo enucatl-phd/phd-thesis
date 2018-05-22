@@ -8,10 +8,10 @@ conventional source}.
 \section{Introduction}
 High-energy Talbot interferometry has been reported so far using a
 synchrotron source at nominal energies of
-$\SI{82}{\kilo\electronvolt}$~\cite{Willner2013}, although with a relatively
+$\SI{82}{\kilo\electronvolt}$~\parencite{Willner2013}, although with a relatively
 large residual transmission through the absorbing lines of the gratings.
 Using a low-brilliance X-ray tube, Talbot-Lau interferometry was applied so
-far at $\SI{60}{\kilo\electronvolt}$ design energy~\cite{Donath2009a}.
+far at $\SI{60}{\kilo\electronvolt}$ design energy~\parencite{Donath2009a}.
 Medical imaging applications may benefit from phase contrast at higher
 energies: chest or abdominal radiography or \ac{CT} require an acceleration
 voltage up to $\SI{150}{\kilo\voltpeak}$. Other potential
@@ -44,13 +44,13 @@ with high aspect ratios. The aspect ratio, given by
 \end{equation}
 where $p$ is the
 grating period and $h$ the  structure height, is limited by the
-fabrication process, usually photolithography~\cite{David2002} or X-ray
-lithography~\cite{Mohr2012} since grating structures tend to collapse or deform
+fabrication process, usually photolithography~\parencite{David2002} or X-ray
+lithography~\parencite{Mohr2012} since grating structures tend to collapse or deform
 (e.g.\ due to capillary forces) if the aspect ratio is too high.
 Moreover, when using a broad spectrum, photons above the design energy
 should also be efficiently blocked by the gratings, thus requiring even
 higher aspect ratios. The largest aspect ratios achieved by current
-fabrication techniques~\cite{David2007,Kenntner2010} are around 60.
+fabrication techniques~\parencite{David2007,Kenntner2010} are around 60.
 For a given setup length the parameter $p$ depends on the design energy
 $\energy$ according to~\eqref{eq:talbot.distance}
 \begin{equation}
@@ -64,7 +64,7 @@ equation~\eqref{eq:delta.beta.energy}
     \energy^3
     \label{eq:absorption.energy}
 \end{equation}
-As a result, the aspect ratio $r$ is proportional to $\energy^{7/2}$~\cite{Momose2003a}.
+As a result, the aspect ratio $r$ is proportional to $\energy^{7/2}$~\parencite{Momose2003a}.
 
 If at $\energy=\SI{25}{\kilo\electronvolt}$ an aspect ratio for the
 absorption grating around $r=30$ is sufficient, it would have
@@ -72,7 +72,7 @@ to be at least $\num{128}$ for $\energy=\SI{100}{\kilo\eV}$. With our
 design, we reach an aspect ratio of $\num{143}$, satisfying the above
 condition with a transmission of less than \SI{1}{\percent} at
 \SI{100}{\kilo\eV}. As a comparison, a recent interferometer implemented at
-a third generation synchrotron facility~\cite{Willner2013} reported an
+a third generation synchrotron facility~\parencite{Willner2013} reported an
 aspect ratio of \num{21} with a transmission as large as \SI{20}{\percent}
 at~\SI{82}{\kilo\eV}.
 
@@ -106,7 +106,7 @@ at high incident angles. In order to overcome this problem, the grating
 lines are circularly aligned with a radius equal to the distance to the
 source. This allows to achieve an arbitrarily large field of view in a
 fan-beam geometry, a significant improvement compared to face-on based and
-glancing angle~\cite{Stutman2012a} approaches.
+glancing angle~\parencite{Stutman2012a} approaches.
 Face-on gratings can sometimes be manufactured on very thin silicon,
 graphite or even titanium substrates\cn that can be bent to accomodate the beam
 curvature at least in one direction for a two-dimensional setup. However,
@@ -124,10 +124,10 @@ scanning the sample or a thin fan beam. The scanning technique has been
 demonstrated to deliver less dose than the conventional approach based on
 the illumination of a large area. In digital mammography, for instance,
 where dose is a critical issue, Philips' MicroDose system combines a
-scanning approach with an highly collimated fan beam~\cite{Aslund2007}.
+scanning approach with an highly collimated fan beam~\parencite{Aslund2007}.
 Thanks to the high collimation, the dose deposited on  patients has been
 reported to be significantly lower than with other instruments based on the
-illumination of a large area detector~\cite{Oduko2010}. Similarly, for
+illumination of a large area detector~\parencite{Oduko2010}. Similarly, for
 tomographic images, the approach allows single slice \ac{CT} or full 3D
 imaging in scanning mode.
 
@@ -141,7 +141,7 @@ sensitivity to the angle of refraction of X-rays, while keeping a compact
 setup with a total length of about \SI{0.5}{\meter}.
 
 The variance of the differential phase signal, with a Poisson variance of
-the counts $\sigma_{\text{det}}^2$ in a detector pixel, is given by~\cite{Raupach2011}
+the counts $\sigma_{\text{det}}^2$ in a detector pixel, is given by~\parencite{Raupach2011}
 \begin{equation}
     \sigma_\alpha = \frac{p_2}{\pi D_j}
     \frac{\sqrt{2}}{v}\sigma_{\text{det}}.\label{eq:variance}
@@ -149,7 +149,7 @@ the counts $\sigma_{\text{det}}^2$ in a detector pixel, is given by~\cite{Raupac
 In order to obtain the maximum sensitivity it would be necessary to
 fabricate gratings with a very small period
 $p_2$, within technical constraint of the fabrication
-techniques~\cite{David2007,Kenntner2010}.
+techniques~\parencite{David2007,Kenntner2010}.
 
 For a constant total length $\ell + D_j$ of the interferometer, the factor
 $p_2/D_j$ can be rewritten through~\eqref{eq:p0} in~\eqref{eq:variance}
@@ -184,7 +184,7 @@ $D_j$ for two reasons:
         $\SI{10}{\percent}$ for $j = 5$.
 \end{aenumerate}
 The maximum visibility of the interference pattern can be theoretically
-estimated according to the formula from~\cite{Thuering20130027} for the visibility as a function
+estimated according to the formula from~\parencite{Thuering20130027} for the visibility as a function
 of energy $\energy$ with a $\pi$ shift in the phase grating, a design energy
 $\energy_0$ and a Lohmann order $j$:
 \begin{equation}
@@ -198,7 +198,7 @@ $\energy_0$ and a Lohmann order $j$:
 
 This formula indicates how energies different from the design energy of the
 interferometer contribute to the visibility of the interference pattern. The
-spectrum of the source simulated with the SpekCalc sofware~\cite{spekcalc}
+spectrum of the source simulated with the SpekCalc sofware~\parencite{spekcalc}
 and equation~\eqref{eq:visibility.energy} are shown in
 figure~\ref{fig:visibility.energy}.
 
@@ -219,8 +219,8 @@ figure~\ref{fig:visibility.energy}.
     \end{subfigure}
     \caption[Spectrum and theoretical visibility of the \SI{100}{\kilo\eV}
     interferometer.]{Spectrum of the source at \SI{160}{\kilo\voltpeak}
-simulated with the SpekCalc software~\cite{spekcalc}. Visibility as a
-function of energy~\cite{Thuering20130027} for a design energy of \SI{100}{\kilo\eV} at the first
+simulated with the SpekCalc software~\parencite{spekcalc}. Visibility as a
+function of energy~\parencite{Thuering20130027} for a design energy of \SI{100}{\kilo\eV} at the first
 Lohmann distance, calculated according to
 equation~\ref{eq:visibility.energy}.}
     \label{fig:visibility.energy}
@@ -234,16 +234,16 @@ visibility we obtain a theoretical maximum of
     \label{eq:maximum.visibility}
 \end{equation}
 For these reasons all interferometers are designed for the first Lohmann
-distance $D_1 = p_1^2 / 8 \lambda$~\cite{Weitkamp2005}, resulting in an
+distance $D_1 = p_1^2 / 8 \lambda$~\parencite{Weitkamp2005}, resulting in an
 intergrating distance of $\SI{158}{\milli\metre}$
 
 The design energy is $\SI{100}{\kilo\electronvolt}$ and the beam splitter
 grating periodically shifts the phase by zero and $\pi$ at this
-energy~\cite{David2002}. Using
+energy~\parencite{David2002}. Using
 gold as the phase shifting material, a structure length of
 $h_1 = \SI{19.8}{\micro \metre}$ is required. The analyzer grating is an absorption mask
 for sensing slight changes of the interference pattern generated by the beam
-splitter~\cite{Momose2003a}. With a structure length of $h_2 =
+splitter~\parencite{Momose2003a}. With a structure length of $h_2 =
 \SI{800}{\micro \metre}$
 it can absorb more than \SI{90}{\percent} of the incoming X-rays up to energies of 
 $\SI{160}{\kilo\electronvolt}$. However,
@@ -252,7 +252,7 @@ critical, and a change in visibility of less than \SI{1}{\percent} is
 observed by displacing it by as much as \SI{5}{\milli\metre}. The
 source grating splits the relatively large focal spot ($\sim
 \SI{1}{\milli\metre}$) into an array of individually coherent, but mutually
-incoherent sources~\cite{Pfeiffer2006}. It is also made of gold structures
+incoherent sources~\parencite{Pfeiffer2006}. It is also made of gold structures
 with a length of $h_0 = h_2 = \SI{800}{\micro \metre}$.
 
 A second setup has also been realized, for a design energy of
@@ -458,7 +458,7 @@ figure~\ref{fig:visibility100} and~\ref{fig:visibility120}, between \num{5} and
     \caption{Visibility of the grating
         interferometers with
         \SI{100}{\kilo\eV} and \SI{120}{\kilo\eV} design
-        energy~\cite{galitesina}. Exposure time \SI{10}{\second}
+        energy~\parencite{galitesina}. Exposure time \SI{10}{\second}
         $\times$ \num{24} phase steps.}
 \end{figure}
 
@@ -484,10 +484,10 @@ and is compatible with compact imaging arrangements.
         interferometer geometry. Multiple gratings for more than one setup
         geometry are fabricated on a single wafer.
         The \ac{SEM} image shows the gold structures and the interrupting bridges
-        that prevent the lamellae from collapsing~\cite{Kenntner2010}.}\label{Fig:grating_mask}
+        that prevent the lamellae from collapsing~\parencite{Kenntner2010}.}\label{Fig:grating_mask}
 \end{figure}
 
-Due to the large spectral acceptance~\cite{Weitkamp2005,Thuering2013c} of the
+Due to the large spectral acceptance~\parencite{Weitkamp2005,Thuering2013c} of the
 interferometer ($\SI{50}{\kilo\electronvolt}$ to
 more than $\SI{160}{\kilo\electronvolt}$) and the high attenuation efficiencies of
 the source and analyzer gratings (more than $90\%$ up to
@@ -556,7 +556,7 @@ the soldering points in the absorption image is due to beam hardening. The
 spectrum impinging on these soldering point is hardened by the resistors in
 the upper layer, resulting in lower absorption contrast. Due to the weaker
 energy dependence of phase shifts ($1/\energy$ compared to $1/\energy^3$), phase-contrast
-images are less sensitive to beam hardening~\cite{Chabior2011a}, which explains the lower
+images are less sensitive to beam hardening~\parencite{Chabior2011a}, which explains the lower
 contrast reduction of the soldering points under the resistors in the
 phase image of the chip. This example shows one of the potential benefits of
 phase contrast X-ray imaging at high energies, which may be useful to
@@ -587,7 +587,7 @@ and compact designs. Particularly for medical application, the operation of
 a phase contrast imaging device at high energies is imperative. When imaging
 patients, a crucial issue is the dose, which depends mainly on the
 absorption of the X-rays and decreases with the third power of the photon
-energy~\cite{Momose2005}. On the other hand, the phase interaction is only inversely
+energy~\parencite{Momose2005}. On the other hand, the phase interaction is only inversely
 proportional to the energy and is therefore relatively much more relevant
 than absorption as the energy increases, possibly leading to a decreased
 exposure for an equivalent image quality. Clinical operation of such a
@@ -602,10 +602,10 @@ efficient investigation of high-density materials or thick samples, adding
 information on electron density and integrated small-angle scattering power
 to the conventional absorption-based signal. This will improve material
 discrimination and density sensitivity in future X-ray or even
-neutron~\cite{Grunzweig2008} investigations.
+neutron~\parencite{Grunzweig2008} investigations.
 
 \section{Methods}
-Edge-on illuminated gratings were manufactured by Microworks GmbH, Germany, using a LIGA process~\cite{Kenntner2010}. Each grating
+Edge-on illuminated gratings were manufactured by Microworks GmbH, Germany, using a LIGA process~\parencite{Kenntner2010}. Each grating
 resides on a $5 \times \SI{60}{\milli\metre^2}$ silicon chip and several
 grating chips are fabricated on a single 4 inch silicon wafer. The
 experimental arrangement for a design energy at \SI{100}{\kilo\electronvolt}
@@ -631,7 +631,7 @@ exposure times are mostly constrained by the low average visibility of the
 gratings (\SI{5}{\percent}). The exposure time was chosen in order to
 get a low noise in the differential phase image. The \ac{SNR} is
 proportional to the visibility and the square root of the exposure
-time~\cite{Raupach2011}.
+time~\parencite{Raupach2011}.
 This implies that the exposure times can easily drop by an order of
 magnitude as these gratings become comparable in quality to those developed
 in the last ten years. 
