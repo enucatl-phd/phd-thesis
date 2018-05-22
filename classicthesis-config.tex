@@ -85,13 +85,14 @@ interferometry: predictive models and applications\xspace}
   backend=biber,bibencoding=utf8, %instead of bibtex
   %backend=bibtex8,bibencoding=ascii,%
   language=auto,%
-  style=numeric-comp,%
-  %style=authoryear-comp, % Author 1999, 2010
-  %bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
+  %style=numeric-comp,%
+  %style=authoryear-brackets, % Author 1999, 2010
+  bibstyle=authoryear-comp,
+  citestyle=authoryear-brackets,
   sorting=nyt, % name, year, title
   maxbibnames=10, % default: 3, et al.
   %backref=true,%
-  natbib=true % natbib compatibility mode (\citep and \citet still work)
+  %natbib=false % natbib compatibility mode (\citep and \citet still work)
 }{biblatex}
     \usepackage{biblatex}
 
