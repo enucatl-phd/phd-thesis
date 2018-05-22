@@ -1,10 +1,11 @@
 # Compiled PDF
 
+Go to the [github release page](https://github.com/Enucatl/phd-thesis/releases/latest) and download the ClassicThesis.pdf file.
+
 The
 [upload-release.py](https://gist.github.com/Enucatl/e120930a45783dbd34d63cd57e95a052)
 script is used to publish the compiled PDF.
 
-Go to the [github release page](https://github.com/Enucatl/phd-thesis/releases/latest) and download the ClassicThesis.pdf file.
 
 # Original README of the template
 A Classic Thesis Style v4.4
