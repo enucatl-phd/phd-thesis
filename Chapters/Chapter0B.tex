@@ -162,3 +162,28 @@ at each phase step.
 All motors are returned to their original positions after the scan.
 A single HDF5 output file is saved with one dataset per detector exposure
 inside.
+
+\section{X-ray tube}
+A module is defined to control the operation of the Comet MXR-225/26 and
+MXR-160HP/11 sources. The class \texttt{CometTube} is defined in
+\texttt{controls/comet\_tube.py} and communicates over a serial connection
+to the tube controller.
+The following activities are defined, with serial codes sent to the
+controller according to the tube manual\cn.
+
+\begin{itemize}
+    \item \verb|CometTube(serial_port="/dev/ttyS0", baudrate=9600,
+        timeout=1)| initializes the serial controller on the specified
+        serial port, baudrate and communication timeout in seconds;
+    \item \verb|current()| reads the current in \si{\milli\ampere}, or
+        by passing a value it can set it \verb|current(value)|;
+    \item \verb|voltage()| reads the voltage in \si{\kilo\volt}, or
+        by passing a value it can set it \verb|voltage(value)|;
+    \item \verb|set_small_focus()| and \verb|set_large_focus()| change the
+        focal spot size to small and large respectively. These tubes have
+        only two focal spot sizes;
+    \item \verb|on()| start the X-ray generation. The interface is not able
+        to determine if the safety circuit is closed, so you need to check
+        that manually;
+    \item \verb|off()| turn off the tube.
+\end{itemize}
