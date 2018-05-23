@@ -36,5 +36,4 @@ along with this program; see the file COPYING.  If not, write to
 the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 Boston, MA 02111-1307, USA.
 
-PLEASE SEE ALSO THE AUTHORS' NOTE REGARDING THIS LICENSE
-IN THE DOCUMENTATION (ClassicThesis.pdf --> Chapter 1 / Chapter01.tex)
+PLEASE SEE ALSO [THE AUTHORS' NOTE REGARDING THIS LICENSE IN THE DOCUMENTATION](https://github.com/Enucatl/phd-thesis/blob/6c5eb8289d1c9632df12311a64f3f9ce5b915d15/Chapters/Chapter01.tex#L322)
