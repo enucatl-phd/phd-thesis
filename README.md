@@ -1,6 +1,6 @@
 # Compiled PDF
 
-Go to the [github release page](https://github.com/Enucatl/phd-thesis/releases/latest) and download the ClassicThesis.pdf file.
+Go to the [latest release page](https://github.com/Enucatl/phd-thesis/releases/latest) and download the ClassicThesis.pdf file.
 
 The
 [upload-release.py](https://gist.github.com/Enucatl/e120930a45783dbd34d63cd57e95a052)
