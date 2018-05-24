@@ -188,7 +188,7 @@ amplitude $I = |\psi|^2$, resulting in the well-known Beer-Lambert law
 We can then conclude that the interaction of X-rays with a sample, that is
 with the electron clouds of the atoms that make it up, is determined by
 two energy-dependent coefficients $\delta$ and $\beta$. These have been
-thoroughly studied and tabulated\cn{NIST database} in terms of the atomic form
+thoroughly studied and tabulated~\parencite{NIST} in terms of the atomic form
 factors $f_1$ and $f_2$ respectively. The relationship between the
 refractive index, $\delta$, $\beta$ and the atomic form factors $f_1$ and
 $f_2$ is:
@@ -230,7 +230,7 @@ A voltage of 60 to \SI{140}{\kilo\voltpeak} is commonly used for medical and
 security applications, or even higher for material sciences or the
 inspection of large volumes or materials with a high atomic number.
 Phase-contrast with grating interferometers has seen so far only limited
-applications\cn to a lower energy range.
+applications~\parencite{Willner2013,Donath2009a} to a lower energy range.
 This is the fundamental motivation of this experimental work, in order to
 assess the feasibility and characteristics of X-ray interferometric
 techniques for standard laboratory sources with a higher beam energy.
@@ -243,20 +243,23 @@ the refractive index $\delta$. Unfortunately, only the intensity $I =
 |\psi|^2$ of the X-ray beam can be directly detected, and an interferometric
 setup is needed to convert phase differences into intensity modulations.
 Various approaches have been presented in the last decades, on different
-applications and source types. The main methods are summarized in the
-following sections, with a detailed description of Talbot-Lau interferometry
-which will be our focus.
+applications and source types. The main phase-contrast methods are summarized in the
+following sections, based on~\cite{2018NIMPA.878...88E}, and followed by a detailed
+description of Talbot-Lau interferometry which will be our focus.
 
 \subsection{Propagation-based phase contrast}
 Techniques based on free-space propagation of X-rays have been widely
-explored on both monochromatic and polychromatic sources. If a weakly
-absorbing object is placed at a distance $R_1$ from a coherent X-ray source,
+explored on both monochromatic~\parencite{1995RScI...66.5486S,Cloetens1996}
+and polychromatic sources~\parencite{Wilkins1996}. If a weakly
+absorbing object is placed at $z=0$ in front of a coherent X-ray source,
 it will introduce phase differences whose laplacian can be observed as an
-intensity modulation at a distance $R_2$ downstream (figure~\ref{fig:propagation.based}), with
-$M = (R_1 + R_2) / R_1$ as the geometrical magnification:
+intensity modulation at a distance $z=z_0$
+downstream~\parencite{Paganin2006b-propagation-based}
+(figure~\ref{fig:propagation.based}):
+
 \begin{equation}
-    I(x, y) = \frac{I_0}{M^2}\left(1 + \frac{R_2\lambda}{2\pi M^2}\nabla_\perp^2
-    \varphi(x, y)\right).
+    I(x, y, z = z_0) = I(x, y, z=0)\left(1 - \frac{z_0\lambda}{2\pi}\nabla_\perp^2
+    \varphi(x, y, z=0)\right).
     \label{eq:free.space.propagation}
 \end{equation}
 
@@ -272,20 +275,24 @@ equation~\eqref{eq:free.space.propagation}.}
 \end{figure}
 
 In general, this technique requires recording such diffraction patterns at
-multiple distances $R_2$ from the sample in order to unambiguously
+multiple distances $z_0$ from the sample in order to unambiguously
 reconstruct the phase and therefore the electron density of the sample.
 Moreover, a high spatial coherence of the beam is required, which means
-that the source must be very small or placed at a large distance $R_1$ from
-the sample. The detector also needs to have a high spatial resolution in
+that the source must be very small or placed at a large distance from
+the sample. The detector also needs to have a high spatial
+resolution~\parencite{Pogany1997,2005RScI...76i3706N,2008OExpr..16.3223G} in
 order to resolve the intensity modulations of
 equation~\eqref{eq:free.space.propagation}. All of these constraints tend to
 have a negative impact on exposure times, but a number of applications are
-possible, including tomographic imaging and even \emph{in vivo} imaging\cn.
+possible, including tomographic
+imaging~\parencite{1997JAP....81.5878C,2009RScI...80e6101B,2012PLoSO...735691L}
+and even \emph{in vivo} imaging~\parencite{2007NIMPA.572..237C}.
 
 \subsection{Diffraction enhanced imaging}
 Diffraction enhanced --- or crystal-based --- methods employ two crystals:
 one after the source, to obtain a monochromatic and collimated X-ray beam;
-and an analyzer crystal before the detector, acting as an extremely sensitive angular filter.
+and an analyzer crystal before the detector, acting as an extremely
+sensitive angular filter~\parencite{pmid10751500}.
 
 The intensity on the detector is modulated by changing the incidence angle
 $\vartheta$ of the beam on the second crystal (figure~\ref{fig:dei}).
@@ -302,23 +309,25 @@ function of $\vartheta$, producing a \emph{rocking curve}. These rocking
 curves are sensitive to refraction in a direction perpendicular to the beam
 and to the axis of rotation of the analyzer crystal, and can provide a
 differential phase image, as well as scattering contrast. This technique
-is also suitable for polychromatic sources, although the presence of the
+is also suitable for polychromatic sources~\parencite{doi:
+10.1117/12.813669,PARHAM2009911}, although the presence of the
 first crystal acting as a monochromator with low efficiency leads to
 long exposure times, especially on low brilliance laboratory sources. The
 beam is collimated to a fan beam on the plane and the sample needs to
 be scanned through it, in addition to the scanning of the rocking curve. A
 device composed by an array of crystals has been proposed as a solution to
-this issue.
+this issue~\parencite{Connor2014}.
 
 \subsection{Bonse-Hart interferometry}
-This method is the oldest approach to X-ray interferometry, where three
+This method is the oldest approach to X-ray
+interferometry~\parencite{1965ApPhL...7...99B,1965ApPhL...6..155B}, where three
 silicon beam splitters are used to create two paths from the X-ray source, a
 sample is introduced in one of the paths, a second mirror deflects them onto
 the third crystal, where they merge again forming an interference pattern
 whose characteristics depend on the phase displacements introduced by the
 sample. This third crystal is necessary since the fringes of this pattern
 have the same period as Bragg planes and are therefore too small to be
-directly recorded (figure~\ref{fig:bonse-hart}).
+directly recorded~\parencite{1974ApOpt..13.2693B} (figure~\ref{fig:bonse-hart}).
 
 \begin{figure}[htb]
     \centering
@@ -335,11 +344,12 @@ reference beam with the sample beam.}
 Again, as for diffraction enhanced techniques, the use of crystals as
 optical elements means that only a very narrow bandwidth can be used from a
 polychromatic source. Moreover, the three beam splitters should be
-manufactured from a single crystal in order to reduce instabilities,
+manufactured from a single crystal in order to reduce
+instabilities~\parencite{1965ApPhL...7...99B},
 resulting in a limitation on the size of the field of view.
 
 \subsection{Edge illumination}
-Edge illumination is not an interferometric technique, although it is
+Edge illumination~\parencite{Olivo2001} is not an interferometric technique, although it is
 inspired by diffraction enhanced imaging. The basic principle of edge
 illumination is the collimation of the X-rays through a narrow aperture,
 the resulting beam is then masked by a second aperture whose position is
@@ -364,11 +374,9 @@ detector pixel (figure~\ref{fig:edge-illumination}).
     \label{fig:edge-illumination}
 \end{figure}
 
-
-
 This approach does not impose requirements on the spatial or temporal
 coherence of the source, and has been successfully run on conventional
-laboratory sources.
+laboratory sources~\parencite{Olivo2007}.
 
 \subsection{Talbot interferometry}\label{sec:talbot-interferometry}
 Talbot interferometry in different configurations is the topic of this
@@ -524,11 +532,12 @@ interference fringes of the Talbot self-image of the grating \G1, with the
 \emph{caveat} that this interference pattern has a pitch of the order of
 few micrometers. Such a pattern is therefore not resolved by detectors with a pixel size
 that is one or two orders of magnitude larger, although some applications
-exist on synchrotron sources for a limited field of view\cn.
+exist on synchrotron sources for a limited field of
+view~\parencite{Cartier:yn5011}.
 
 For this reason, a second grating \G2 with absorbing lines is placed at the
 location where the self-image of \G1 is created with the same period of the
-interference pattern. This grating is then laterally displaced in the $x$
+interference pattern~\parencite{Pfeiffer2006}. This grating is then laterally displaced in the $x$
 direction: when the grating lines of \G2
 match the bright lines of the interference pattern, the intensity recorded
 by the underlying detector pixel reaches a minimum, whereas when the
@@ -551,7 +560,8 @@ and the phase $\theta$.}
 A triangular phase stepping curve is the result of the convolution of the
 two rectangular shapes of the grating transmissions. However, a finite
 source size also affects the shape of the curve by convolving the signal
-with the image of the source. The result is calculated in detail in\cn, we
+with the image of the source. The result is calculated in detail
+in~\parencite{Bech2009}, we
 are here interested in the result pictured in
 figure~\ref{fig:phase.stepping.sinusoidal}: the curve is well approximated by a
 sinusoid
@@ -615,12 +625,12 @@ Three complementary signals can be determined by these parameters:
             \label{eq:dark-field-definition}
         \end{equation}
         is influenced by inhomogeneities of the sample on a scale smaller
-        than a detector pixel\cn.
+        than a detector pixel~\parencite{Yashiro:10}.
 \end{description}
 
 \subsection{Temporal coherence}\label{sec:temporal-coherence}
 Talbot interferometry is compatible with laboratory sources with a wide
-\emph{bremsstrahlung} spectrum. It has been shown\cn that the spectral
+\emph{bremsstrahlung} spectrum. It has been shown~\parencite{Weitkamp2005} that the spectral
 acceptance at the $j$-th Lohmann distance is
 \begin{equation}
     \frac{\Delta \lambda}{\lambda} = \frac{1}{2j - 1}.\label{eq:acceptance}
@@ -663,7 +673,7 @@ or larger this would be impossible.
 
 This problem can be overcome by placing an additional grating \G0 in front
 of the source. The \G0 grating creates an array of individually coherent but
-mutually incoherent sources\cn. As in equation~\eqref{eq:neighbouring-sources},
+mutually incoherent sources~\parencite{Pfeiffer2006}. As in equation~\eqref{eq:neighbouring-sources},
 two neighbouring sources separated by a distance $p_0$ will have their
 interference pattern shifted by 
 distance have their
