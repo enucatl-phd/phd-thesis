@@ -7,7 +7,7 @@ The
 script is used to publish the compiled PDF.
 
 # Dark-field imaging for hard X-ray grating interferometry: predictive models and applications
-# Abstract
+## Abstract
 Grating interferometry has been developed on a wide variety of sources and
 applications in the last decade, and it is reaching clinical significance in
 specific fields such as mammography and cartilage imaging. This is the
