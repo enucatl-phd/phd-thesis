@@ -615,7 +615,9 @@
         \PassOptionsToPackage{draft}{prelim2e}
         \RequirePackage{prelim2e}
         \renewcommand{\PrelimWords}{\relax}
-        \renewcommand{\PrelimText}{\footnotesize[\,\today\ at \thistime\ -- \texttt{github.com/Enucatl/phd-thesis} ~ \myVersion\,]}
+        \renewcommand{\PrelimTextStyle}{\footnotesize }
+        \renewcommand{\PrelimText}{\parbox{\textwidth}{\centering [\texttt{github.com/Enucatl/phd-thesis}
+        ~ \myVersion] \\ \today\ at \thistime}}
 }{\renewcommand{\finalVersionString}{\emph{Final Version} as of \today\ (\texttt{github.com/Enucatl/phd-thesis} ~ \myVersion).}}
 
 % ********************************************************************

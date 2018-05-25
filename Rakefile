@@ -27,7 +27,7 @@ IMAGES = EEPIC.ext(".eepic") + [
 namespace :main do
 
   desc "main pdf"
-  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "version.tex", "authoryear-brackets.cbx"] + IMAGES + LATEX_TEXT do |f|
+  file "ClassicThesis.pdf" => ["ClassicThesis.tex", "Bibliography.bib", "version.tex", "authoryear-brackets.cbx", "classicthesis.sty"] + IMAGES + LATEX_TEXT do |f|
     sh "pdflatex ClassicThesis"
     sh "biber ClassicThesis"
     sh "pdflatex ClassicThesis"
