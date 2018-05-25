@@ -257,23 +257,39 @@ map is calculated. The local thickness map is an algorithm developed for
 bone analysis or foam analysis in material science~\parencite{6778077}, that aims
 at calculating the maximum diameter of a sphere fitting in each hole in the
 sample.
-
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/lung-paper-figures/0700.png}
     \caption{Stitched slice of the mouse lung labelled KO202.}
     \label{fig:stitched}
 \end{figure}
-
 The euclidean distance transform is calculated from the image, yielding the
-distance of each point in the airways from the closest wall. The points in
-the transformed dataset are then sorted in descending order in order to fit
-the largest possible sphere at each location.
+distance of each point in the airways from the closest
+wall (figure~\ref{fig:distance-ridge}).
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/lung-paper-figures/KO202_DR_700.png}
+    \caption[Euclidean distance transform.]{Euclidean distance transform of figure~\ref{fig:stitched},
+where each pixel encodes its distance from the closest wall. Sample with
+label KO202.}
+    \label{fig:distance-ridge}
+\end{figure}
+The points in the transformed dataset are then sorted in descending order in
+order to fit the largest possible sphere at each location.
 
 In the case of lungs, each of the airways is filled with the largest possible
 sphere, resulting in a model where the lung airways are a collection of
-spheres embedded in the background of the tissue.
-
+spheres embedded in the background of the tissue (figure~
+\ref{fig:thickness-map}.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/lung-paper-figures/KO202_TM_700.png}
+    \caption[Local thickness map.]{Thickness map of
+        figure~\ref{fig:distance-ridge}. Airways are filled with spheres
+        with the largest diameter that fits between the walls. These
+    diameter distribution is then used to produce figure~\ref{fig:sizepdf}
+    \label{fig:thickness-map}
+\end{figure}
 To obtain a distribution of sphere sizes, kernel density estimation in the R
 statistics package \emph{ks}~\parencite{JSSv021i07} is used in order to avoid possible artifacts
 resulting from the arbitrary binning of the histogram of sphere sizes.
@@ -294,13 +310,12 @@ radiography:
     \label{eqn:definitions}
 \end{align}
 \begin{figure}[h!]
-\begin{center}
-\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/KO373_LL_smoke/WT256_LL_smoke}
-\caption{{Example of an ex vivo lung interferometric radiography on a laboratory
-source. Sample labelled WT256.
-{\label{590406}}%
-}}
-\end{center}
+    \centering
+    \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/KO373_LL_smoke/WT256_LL_smoke}
+    \caption{{Example of an ex vivo lung interferometric radiography on a laboratory
+        source. Sample labelled WT256.
+        {\label{590406}}%
+    }}
 \end{figure}
 
 \section{Modelling the polychromatic dark-field signal}\label{sec:model}
