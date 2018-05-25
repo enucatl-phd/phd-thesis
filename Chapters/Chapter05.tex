@@ -1,5 +1,5 @@
 \chapter{Quantitative dark-field imaging}\label{ch:lung-dark-field}
-This chapter is also presented in Abis M, Lovric G, Schittny J, Stampanoni
+Parts of this chapter are also presented in Abis M, Lovric G, Schittny J, Stampanoni
 M, \emph{Quantitative lung microstructure mapping with X-ray dark-field grating interferometry on a laboratory source}.
 \section{Introduction}\label{sec:introduction}
 X-ray grating interferometry has been developed over the course of the last
@@ -172,7 +172,7 @@ The setup is shown in figure~\ref{248327}.
 \section{Methods}\label{sec:methods}
 \subsection{Sample preparation}
 Eight \emph{ex-vivo} mouse samples were prepared at the university of Bern.
-In order to preserve the delicate structure of the lungs, critical point
+To preserve the delicate structure of the lungs, critical point
 drying is used in order to avoid the damage caused by evaporating the liquids
 from the sample in ordinary pressure conditions.
 
@@ -361,17 +361,19 @@ $s(\energy)$:
     \label{eqn:lynchpolychromatic}
 \end{equation}
 
-This formula was first tested on monodisperse solution of silicon dioxide
+This formula, that we can call the \emph{gi method} for the calculation of
+the dark-field extinction coefficient (figure~\ref{fig:equivalence-lynch-saxs}), was first tested on monodisperse solution of silicon dioxide
 spheres with sizes ranging from \SI{0.166}{\micro\meter} to
 \SI{7.760}{\micro\meter}, with a volume fraction of 20\%
-in glycerine. This model yields a good agreement between the continuous line
+in glycerol. This model yields a good agreement between the continuous line
 and the experimental data representing radiographies of the silicon dioxide
-sphere samples recorded on the laboratory source interferometer.
+sphere samples recorded on the laboratory source interferometer (figure
+\ref{725462}).
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/summary/summary}
 \caption{{Silicon dioxide monodisperse microspheres in a 20\% solution of
-glicerine as a function of sphere diameter. The continuous line is the
+glycerol as a function of sphere diameter. The continuous line is the
 function in eq. {\ref{eqn:lynchpolychromatic}}.
 {\label{725462}}%
 }}
@@ -406,14 +408,15 @@ to $q$, and by using the classical electron radius $r_e$:
     \label{eq:autocorrelation}
 \end{equation}
 
-This formula, implemented in a publicly available Python
+This formula, that we can call the \emph{usaxs method} for the
+calculation of the dark-field extinction coefficient, is implemented in a publicly available Python
 package~\parencite{scattering-repository}
 is used in all the following calculations, where we used the approximation
 $S(q) = 1$.
 
 The equivalence between the two calculations can be checked explicitly, for
 instance for a system with $p_2 = \SI{2}{\micro\meter}$, $L =
-\SI{12}{\centi\meter}$, a solution of silicon dioxide spheres in glicerine
+\SI{12}{\centi\meter}$, a solution of silicon dioxide spheres in glycerol
 with $f = 0.4$ results in estimates of the dark-field extinction coefficient
 according to equations~\eqref{eqn:lynch} and~\eqref{eq:autocorrelation},
 which align along the same curve (figure~\ref{fig:equivalence-lynch-saxs}).
@@ -456,7 +459,7 @@ the samples, leaving a denser material than in \emph{in vivo} conditions.
 The coefficient $\mu_B$ can then be expressed as a double summation over the spectrum
 $s(\energy)$ and over the distribution of sphere diameters $\rho(d)$:
 \begin{equation}
-    \mu_{B,\text{total}} = \sum_{d}\sum_{\energy} \mu_B(r, E; n, f)\rho(d)s(\energy)
+    \mu_{B,\text{total}} = \sum_{d}\sum_{\energy} \mu_B(d, \energy; n, f)\rho(d)s(\energy)
     \label{eqn:totalsum}.
 \end{equation}
 
@@ -471,7 +474,7 @@ microtomographic datasets, as described in section~\ref{sec:tomoprocessing}, and
 fig.~\ref{206272} with red dots for each sample.
 \begin{figure}[h!]
 \begin{center}
-\includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/samples/samples}
+\includegraphics[width=\textwidth]{gfx/lung-paper-figures/samples/samples}
 \caption{{\(R\) value for each lung in the laboratory setup
 radiography (measured, black dots with errorbars) compared to the
 expected value modelled from microtomographic inputs (theory).
@@ -500,11 +503,12 @@ different distribution of shapes in the lung parenchyma, or additional
 effects of beam hardening which are known to influence the dark-field
 signal. In order to consider the effects of possible shape asymmetries, a
 single mouse lung sample was scanned at the X02DA TOMCAT beamline with the
-setup described in Kagias et al.~\parencite{PhysRevLett.116.093902}. This
+setup described in~\cite{PhysRevLett.116.093902}. This
 technique is similar to Talbot interferometry, but it is able to detect
 scattering from unresolved microscopic structures under different angles in
 a single shot by
-creating an array of circular interference patterns. The intensity of the
+creating an array of circular interference patterns (also see
+chapter~\ref{ch:omnidirectional}). The intensity of the
 dark-field signals for different angles can then be recovered for each
 pixel, and an asymmetry value defined as the amplitude of this periodic
 signal divided by the average can be calculated for each pixel. This allows
@@ -512,13 +516,16 @@ us to exclude the possibility that there are significant inhomogeneities in
 the dark-field response of the lung structures under different angles, which
 would directly invalidate the model of a superposition of spheres. This
 amounts to quantifying the departure from a spherical model towards
-ellipsoids. In our sample this asymmetry is an average of $0.11 \pm 0.04$, indicating a departure from the spherical model of less than 15\%.
+ellipsoids. In our sample this asymmetry is an average of $0.11 \pm 0.04$,
+indicating a departure from the spherical model of less
+than\SI{15}{\percent}.
 
 Another effect commonly reported in dark-field analyses on wide, polychromatic
 sources is the influence of beam hardening on the recorded dark-field
 values. In our case, given the high voltage of the source and the small
-thickness of the samples (less than 4 mm), the absorption ranges from 4\% to
-6\%. The correction to dark-field values provided by is therefore
+thickness of the samples (less than \SI{4}{\milli\meter}), the absorption
+ranges from \SI{4}{\percent} to \SI{6}{\percent}. The correction to
+dark-field values provided by \cite{Yashiro:15} is therefore
 not applied, as it is reported to be relevant for samples absorbing at least
 50\% of the incoming light. The beam hardening effect is considered insofar
 it affects the spectral weights of eq.~\ref{eqn:totalsum}, which are calculated

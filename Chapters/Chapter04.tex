@@ -2,21 +2,23 @@
 \section{Introduction}
 In the previous chapter, the results providing the \emph{first light}
 through Talbot-Lau interferometers at \SI{160}{\kilo\voltpeak} have been
-shown (figures~\ref{fig:img_chip} and~\ref{fig:screw}). It would therefore
-be appropriate to test if the quantitative studies on the differential phase
-and dark field signals could be replicated and extended to these setups.
+shown (figures \ref{fig:img_chip} and~\ref{fig:screw}). It was therefore
+appropriate to test if the quantitative studies on the differential phase
+and dark field signals could be replicated and extended to these
+high-energy setups.
 
-A number of studies have been published over the last few years\cn
+A number of studies have been published over the last few
+years~\parencite{Yashiro:10,Cong:12,Ritter:14,Schleede2012a,Meinel_2014,Scherer2015NoninvasiveDO} 
 connecting the intensity of the recorded dark-field signal to physical
-properties of a sample, most notably its structure and its composition. A
+properties of the sample, most notably its structure and its composition. A
 preliminary study to determine if such a goal would be attainable in the
-edge-on and high-energy configuration has been designed.
+edge-on and high-energy configuration was designed.
 
 \section{High efficiency with an edge-on detector}\label{sec:mythen-edge-on}
 The setup consisting of the interferometer with a design energy of
 \SI{120}{\kilo\eV} (see table~\ref{tab:gratings}) with a specially modified
 Mythen detector~\parencite{SCHMITT2003267} from the detector group of the Paul Scherrer Institute is chosen
-for the purpose. The
+for this purpose. The
 module is a strip detector with 1280 photon counting channels, arranged to
 match the fan beam curvature at a distance of \SI{70}{\centi\meter} from the
 source. The strips are also designed to lie on the beam plane as to achieve
@@ -45,9 +47,10 @@ sensor, without compromising the resolution. The calculated efficiency is above
     \label{fig:mythen-edge-on}
 \end{figure}
 
-The new, custom made, detector matching the circular wave front provides a
+The new custom made detector, matching the circular wave front, provides a
 significant benefit for the visibility of the interference fringes, which is
-improved to an average of \SI{7.5}{\percent}, as shown in
+improved from \SI{6}{\percent} (figures \ref{fig:visibility100}
+and~\ref{fig:visibility120}) to an average of \SI{7.5}{\percent}, as shown in
 figure~\ref{fig:mythen-visibility}.
 
 \begin{figure}[htb]
@@ -146,7 +149,7 @@ relationship becomes simply
     \delta &= \frac{2 \pi p_2 \tan \theta}{D_1}P,
     \label{eq:measuring.differential.phase}
 \end{align}
-where $P$ is the differential phase signal directly as measured with the
+where $P$ is the differential phase signal directly measured with the
 interferometer. With this relationship between the real part of the
 refractive index $\delta$ and the measured differential phase value $P$ we
 can test our experiment by scanning three wedges made of plastic materials
@@ -177,8 +180,10 @@ good agreement (table~\ref{tab:delta.experiment})
 \end{table}
 
 \subsection{Testing dark field sensitivity to microstructures}
-It has been reported in many studies that the dark field contrast arises
-whenever the sample contains very small structures, on the scale of few
+It has been reported in many
+studies~\parencite{Yashiro:10,Cong:12,Ritter:14,Schleede2012a,Meinel_2014,Scherer2015NoninvasiveDO}
+that the dark field contrast arises whenever the sample contains very small
+structures, on the scale of few
 micrometers, that cannot be resolved by a detector pixel, but contribute to
 decreasing the visibility of the interference pattern in a Talbot-Lau
 interferometer.
@@ -194,9 +199,9 @@ with the most absorption, is selected. More in detail, the minimum value in
 the transmission profile is selected, and values up to
 \SI{10}{\percent} higher than the minimum are kept.
 
-The data are then averaged, and shown here with $R = \log(B) / \log(A)$ as
-function of X-ray transmission, indicating different thicknesses
-(figure~\ref{fig:powders}).
+The data are then averaged, and shown in figure~\ref{fig:powders} with $R =
+\log(B) / \log(A)$ as a function of X-ray transmission, indicating different
+thicknesses.
 
 \begin{figure}[ht]
     \centering
@@ -226,14 +231,19 @@ steps and \SI{5}{\second} exposure per step. The sample is sketched on the
 left and the profile of the image is plotted on the right. The foam has a larger contrast
 in the dark-field image, while the homogeneous steel bar has a larger
 contrast in the transmission image.}
+\label{fig:steelrod}
 \end{figure}
 
-The results at this stage are mainly qualitative in nature, as the samples
+At this stage both results are mainly qualitative in nature, as the samples
 are very heterogeneous and contain particles of different sizes, but suggest
-that powders have a stronger dark field signal than homogeneous samples,
-thus indicating that further investigations, presented in
-chapter~\ref{ch:lung-dark-field}, should be carried out to determine a more
-precise model.
+that powders have a stronger dark field signal than homogeneous samples. In
+figure~\ref{fig:steelrod} it is clear that the polystyrene foam exhibits a
+large dark-field contrast, while a homogeneous steel bar has a larger
+transmission contrast.
+Further investigations, presented in
+chapter~\ref{ch:lung-dark-field}, will be carried out to determine a
+quantitative link between the size of microstructures in a foam-like sample 
+and the dark-field values recorded by the interferometer.
 
 \section{Compton scattering}
 The main change in the physical interactions when the energy of the beam is
@@ -241,9 +251,9 @@ increased, as is the goal of our experiments, is the fact that photoelectric
 absorption decreases, whereas incoherent Compton scattering becomes more
 relevant. We consider in this section how this could possibly affect the
 signals of a grating interferometer at energies above \SI{50}{\kilo\eV} for
-materials with low atomic number.
+materials with a low atomic number.
 
-Figure~\ref{fig:carbon-cross-sections} show the tabulated values for the
+Figure~\ref{fig:carbon-cross-sections} shows the tabulated values for the
 scattering cross sections of coherent and incoherent scattering, and
 photoelectric absorption for carbon.
 
@@ -251,7 +261,7 @@ photoelectric absorption for carbon.
     \centering
     \includegraphics[width=\textwidth]{gfx/compton/carbon_cross_section.png}
     \caption{Cross sections for coherent and incoherent scattering, and
-        photoelectric absorption for carbon. Above \SI{50}{\kilo\eV} Compton
+        photoelectric absorption for carbon~\parencite{NIST}. Above \SI{50}{\kilo\eV} Compton
     scattering is the most important effect.}
     \label{fig:carbon-cross-sections}
 \end{figure}
@@ -262,7 +272,7 @@ experiments incoherent scattering is the most common type of interaction.
 The question then arises as how this affects the beam coherence and possibly
 the visibility of the interference patterns. It has been
 reported~\parencite{PhysRevLett.90.160401} that incoherent scattering of
-particles in a Talbot-Lau interferometer does lead in a loss of visibility
+particles in a Talbot-Lau interferometer does lead to a loss of visibility
 --- encoded in the dark-field signal --- for a matter wave interferometer of
 fullerene $C_{70}$ molecules.
 

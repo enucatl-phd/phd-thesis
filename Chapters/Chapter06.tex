@@ -8,19 +8,19 @@ The Talbot-Lau interferometer described in chapter~\ref{ch:review} is one
 method of exploiting the self-imaging phenomenon for a periodical wave in
 order to transform phase differences into intensity modulations.
 An alternative approach has been established on synchrotron
-sources~\parencite{PhysRevLett.116.093902}, in order to overcome two limitations
-of conventional grating interferometry: the limitation of the sensitivity of
+sources~\parencite{PhysRevLett.116.093902} in order to overcome two limitations
+of conventional grating interferometry: first, the limitation of the sensitivity of
 the phase and dark-field signals to the direction orthogonal to the grating
-lines (equation~\ref{eq:talbot1}); the phase stepping procedure, where
+lines (equation~\ref{eq:talbot1}); second, the phase stepping procedure, where
 the analyzer grating is scanned across the interference fringes in order to
 decode the three characteristic signals
 (section~\ref{sec:gi-image-analysis}), which requires multiple exposures and
-a precise displacement of the absorption grating \G2 on the order of
+a precise displacement of the absorption grating \G2 of the order of
 hundreds of nanometers.
 
 The setup proposed in~\parencite{PhysRevLett.116.093902} relies on the modulation
 of a wave front that is periodical in two ways: a unit cell made of
-concentric circles introducing a phase shift of $\pi/2$ in the X-rays is
+concentric circles introducing a phase shift of $\pi/2$ in the X-rays,
 replicated across the field of view
 (figure~\ref{fig:omnidirectional-synchrotron}).
 
@@ -37,7 +37,7 @@ American Physical Society.}
     \label{fig:omnidirectional-synchrotron}
 \end{figure}
 
-The key feature is the replication of the circular structures 
+The key feature is the self-imaging of the circular structures 
 at the Talbot distances, again according to
 equation~\ref{eq:talbot.distance}:
 \begin{equation*}
@@ -46,7 +46,7 @@ equation~\ref{eq:talbot.distance}:
 \end{equation*}
 Additional imperfections are introduced by the finite number of periods in
 each unit cell, but these are smoothened out as a result of the finite
-source size as reported in~\cite{PhysRevLett.116.093902} and this is even
+source size as reported in~\cite{PhysRevLett.116.093902}. This is even
 more so in the case of a laboratory source with a compact setup.
 This pattern is replicated with a period $P$ of the unit cells themselves,
 for which
@@ -54,20 +54,17 @@ for which
     P = Np_1.
     \label{eq:unit.cell.periop}
 \end{equation}
-
 These fringes have to be large enough to be directly resolved at the
-detector, as the data from physical detector pixels belonging to the same
-unit cell are analyzed together to produce the final image. Analogously to
+detector, as the data from neighnouring detector pixels belonging to the same
+unit cell are analyzed together, resulting in a macroscopic pixel in the final image. Analogously to
 the phase stepping approach for Talbot-Lau interferometry, each unit cell
 records a circular interference fringe that is approximated with a sinusoid
-
 \begin{equation}
     I(x, y) = a_0 + a_1(\theta)\cos\left(\frac{2\pi}{p_1} \sqrt{x^2 +
     y^2}\right),
     \label{eq:omnidirectional.periodical.signal}
 \end{equation}
-
-Where $x$ and $y$ are the positions of the pixels with respect to the center
+where $x$ and $y$ are the positions of the pixels with respect to the center
 of the unit cell pattern, as identified by the pixel with maximum intensity,
 and $\theta = \arctan(y/x)$.
 
@@ -78,11 +75,11 @@ transmission signal; a displacement of the location of the maximum $(x, y)$,
 related to the refraction of the X-ray beam; and a reduction in the
 visibility of the pattern $a_1$. 
 
-Critically, the dark field signal, or visibility reduction signal, can be
-determined as a function of the angle $\phi$ around the circle by calculating the
-Fourier transform of the line passing through the center of the unit circle
-at the angle $\phi$ and taking the ratio of the $N$-th to the zeroth component
-
+The dark field signal, or visibility reduction signal, can be
+determined as a function of the angle $\phi$ around the circle by
+calculating the Fourier transform of the line passing through the center of
+the unit circle at the angle $\phi$ and taking the ratio of the $N$-th to
+the zeroth component
 \begin{equation}
     B = \frac{a_{1,s}(\theta = \phi)}{a_{1,f}(\theta =
 \phi)}\frac{a_{0,f}}{a_{0,s}}
@@ -91,18 +88,19 @@ at the angle $\phi$ and taking the ratio of the $N$-th to the zeroth component
 
 \section{An omnidirectional setup for laboratory sources}
 These are the features of omnidirectional dark-field imaging so far reported
-in~\parencite{PhysRevLett.116.093902}, our goal is now to export the same
+in~\parencite{PhysRevLett.116.093902}, our goal was to export the same
 technique from a synchrotron to a conventional X-ray source.
-As described in~\parencite{kagias2018omnidir}, the problem arises of resolving
-the very fine self-image of the grating with a period on the order of the
-micrometer. The detector used for this experiment in the same as in
+As described in~\parencite{kagias2018omnidir}, the main problem is the
+resolution of
+the very fine self-image of the grating with a period in the order of 
+micrometers. The detector used for this experiment in the same as in
 chapter~\ref{ch:lung-dark-field}, the cadmium telluride prototype Santis
 CdTe by Dectris Ltd. While this provides excellent efficiency at high
 energy, its resolution of \SI{75}{\micro\meter} cannot be compared with the
 submicron resolution available for the synchrotron experiment employing a tenfold optical magnification.
 
 This issue can be overcome by designing each unit cell as a beam splitter
-grating~\ref{fig:beam-splitter}. The resulting intensity profile in the far
+grating (figure~\ref{fig:beam-splitter}). The resulting intensity profile in the far
 field has one central maximum, a minimum and a secondary maximum along the
 radial direction away from the center. This cell
 is then repeated across the field of view and the Talbot effect is then used
@@ -141,16 +139,17 @@ sources~\parencite{kagias2018omnidir}.}
 As in the case of the Talbot interferometer, while this can be achieved in
 normal operating conditions for synchrotron experiments, the required
 coherence is enforced on the laboratory source with a focal spot size of
-\SI{1}{\milli\meter} by introducing an absorption grating \G0, in this case
+\SI{1}{\milli\meter} by introducing an absorption grating \G0. In this case
 a two-dimensional array of pinholes with period $p_0 =
-\SI{455}{\micro\meter}$ and diameter $s = 50-\SI{100}{\micro\meter}$ in a
-\SI{100}{\micro\meter} thick tungsten
+\SI{455}{\micro\meter}$ and diameter between $s = \SI{50}{\micro\meter}$ and
+$ s = \SI{100}{\micro\meter}$, with a variance given by the penetration of
+the laser through the \SI{100}{\micro\meter} thick tungsten
 plate. This achieves the required coherence according to
 equation~\eqref{eq:source.size.omnidirectional}, while the interference
-patterns from different sources superimpose constructively if
+patterns from different pinhole sources superimpose constructively if
 condition~\eqref{eq:p0} is met
 \begin{equation}
-    p_0 = p_2 \frac{L}{D}.\label{eq:p0.omnidirectional},
+    p_0 = p_2 \frac{L}{D}\label{eq:p0.omnidirectional},
 \end{equation}
 where $p_2$ is the magnified period $P$ at the detector plane.
 
@@ -167,8 +166,8 @@ The geometry satisfies
     D &= \SI{110}{\centi\meter}.
 \end{align*}
 
-The sample is a knot made with carbon fibers, exhibiting a strong
-directional scattering related to the direction of the fibers. The exposure
+The sample is a knot made of carbon fibers, exhibiting a strong
+directional scattering signal related to the direction of the fibers. The exposure
 time was chosen to be \SI{100}{\second}.
 Results are shown in figure~\ref{fig:knot-reconstruction}.
 
@@ -203,3 +202,17 @@ figure~\ref{fig:cells}.
     each pixel is shown.}
     \label{fig:cells}
 \end{figure}
+
+In conclusion, this was the first extension to a laboratory source of
+omnidirectional grating interferometry. This technique was developed for
+synchrotron experiments by~\cite{PhysRevLett.116.093902}, and could be
+applied to a low coherence source with the same principle of Talbot-Lau
+interferometry. A pinhole array creates individually coherent sources that
+are capable of generating an interference pattern (figure~\ref{fig:cells})
+that is large enough to be directly resolved by the detector. The
+interference pattern from adjacent pinholes superimpose incoherently but
+constructively reinforcing each other if the geometrical
+constraint~\eqref{eq:p0} is taken into account. As a result, the strength of
+the scattering signal along different directions can be retrieved, with
+figure~\ref{fig:knot-reconstruction} showing the dominant direction of the
+fibers as they appear to be following the tied cable.
