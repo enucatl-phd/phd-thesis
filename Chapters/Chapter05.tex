@@ -102,7 +102,7 @@ equation~\eqref{eq:magnification-distance}
 
 \section{Silicon and cadmium telluride detectors}
 
-The first available detector for two-dimensional radiography experiments is
+The first detector available to us for two-dimensional radiography experiments is
 an Eiger 1M module by Dectris Ltd~\parencite{dectris-eiger, 1748-0221-9-05-C05032}. It features a silicon sensor
 with a thickness of~\SI{450}{\micro\meter} and a pixel size of
 $75\times\SI{75}{\micro\meter\squared}$. The efficiency of this sensor is
@@ -153,7 +153,8 @@ exposure per step.
     \centering
     \includegraphics[width=.8\textwidth]{gfx/visibility_titlis.png}
     \caption{Visibility histogram of the face-on interferometer with a
-        design energy of~\SI{45}{\kilo\eV}. The average is
+        design energy of~\SI{45}{\kilo\eV} on a cadmium telluride prototype
+        sensor. The average is
         \SI{14}{\percent}.}
     \label{fig:visibility-titlis}
 \end{figure}
@@ -215,7 +216,7 @@ scan itself. This is then relevant to gather data from the radiography on
 the Talbot-Lau interferometer on the same area.}
 \end{figure}
 
-\subsection{Processing of the tomographic data}\label{sec:tomoprocessing}
+\subsection{Processing of the synchrotron tomographic data}\label{sec:tomoprocessing}
 The tomographic sinograms are preprocessed with the Paganin
 algorithm~\parencite{Paganin_2002} and
 the 3D volume is then reconstructed with the gridrec
@@ -254,13 +255,14 @@ the subsequent analysis.
 Next, each lung sample is manually stitched from three or four local
 tomographies (figure~\ref{fig:stitched}), depending on the sample thickness, and the local air thickness
 map is calculated. The local thickness map is an algorithm developed for
-bone analysis or foam analysis in material science~\parencite{6778077}, that aims
+bone analysis or foam analysis in material science~\parencite{localthickness}, that aims
 at calculating the maximum diameter of a sphere fitting in each hole in the
 sample.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/lung-paper-figures/0700.png}
-    \caption{Stitched slice of the mouse lung labelled KO202.}
+    \caption{Stitched slice of the mouse lung labelled KO202, measured on
+    the X02DA TOMCAT beamline.}
     \label{fig:stitched}
 \end{figure}
 The euclidean distance transform is calculated from the image, yielding the
@@ -295,7 +297,7 @@ To obtain a distribution of sphere sizes, kernel density estimation in the R
 statistics package \emph{ks}~\parencite{JSSv021i07} is used in order to avoid possible artifacts
 resulting from the arbitrary binning of the histogram of sphere sizes.
 
-\subsection{Processing of the radiographic data}\label{sec:radioprocessing}
+\subsection{Processing of the radiographic data from the laboratory source}\label{sec:radioprocessing}
 For each pixel, the transmission image $A$ and the
 dark-field image $B$ are calculated (see fig.~\ref{590406}). Both of these
 quantities are known to follow the Beer-Lambert law, with an exponential
@@ -361,7 +363,7 @@ $s(\energy)$:
     \label{eqn:lynchpolychromatic}
 \end{equation}
 
-This formula, that we can call the \emph{gi method} for the calculation of
+This formula, that we can call the \emph{GI method} (grating interferometry) for the calculation of
 the dark-field extinction coefficient (figure~\ref{fig:equivalence-lynch-saxs}), was first tested on monodisperse solution of silicon dioxide
 spheres with sizes ranging from \SI{0.166}{\micro\meter} to
 \SI{7.760}{\micro\meter}, with a volume fraction of 20\%
@@ -445,7 +447,7 @@ the sphere diameters is extracted from the microtomographic data
     \centering
     \includegraphics[width=.8\textwidth]{gfx/lung-paper-figures/size_pdf.png}
     \caption{Distribution of the diameters of the alveoli as determined from
-    microscopic tomography data for all samples.}
+    synchrotron tomography data for all samples.}
     \label{fig:sizepdf}
 \end{figure}
 together
@@ -518,7 +520,7 @@ would directly invalidate the model of a superposition of spheres. This
 amounts to quantifying the departure from a spherical model towards
 ellipsoids. In our sample this asymmetry is an average of $0.11 \pm 0.04$,
 indicating a departure from the spherical model of less
-than\SI{15}{\percent}.
+than \SI{15}{\percent}.
 
 Another effect commonly reported in dark-field analyses on wide, polychromatic
 sources is the influence of beam hardening on the recorded dark-field

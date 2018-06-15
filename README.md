@@ -10,7 +10,7 @@ script is used to publish the compiled PDF.
 ## Abstract
 Grating interferometry has been developed on a wide variety of sources and
 applications in the last decade, and it is reaching clinical significance in
-specific fields such as mammography and cartilage imaging. This is the
+specific fields such as mammography and lung imaging. This is the
 result of the sensitivity of this technique to additional physical signals,
 namely differential phase contrast and dark-field contrast. While these
 provide great insights in the physical properties of samples, and most

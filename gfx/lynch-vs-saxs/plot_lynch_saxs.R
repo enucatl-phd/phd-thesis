@@ -28,7 +28,7 @@ plot = ggplot(merged, aes(x=diameter, y=dfec)) +
 dev.new()
 print(plot)
 
-width = 7
+width = 10
 factor = 0.618
 height = width * factor
 ggsave(args$output, plot, width=width, height=height, dpi=300)
