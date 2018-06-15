@@ -78,7 +78,7 @@ figure~\ref{fig:spectrum-100kV}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/spectrum-visibility/spectrum-100kV.png}
-    \caption{Spectrum of the laboratory source with an acceleration voltage of
+    \caption[Spectrum of the laboratory source at \SI{100}{\kilo\voltpeak}]{Spectrum of the laboratory source with an acceleration voltage of
         \SI{100}{\kilo\volt}. Simulated with the SpekCalc
         software~\parencite{spekcalc}.}
     \label{fig:spectrum-100kV}
@@ -114,7 +114,7 @@ provide enough quantum efficiency --- less than \SI{10}{\percent} above
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/eiger/efficiency.png}
-    \caption{Efficiency of the \SI{450}{\micro\meter} thick sensor of the
+    \caption[Efficiency of the Eiger silicon detector]{Efficiency of the \SI{450}{\micro\meter} thick sensor of the
 Eiger 1M detector as a function of energy.}
     \label{fig:eiger-efficiency}
 \end{figure}
@@ -125,7 +125,7 @@ figure~\ref{fig:eiger-chicken}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/eiger/series_160729_170729669658_series_160729_171501073073.png}
-    \caption{Chicken paw scanned with a \SI{45}{\kilo\eV} two-dimensional
+    \caption[Chicken paw radiography]{Chicken paw scanned with a \SI{45}{\kilo\eV} two-dimensional
 grating interferometer and the silicon detector Eiger 1M.}
     \label{fig:eiger-chicken}
 \end{figure}
@@ -152,7 +152,7 @@ exposure per step.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=.8\textwidth]{gfx/visibility_titlis.png}
-    \caption{Visibility histogram of the face-on interferometer with a
+    \caption[Visibility of the face-on interferometer]{Visibility histogram of the face-on interferometer with a
         design energy of~\SI{45}{\kilo\eV} on a cadmium telluride prototype
         sensor. The average is
         \SI{14}{\percent}.}
@@ -164,10 +164,10 @@ The setup is shown in figure~\ref{248327}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/lung-setup/lung-setup}
-    \caption{{Talbot-Lau interferometer with three gratings G0, G1 and G2, used for
+    \caption[Photo of the Talbot-Lau interferometer for lung radiographies]{Talbot-Lau interferometer with three gratings G0, G1 and G2, used for
         the radiographies on the laboratory source.
         {\label{248327}}%
-    }}
+    }
 \end{figure}
 
 \section{Methods}\label{sec:methods}
@@ -261,7 +261,7 @@ sample.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/lung-paper-figures/0700.png}
-    \caption{Stitched slice of the mouse lung labelled KO202, measured on
+    \caption[Stitched beamline tomography of a mouse lung.]{Stitched slice of the mouse lung labelled KO202, measured on
     the X02DA TOMCAT beamline.}
     \label{fig:stitched}
 \end{figure}
@@ -315,10 +315,9 @@ radiography:
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/KO373_LL_smoke/WT256_LL_smoke}
-    \caption{{Example of an ex vivo lung interferometric radiography on a laboratory
+    \caption[Radiography of a mouse lung on a laboratory source]{Example of an ex vivo lung interferometric radiography on a laboratory
         source. Sample labelled WT256.
-        {\label{590406}}%
-    }}
+        {\label{590406}}}
 \end{figure}
 
 \section{Modelling the polychromatic dark-field signal}\label{sec:model}
@@ -369,16 +368,14 @@ spheres with sizes ranging from \SI{0.166}{\micro\meter} to
 \SI{7.760}{\micro\meter}, with a volume fraction of 20\%
 in glycerol. This model yields a good agreement between the continuous line
 and the experimental data representing radiographies of the silicon dioxide
-sphere samples recorded on the laboratory source interferometer (figure
-\ref{725462}).
+sphere samples recorded on the laboratory source interferometer (figure~\ref{725462}).
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=0.70\columnwidth]{gfx/lung-paper-figures/summary/summary}
-\caption{{Silicon dioxide monodisperse microspheres in a 20\% solution of
-glycerol as a function of sphere diameter. The continuous line is the
-function in eq. {\ref{eqn:lynchpolychromatic}}.
-{\label{725462}}%
-}}
+\caption[Dark-field signals for silicon microspheres.]{Silicon dioxide monodisperse microspheres in a 20\% solution of
+    glycerol as a function of sphere diameter. The continuous line is the
+    function in eq. {\ref{eqn:lynchpolychromatic}}.
+    {\label{725462}}}
 \end{center}
 \end{figure}
 
@@ -426,7 +423,9 @@ which align along the same curve (figure~\ref{fig:equivalence-lynch-saxs}).
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{gfx/lynch-vs-saxs/plot.png}
-    \caption{Comparison of equations~\eqref{eqn:lynch}, or \emph{gi} method,
+    \caption[Equivalence of grating interferometry and small-angle
+        scattering approaches for the calculation of dark-field extinction
+    coefficients.]{Comparison of equations~\eqref{eqn:lynch}, or \emph{gi} method,
     and~\eqref{eq:autocorrelation}, or \emph{usaxs} method for the
 estimation of the scattering intensity, as seen through the dark-field
 extinction coefficients. The two methods are equivalent.}
@@ -477,7 +476,8 @@ fig.~\ref{206272} with red dots for each sample.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=\textwidth]{gfx/lung-paper-figures/samples/samples}
-\caption{{\(R\) value for each lung in the laboratory setup
+\caption[Comparison of the theoretical estimate and experimental values of
+the dark-field signal.]{{\(R\) value for each lung in the laboratory setup
 radiography (measured, black dots with errorbars) compared to the
 expected value modelled from microtomographic inputs (theory).
 {\label{206272}}%
@@ -614,7 +614,7 @@ square root proportionality between the height of the water column and time.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/wet-cement/position.png}
-    \caption{Height of the water column in a cement cylinder as a function
+    \caption[Water diffusion in cement.]{Height of the water column in a cement cylinder as a function
         of time, measured on $R$ images from the \SI{45}{\kilo\eV} grating
     interferometer. The blue line is a linear fit according to
     equation~\eqref{eq:sorptivity}, establishing the proportionality between
