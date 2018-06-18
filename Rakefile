@@ -22,7 +22,8 @@ IMAGES = EEPIC.ext(".eepic") + [
     "gfx/omnidirectional/visibility-omnidirectional.png",
     "gfx/eiger/efficiency.png",
     "gfx/mythen-edge-on/g1roty.png",
-  ]
+  ] +
+  FileList["gfx/eiger/*.png"]
 
 namespace :main do
 

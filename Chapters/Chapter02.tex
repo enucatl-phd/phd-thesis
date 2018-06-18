@@ -384,7 +384,6 @@ thesis. The Talbot effect is therefore described in detail.
 The Helmoltz equation~\eqref{eq:helmoltz.fourier} provides the solution for
 the propagation of a plane wave in a vacuum, where $n \equiv 1$. Plane waves
 are also solutions
-
 \begin{equation}
     \psi(\omega, \vec{x}) = e^{i\vec{k}\cdot \vec{x}} \qquad \text{with } k^2
     = k_x^2 + k_y^2 + k_z^2 = c^2 \omega^2.
@@ -399,8 +398,11 @@ of propagation $z$, by writing the solution~\eqref{eq:plane.wave.solution} in th
     \label{eq:free.propagation}
 \end{equation}
 It is then clear that to propagate the plane wave from $z = 0$ to $z = z_0$
-it is necessary to multiply by the factor $\exp(iz_{0}\sqrt{k^2 - k_x^2 -
-k_y^2})$.
+it is necessary to multiply by the factor
+\begin{equation}
+    \exp(iz_{0}\sqrt{k^2 - k_x^2 - k_y^2}).
+    \label{eq:factor.propagator}
+\end{equation}
 
 Given a general solution $\psi(\omega, x, y, z)$ to the Helmoltz
 equation~\eqref{eq:helmoltz.fourier}, it can be decomposed as a sum of plane
@@ -451,10 +453,10 @@ to the frequencies $k_{xj}$ will be nonzero after the transform.
 By then propagating according to equation~\eqref{eq:paraxial.propagator}
 
 \begin{align}
-    \Fx\psi(\omega, x, z_0) &= \exp(ikz_0)\exp\big(-i
-    z_0\frac{k_x^2}{2k}\big)\sum_j \psi_j(\omega)\delta(k_x -
+    \Fx\psi(\omega, x, z_0) &= \exp\Big(ikz_0-i
+    z_0\frac{k_x^2}{2k}\Big)\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}) \\
-    &= \exp(ikz_0)\exp\big(-i z_0\frac{k_{xj}^2}{2k}\big)\sum_j \psi_j(\omega)\delta(k_x -
+    &= \exp\Big(ikz_0-i z_0\frac{k_{xj}^2}{2k}\Big)\sum_j \psi_j(\omega)\delta(k_x -
     k_{xj}).
     \label{eq:talbot1}
 \end{align}
