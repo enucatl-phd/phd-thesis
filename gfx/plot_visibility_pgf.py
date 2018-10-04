@@ -59,7 +59,7 @@ legend = plt.legend([line], ["{0}: {1:.1f} $\\%$".format(
 legend.get_frame().set_linewidth(0)
 axis.set_ylim(
     bottom=0,
-    top=1.2*max_visibility)
+    top=0.14)
 axis.xaxis.tick_bottom()
 axis.yaxis.tick_left()
 axis.yaxis.set_major_formatter(FuncFormatter(

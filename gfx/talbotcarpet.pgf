@@ -78,7 +78,6 @@
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=0.594030in,y=0.342000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont 0}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -124,7 +123,6 @@
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=2.042265in,y=0.342000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont 1.5}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -170,7 +168,6 @@
 \end{pgfscope}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=3.548709in,y=0.342000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont 2.5}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%
@@ -197,7 +194,8 @@
 %
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgftext[left,bottom,x=1.827083in,y=0.165000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont Lohmann distance}}
+\pgftext[left,bottom,x=1.827083in,y=0.165000in,rotate=0.000000]{{\rmfamily\fontsize{11.000000}{13.200000}\selectfont
+    Lohmann index}}
 %
 \end{pgfscope}%
 \begin{pgfscope}%

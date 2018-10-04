@@ -199,6 +199,16 @@ with the most absorption, is selected. More in detail, the minimum value in
 the transmission profile is selected, and values up to
 \SI{10}{\percent} higher than the minimum are kept.
 
+The absorption and visibility reduction signals are used, according to the
+definitions given in equations~\eqref{eq:visibility-definition}
+and~\eqref{eq:dark-field-definition}.
+
+\begin{align}
+    A &= a_{0,s} / a_{0,f}\\
+    B &= \frac{a_{1,s}}{a_{0,s}}\frac{a_{0,f}}{a_{1,f}}
+    \label{eq:signal-definition-2}
+\end{align}
+
 The data are then averaged, and shown in figure~\ref{fig:powders} with $R =
 \log(B) / \log(A)$ as a function of X-ray transmission, indicating different
 thicknesses.
@@ -252,19 +262,6 @@ absorption decreases, whereas incoherent Compton scattering becomes more
 relevant. We consider in this section how this could possibly affect the
 signals of a grating interferometer at energies above \SI{50}{\kilo\eV} for
 materials with a low atomic number.
-
-Figure~\ref{fig:carbon-cross-sections} shows the tabulated values for the
-scattering cross sections of coherent and incoherent scattering, and
-photoelectric absorption for carbon.
-
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=\textwidth]{gfx/compton/carbon_cross_section.png}
-    \caption[Scattering cross sections.]{Cross sections for coherent and incoherent scattering, and
-        photoelectric absorption for carbon~\parencite{nist}. Above \SI{50}{\kilo\eV} Compton
-    scattering is the most important effect.}
-    \label{fig:carbon-cross-sections}
-\end{figure}
 
 It is clear that in the energy range that we want to explore in our
 experiments incoherent scattering is the most common type of interaction.

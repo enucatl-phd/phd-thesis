@@ -211,18 +211,20 @@ $Z$ roughly as~\parencite{knoll2000radiation,Momose2005}
 
 This leads to the conclusion that the phase term $\delta$ becomes
 relatively more important as the energy of the beam and the atomic number
-are increased~(see figure~\ref{fig:delta.beta}).
+are increased~(see figure~\ref{fig:delta.beta}). 
 
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/delta-beta-comparison/delta-beta-comparison.png}
     \caption[Values of $\delta/\beta$ as a function of energy for different
-    materials.]{Ratio of $\delta$ to $\beta$. $\delta$ contributes to the
-    phase interaction, while $\beta$ is the term for absorption in the
-refractive index. The ratio shows that the phase interaction is stronger
-than absorption interaction and that it also becomes relatively stronger as
-the energy increases up to stabilizing at a value that is larger for
-materials with a higher atomic number.}
+    materials.]{Ratio of $\delta$ to $\beta$, tabulated from \cite{nist}.
+    $\delta$ contributes to the phase interaction, while $\beta$ is the term
+    for absorption in the refractive index. The ratio shows that the phase
+    interaction is stronger than absorption interaction and that it also
+    becomes relatively stronger as the energy increases up to 
+    a value that is larger for materials with a higher atomic number, then
+    decreases as inelastic scattering becomes the dominant interaction of
+the X-rays with the material.}
     \label{fig:delta.beta}
 \end{figure}
 
@@ -234,6 +236,61 @@ applications~\parencite{Willner2013,Donath2009a} to a lower energy range.
 This is the fundamental motivation of this experimental work, in order to
 assess the feasibility and characteristics of X-ray interferometric
 techniques for standard laboratory sources with a higher beam energy.
+
+Figure~\ref{fig:carbon-cross-sections} shows the tabulated values for the
+scattering cross sections of coherent and incoherent scattering, and
+photoelectric absorption for carbon.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=\textwidth]{gfx/compton/carbon_cross_section.png}
+    \caption[Scattering cross sections.]{Cross sections for coherent and incoherent scattering, and
+        photoelectric absorption for carbon~\parencite{nist}. Above \SI{50}{\kilo\eV} Compton
+    scattering is the most important effect.}
+    \label{fig:carbon-cross-sections}
+\end{figure}
+
+In this energy range, Compton scattering is the most common mode of
+interaction of X-rays with matter. Therefore, we have to carefully evaluate recommendations found in
+literature~\parencite{Wong2014} proposing an energy increase for
+phase-sensitive techniques in order to profit from the increase in the
+$\delta/\beta$ ratio and a decrease in photoelectric absorption --- that
+translates to a smaller deposited dose in the sample.
+
+We can see that while this holds for specific lower energy applications such
+as mammography with voltages in the \num{30}-\SI{50}{\kilo\volt} range, for
+our experiments we cannot recommend further increases in energy with respect
+to what is already needed to achieve sufficient beam penetration across a
+large-scale sample.
+
+This is for two reasons. First, as shown in
+figure~\ref{fig:carbon-cross-sections}, for materials with a low atomic
+number that constitute most biological samples, inelastic scattering
+completely predominant above a photon energy of \SI{50}{\kilo\eV}.
+Therefore, we cannot expect to gain sensitivity to phase signals as the
+$\delta/\beta$ ratio is already decreasing above this energy range.
+Moreover, the dose delivered to a sample is also of critical importance for
+medical applications. It must be kept below strict regulatory limits and
+generally as low as possible.
+In the lower energy range, where photoelectric absorption is the main
+interaction, the photon and its whole energy are absorbed in the sample.
+By increasing the energy $\energy$ we have a decrease in the probability of
+photoelectric absorption by a
+factor of $\approx\energy^{3.5}$, while each absorption even of course deposits an
+energy of $\energy$. For this reason, increasing the energy may be
+beneficial in order to deposit less dose in the sample, provided that an
+adequate compensation in image quality can be achieved by the usage of
+phase-sensitive techniques.
+
+In the higher energy range, Compton scattering becomes the main source of
+interaction and its behaviour is entirely different. A photon is not
+absorbed but rather deviated at an angle with respect to its original path
+by the electrons in the sample. Such interaction transfers an amount of
+energy that is proportional to the energy of the incoming
+photon~\parencite{PhysRev.21.483}, but its cross section does not decrease
+with increasing energy. Hence, above this energy threshold where Compton
+scattering becomes the main source of X-ray interactions, it is no longer
+advantageous from the point of view of dose delivery to increase the energy.
 
 \section{Interferometry}
 The results of the previous section, and in particular
@@ -499,11 +556,18 @@ figure~\ref{fig:talbotcarpet}.
     \input{gfx/talbotcarpet.pgf}
     \caption[Talbot carpet.]{Simulation of the \emph{Talbot carpet},
     that is the propagation of a wave front with a phase periodicity
-    introduced by a grating \G1.
+    introduced by a grating \G1 with a phase shift of $\pi$.
     Interference fringes are created at the Lohmann distances with half the
 period of the grating \G1.}
     \label{fig:talbotcarpet}
 \end{figure}
+
+In all our experiments a phase shift of $\pi$ in the \G1 grating has been
+used. It is not the only available choice though, as many experiments and theoretical
+analyses have been reported
+with phase gratings imposing a shift of $\pi/2$ on the incident
+beam~\parencite{Hipp:14,Wang20102,Thuering2014}.
+
 
 \section{Talbot-Lau interferometry}
 \subsection{Image generation and analysis}\label{sec:gi-image-analysis}
@@ -575,9 +639,10 @@ sinusoid
     \includegraphics[width=\textwidth]{gfx/sinusoidal-phase-stepping/sinusoidal-phase-stepping.png}
     \caption[Convolution of two rectangular and a gaussian signal.]{The
         plotted function is the result of the convolution of two rectangular
-        signals, representing the self image of the phase grating \G1 and the
+        signals with period $2\pi$, representing the self image of the phase grating \G1 and the
         transmission function of the analyzer grating \G2, and a gaussian
-    signal representing a finite source profile.}
+    signal with width $\sigma=\pi/5$ representing a finite source profile.
+The decrease in amplitude in the picture is an artifact at the edges of the finite size of the sampling.}
     \label{fig:phase.stepping.sinusoidal}
 \end{figure}
 
