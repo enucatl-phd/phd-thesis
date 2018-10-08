@@ -323,7 +323,8 @@ figure~\ref{fig:sketch-compton}.
 \begin{figure}[htb]
     \centering
     \includegraphics[width=\textwidth]{gfx/compton/compton_deviation.png}
-    \caption[Deviation of X-rays after a scattering event.]{Deviation of an X-ray photon from the sample after incoherent
+    \caption[X-rays limiting angle after a scattering event.]{Maximum angle
+        for the deviation of an X-ray photon after incoherent
     scattering. The photon reaches the detector only if the angle $\alpha$
 is small enough that the photon is not subsequently absorbed by the grating.}
     \label{fig:sketch-compton}
@@ -333,13 +334,13 @@ The X-ray photon interacts with the sample, and after incoherent scattering
 it is detected only if the angle $\alpha$ is small enough that the grating
 does not block it after the interaction. By using the small angle
 approximation $\alpha \sim \sin\alpha \sim\tan\alpha$ and the orders of
-magnitude of the distances $D \sim \SI{10}{\centi\meter}$ and grating
+magnitude of the distances $h \sim \SI{100}{\micro\meter}$ and grating
 periods $p \sim \SI{2}{\micro\meter}$ used across all of our
 experiments
 
 \begin{equation}
-    \alpha < \frac{p}{2D} \simeq
-    \frac{\SI{1}{\micro\meter}}{\SI{10}{\centi\meter}} = 10^{-5}
+    \alpha < \frac{p}{2h} \simeq
+    \frac{\SI{1}{\micro\meter}}{\SI{100}{\micro\meter}} = 10^{-2}
     \label{eq:acceptance-angle}
 \end{equation}
 
@@ -360,11 +361,11 @@ approximated with the Klein-Nishina formula~\parencite{Klein1929}
 where $\hslash$ is the reduced Planck's constant, $c$ is the speed of light,
 $m_e$ is the mass of the electron, $k$ is the momentum of the incident
 photon, $k^\prime$ is the momentum of the emitted photon and
-$\alpha_{fs} = 1/137$ is the fine structure constant. By comparing a plot of
-the scattering intensity as a function of scattering
-angle, figure~\ref{fig:klein-nishina}, it is immediately obvious that the
-distribution of scattering angles is many orders of magnitude above the
-angular acceptance~\eqref{eq:acceptance-angle} of our interferometers.
+$\alpha_{fs} = 1/137$ is the fine structure constant. 
+As a consequence of high probability for large scattering angles
+(figure~\ref{fig:klein-nishina}) involved in incoherent
+scattering, the absorption grating \G2 installed in a Talbot-Lau
+interferometer suppresses scattered radiation.
 
 \begin{figure}[htb]
     \centering
@@ -376,16 +377,17 @@ angular acceptance~\eqref{eq:acceptance-angle} of our interferometers.
 \end{figure}
 
 Therefore, after a typical incoherent interaction, a photon does not reach
-the detector, hence it does not contribute to the dark-field signal but it
+the detector, hence its contribution to the dark-field signal is suppressed
+by a factor of at least 100 but it
 is revealed in the transmission signal as absorption by extinction of the
 beam. This is also confirmed through Monte Carlo simulations described
 in~\cite{silviathesis}. A source spectrum with a gaussian distribution
 around \SI{60}{\kilo\eV} for the edge-on interferometer is simulated. In the
 Monte Carlo simulation it is possible to follow individual particles and to
 track which kind of interaction occurred before hitting the detector.
-We can therefore exclude the influence of Compton scattering on the
-dark-field in our experiments (figure~\ref{fig:silvia}) as it is suppressed
-by many orders of magnitude by the grating geometry.
+We can therefore conclude that the influence of Compton scattering on the
+dark-field in our experiments (figure~\ref{fig:silvia}) is suppressed
+by at least two orders of magnitude by the grating geometry.
 
 \begin{figure}[htb]
     \centering
@@ -417,8 +419,9 @@ be achieved for elements with a low atomic number, such as plastic phantoms.
 Moreover, in order to achieve a quantitative estimation of the
 dark-field signal it was necessary to analyze through theoretical and
 simulation results the effects of Compton scattering. We were able to
-conclude that this effect does not influence the dark-field signal, but is
-only detected as absorption contrast through extinction of the beam. Scattering can significantly reduce contrast
+conclude that this effect has a small influence on the dark-field signal,
+but it is
+detected as absorption contrast through extinction of the beam. Scattering can significantly reduce contrast
 in absorption radiography, and antiscatter grids are a known means of
 preventing contrast and resolution loss~\parencite{doi:10.1118/1.4811156}. 
 In our case, these grids with a high aspect ratio are consituted by the
