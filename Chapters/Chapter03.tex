@@ -199,7 +199,34 @@ $p_0 = p_1 = p_2$. For the current experiments, a symmetric interferometer
 with a grating period of $p = \SI{2.8}{\micro\metre}$ for all gratings has
 been used.
 
-The second critical factor in~\eqref{eq:variance} is the visibility~$v$. The
+The duty cycle should also be chosen for the absorption gratings. The recipe
+from~\cite{Thuering2014} can be used to determine the smallest detectable
+refraction angle as a function of the duty cycle $d$ of the absorption
+gratings. For a grating with perfect absorption, that is with lamellae
+blocking \SI{100}{\percent} of the incoming radiation, the smallest
+detectable angle is proportional to
+\begin{equation}
+    \gamma(d) = \frac{k}{k \sinc(k)}.
+    \label{eq:sens-dc}
+\end{equation}
+This function is plotted on figure~\ref{fig:sens-dc}, indicating an optimal
+value of 0.37 for the duty cycle $d$ in the absorption gratings. In
+consideration of the fact that this function shows a limited response to
+small changes of the duty cycle around this value, that it is beneficial
+to increase the total counts for a better quality in the absorption image,
+and for ease of fabrication, a duty cycle of 0.5 was finally chosen for all
+gratings in our experiments.
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=.6\textwidth]{gfx/sens-dc.png}
+    \caption{Smallest detectable refraction angle for a Talbot-Lau
+    interferometer as a function of the duty cycle of the absorption grating
+\G0. The minimum of this function indicates the optimal duty cycle.}
+    \label{fig:sens-dc}
+\end{figure}
+
+Another critical factor in~\eqref{eq:variance} is the visibility~$v$. The
 variance is indeed not necessarily decreased by increasing the distance
 $D_j$ for two reasons:
 \begin{aenumerate}
