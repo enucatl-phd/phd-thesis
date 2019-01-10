@@ -61,14 +61,14 @@ for a length of $n$ periods of the interference pattern:
 
 \begin{enumerate}
     \item the absolute value of the zeroth component along the $z$ axis is the average value $a_0$
-        in equation~\eqref{eq:flat}:
+        in equation~\eqref{eq:flat}:\\
         \texttt{tensorflow.abs(transformed[..., 0])};
     \item the argument of the complex number \texttt{transformed[..., n]}
         is the phase displacement $\theta$ in equation~\eqref{eq:flat}. This
         is calculated with the C++ function \texttt{std::arg}.
     \item the absolute value of the $n$-th component along the $z$ axis is
         the amplitude $a_1$
-        in equation~\eqref{eq:flat}:
+        in equation~\eqref{eq:flat}:\\
         \texttt{tensorflow.abs(transformed[..., n])};
 \end{enumerate}
 The three parameters are then stacked together to form a tensor with shape
