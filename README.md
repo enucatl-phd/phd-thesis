@@ -1,4 +1,4 @@
-# Compiled PDF
+# Download (PDF)
 
 Go to the [latest release page](https://github.com/Enucatl/phd-thesis/releases/latest) and download the ClassicThesis.pdf file.
 
